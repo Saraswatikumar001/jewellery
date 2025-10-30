@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Card Grid (View Similar Inside)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jQuery + Slick Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <style>
+        .slick-prev:before,
+        .slick-next:before {
+            color: #6b21a8;
+            font-size: 20px;
+        }
+
+        .expand-enter {
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .expand-active {
+            max-height: 400px;
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50  justify-center items-center min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                    <span class="text-xl font-bold">ShopCart</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-4">
+                    <div class="flex">
+                        <input type="text" placeholder="Search for products, brands and more"
+                            class="w-full px-4 py-2 rounded-l text-gray-800 focus:outline-none">
+                        <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-r">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-6">
+                    <div class="flex flex-col items-center cursor-pointer">
+                        <i class="fas fa-user text-xl"></i>
+                        <span class="text-sm">Login</span>
+                    </div>
+                    <div class="flex flex-col items-center cursor-pointer">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                        <span class="text-sm">Cart</span>
+                    </div>
+                    <div class="flex flex-col items-center cursor-pointer">
+                        <i class="fas fa-store text-xl"></i>
+                        <span class="text-sm">Become a Seller</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="bg-white shadow-sm p-5">
+            <div class="container mx-auto px-4 py-2">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-8">
+                        <!-- RINGS MENU ITEM -->
+                        <div class="relative" id="rings-menu">
+                            <a href="./ring.html" id="rings-link"
+                                class="text-black hover:text-[#6E002C] font-medium block py-2">
+                                Rings
+                            </a>
+                            <!-- Mega Menu -->
+                            <div id="rings-dropdown"
+                                class="absolute left-0 top-full hidden w-screen bg-white shadow-lg border-t mt-2 transition-all duration-300 ease-out opacity-0">
+                                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 p-8">
+                                    <!-- Featured -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">Featured</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Latest Designs</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Bestsellers</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Fast Delivery</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Special Deals</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- By Style -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Style</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">All Rings</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Solitaire</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Couple Rings</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Adjustable</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- By Metal & Stone -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Metal & Stone</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Diamond</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Gold</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Platinum</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Gemstone</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- By Price -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Price</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Under ₹10k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹10k - ₹20k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹20k - ₹30k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹30k & Above</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Image Section -->
+                                    <div class="hidden md:block">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="relative">
+                                                <img src="./asset/img-3.jpg" alt="Switch"
+                                                    class="rounded-lg w-full h-40 object-cover">
+                                                <span
+                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Switch</span>
+                                            </div>
+                                            <div class="relative">
+                                                <img src="./asset/img-8.jpg" alt="Dancing Hoops"
+                                                    class="rounded-lg w-full h-40 object-cover">
+                                                <span
+                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Dancing
+                                                    Hoops</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="#" class="text-black hover:text-[#6E002C]">Necklaces</a></li>
+                        <li><a href="#" class="text-black hover:text-[#6E002C] font-medium">Bracelets & Bangles</a></li>
+                        <li><a href="#" class="text-black hover:text-[#6E002C] font-medium">Solitaires</a></li>
+                    </div>
+                    <div>
+                        <a href="#"
+                            class="text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
+                            Offers
+                            <span
+                                class="bg-yellow-400 text-red-800 px-2 py-1 rounded-full text-xs ml-1 font-bold animate-pulse">
+                                New
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- MOBILE MENU -->
+                <div id="mobile-menu" class="lg:hidden hidden bg-white border-t shadow-md">
+                    <ul class="flex flex-col space-y-4 p-4 font-medium">
+                        <li><a href="#" class="block hover:text-[#6E002C]">Rings</a></li>
+                        <li><a href="#" class="block hover:text-[#6E002C]">Earrings</a></li>
+                        <li><a href="#" class="block hover:text-[#6E002C]">Bracelets</a></li>
+                        <li><a href="#" class="block hover:text-[#6E002C]">Necklaces</a></li>
+                    </ul>
+                </div>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+    <div class="flex">
+        <!-- FILTER SIDEBAR -->
+        <div class="pt-48">
+            <aside
+                class="bg-white border rounded-md shadow-sm  p-4 mb-16 text-gray-700 overflow-y-scroll scrollbar-hide h-[500px]">
+                <!-- Header -->
+                <div class="flex justify-between items-center relative fixed top-0 left-0 right-0 bg-white">
+                    <h2 class="font-semibold text-lg tracking-wide">FILTERS <span
+                            class="text-lg text-gray-500 ml-1">0</span>
+                    </h2>
+                    <button class="text-lg text-pink-500 hover:underline font-medium">CLEAR ALL</button>
+                </div>
+                <!-- PRICE -->
+                <div class="border-b pb-3 mb-5">
+                    <h3 class="font-medium text-sm mb-2">Price</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> ₹10,001 – ₹15,000
+                                <span class="ml-auto text-gray-400 text-xs">(564)</span></label></li>
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> ₹20,001 – ₹30,000
+                                <span class="ml-auto text-gray-400 text-xs">(917)</span></label></li>
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> Under ₹5,000 <span
+                                    class="ml-auto text-gray-400 text-xs">(23)</span></label></li>
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> ₹5,001 – ₹10,000 <span
+                                    class="ml-auto text-gray-400 text-xs">(426)</span></label></li>
+                    </ul>
+                    <button id="togglePrice" class="text-xs text-purple-600 mt-2 hover:underline flex items-center">
+                        <span>▼ 10 More</span>
+                    </button>
+
+                    <!-- Hidden extra items -->
+                    <ul id="priceMore" class="space-y-1 text-sm mt-2 hidden">
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> ₹30,001 – ₹40,000
+                                <span class="ml-auto text-gray-400 text-xs">(215)</span></label></li>
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> ₹40,001 – ₹50,000
+                                <span class="ml-auto text-gray-400 text-xs">(163)</span></label></li>
+                    </ul>
+                </div>
+                <!-- DISCOUNTS -->
+                <div class="border-b pb-3 mb-3">
+                    <h3 class="font-medium text-sm mb-2">Di</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> Flat 5% off on Making
+                                Charges
+                                <span class="ml-auto text-gray-400 text-xs">(1100)</span></label></li>
+                    </ul>
+                </div>
+
+                <!-- PRODUCT TYPE -->
+                <div class="border-b pb-3 mb-3">
+                    <h3 class="font-medium text-sm mb-2">Product Type</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> Earrings <span
+                                    class="ml-auto text-gray-400 text-xs">(1929)</span></label></li>
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> Rings <span
+                                    class="ml-auto text-gray-400 text-xs">(1367)</span></label></li>
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> Necklaces <span
+                                    class="ml-auto text-gray-400 text-xs">(558)</span></label></li>
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> Pendants <span
+                                    class="ml-auto text-gray-400 text-xs">(682)</span></label></li>
+                    </ul>
+                    <button id="toggleProductType"
+                        class="text-xs text-purple-600 mt-2 hover:underline flex items-center">
+                        <span>▼ 13 More</span>
+                    </button>
+
+                    <!-- Hidden more product types -->
+                    <ul id="productTypeMore" class="space-y-1 text-sm mt-2 hidden">
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> Bangles <span
+                                    class="ml-auto text-gray-400 text-xs">(421)</span></label></li>
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> Bracelets <span
+                                    class="ml-auto text-gray-400 text-xs">(303)</span></label></li>
+                    </ul>
+                </div>
+
+                <!-- WEIGHT RANGES -->
+                <div>
+                    <h3 class="font-medium text-sm mb-2">Weight Ranges</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> 0-2g <span
+                                    class="ml-auto text-gray-400 text-xs">(2055)</span></label></li>
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> 2-5g <span
+                                    class="ml-auto text-gray-400 text-xs">(1590)</span></label></li>
+                        <li><label class="flex items-center"><input type="checkbox" class="mr-2"> 5-10g <span
+                                    class="ml-auto text-gray-400 text-xs">(845)</span></label></li>
+                    </ul>
+                </div>
+                <div class="w-64">
+                    <!-- Weight Section -->
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-2 text-gray-700">Weight</h3>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li><label class="flex items-center"><input type="checkbox"
+                                        class="mr-2 accent-purple-600">5–10
+                                    g
+                                    <span class="text-gray-400 ml-1">(12)</span></label></li>
+                            <li><label class="flex items-center"><input type="checkbox"
+                                        class="mr-2 accent-purple-600">10–20
+                                    g
+                                    <span class="text-gray-400 ml-1">(11)</span></label></li>
+                            <li><label class="flex items-center"><input type="checkbox"
+                                        class="mr-2 accent-purple-600">20–30
+                                    g
+                                    <span class="text-gray-400 ml-1">(3)</span></label></li>
+                        </ul>
+                    </div>
+
+                    <hr class="my-3">
+                    <!-- Material -->
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-2 text-gray-700">Material</h3>
+                        <ul class="text-sm text-gray-600">
+                            <li>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="mr-2 accent-purple-600">
+                                    <span class="flex items-center">
+                                        <span class="mr-1">💎</span> Diamond
+                                        <span class="text-gray-400 ml-1">(30)</span>
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <!-- Metal -->
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-2 text-gray-700">Metal</h3>
+                        <ul class="space-y-1 text-sm text-gray-600">
+                            <li>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="mr-2 accent-purple-600">
+                                    <span class="flex items-center">
+                                        <span class="inline-block w-3 h-3 bg-yellow-400 rounded-sm mr-2"></span>
+                                        18 KT Yellow <span class="text-gray-400 ml-1">(6)</span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="mr-2 accent-purple-600">
+                                    <span class="flex items-center">
+                                        <span class="inline-block w-3 h-3 bg-gray-300 rounded-sm mr-2"></span>
+                                        18 KT White <span class="text-gray-400 ml-1">(18)</span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="mr-2 accent-purple-600">
+                                    <span class="flex items-center">
+                                        <span class="inline-block w-3 h-3 bg-rose-300 rounded-sm mr-2"></span>
+                                        18 KT Rose <span class="text-gray-400 ml-1">(6)</span>
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <hr class="my-3">
+                    <!-- Shop For -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold mb-2 text-gray-700">Shop for</h3>
+                        <ul class="text-sm text-gray-600">
+                            <li>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="mr-2 accent-purple-600">
+                                    Women <span class="text-gray-400 ml-1">(30)</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- View More Button -->
+                    <button
+                        class="w-full border border-purple-500 text-purple-600 py-2 rounded-md text-sm hover:bg-purple-50 transition">
+                        VIEW MORE
+                    </button>
+                </div>
+            </aside>
+
+        </div>
+        <!-- All Card -->
+        <div class="pt-48 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+            <!-- Product Card Template (Repeatable) -->
+            <div class="bg-white w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+                <div class="product-slider">
+                    <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Side View" class="w-full h-40 object-cover"></div>
+                </div>
+
+                <div class="p-3 text-center">
+                    <h3 class="text-sm font-medium">Classic Gold Studs</h3>
+                    <p class="text-gray-500 text-xs mb-2">₹15,999</p>
+                    <button
+                        class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
+                        View Similar
+                    </button>
+                </div>
+
+                <!-- Hidden Similar Items Section -->
+                <div class="similar-section expand-enter bg-gray-50 border-t p-3">
+                    <h4 class="text-xs font-semibold text-gray-700 mb-3">Similar Products</h4>
+                    <!-- Slick Slider Container -->
+                    <div class="similar-slider">
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹14,999</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹16,299</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹18,999</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹17,499</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copy same structure for more cards -->
+            <div class="bg-white w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+                <div class="product-slider">
+                    <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Side View" class="w-full h-40 object-cover"></div>
+                </div>
+                <div class="p-3 text-center">
+                    <h3 class="text-sm font-medium">Classic Gold Studs</h3>
+                    <p class="text-gray-500 text-xs mb-2">₹15,999</p>
+                    <button
+                        class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
+                        View Similar
+                    </button>
+                </div>
+                <!-- Hidden Similar Items Section -->
+                <div class="similar-section expand-enter bg-gray-50 border-t p-3">
+                    <h4 class="text-xs font-semibold text-gray-700 mb-3">Similar Products</h4>
+                    <!-- Slick Slider Container -->
+                    <div class="similar-slider">
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹14,999</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹16,299</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹18,999</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹17,499</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+                <div class="product-slider">
+                    <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Side View" class="w-full h-40 object-cover"></div>
+                </div>
+
+                <div class="p-3 text-center">
+                    <h3 class="text-sm font-medium">Classic Gold Studs</h3>
+                    <p class="text-gray-500 text-xs mb-2">₹15,999</p>
+                    <button
+                        class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
+                        View Similar
+                    </button>
+                </div>
+
+                <!-- Hidden Similar Items Section -->
+                <div class="similar-section expand-enter bg-gray-50 border-t p-3">
+                    <h4 class="text-xs font-semibold text-gray-700 mb-3">Similar Products</h4>
+                    <!-- Slick Slider Container -->
+                    <div class="similar-slider">
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹14,999</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹16,299</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹18,999</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹17,499</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+                <div class="product-slider">
+                    <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Side View" class="w-full h-40 object-cover"></div>
+                </div>
+
+                <div class="p-3 text-center">
+                    <h3 class="text-sm font-medium">Classic Gold Studs</h3>
+                    <p class="text-gray-500 text-xs mb-2">₹15,999</p>
+                    <button
+                        class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
+                        View Similar
+                    </button>
+                </div>
+
+                <!-- Hidden Similar Items Section -->
+                <div class="similar-section expand-enter bg-gray-50 border-t p-3">
+                    <h4 class="text-xs font-semibold text-gray-700 mb-3">Similar Products</h4>
+                    <!-- Slick Slider Container -->
+                    <div class="similar-slider">
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹14,999</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹16,299</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹18,999</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹17,499</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+                <div class="product-slider">
+                    <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Side View" class="w-full h-40 object-cover"></div>
+                </div>
+
+                <div class="p-3 text-center">
+                    <h3 class="text-sm font-medium">Classic Gold Studs</h3>
+                    <p class="text-gray-500 text-xs mb-2">₹15,999</p>
+                    <button
+                        class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
+                        View Similar
+                    </button>
+                </div>
+                <!-- Hidden Similar Items Section -->
+                <div class="similar-section expand-enter bg-gray-50 border-t p-3">
+                    <h4 class="text-xs font-semibold text-gray-700 mb-3">Similar Products</h4>
+                    <!-- Slick Slider Container -->
+                    <div class="similar-slider">
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹14,999</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹16,299</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹18,999</p>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
+                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
+                            <p class="text-[10px] mt-1 text-gray-600">₹17,499</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-10 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">ABOUT</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">HELP</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Payments</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cancellation & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">POLICY</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Return Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms Of Use</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">SOCIAL</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Facebook</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">YouTube</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span class="text-xl font-bold">ShopCart</span>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    &copy; 2023 ShopCart. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JS -->
+    <script>
+        $(document).ready(function () {
+            // Initialize Slick sliders
+            $('.product-slider').slick({
+                dots: false,
+                infinite: true,
+                arrows: false,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            });
+
+            // Toggle similar section inside each card
+            $('.viewSimilarBtn').on('click', function (e) {
+                e.stopPropagation();
+                const card = $(this).closest('.group');
+                const section = card.find('.similar-section');
+
+                if (section.hasClass('expand-active')) {
+                    section.removeClass('expand-active').addClass('expand-enter');
+                    $(this).text('View Similar');
+                } else {
+                    section.removeClass('expand-enter').addClass('expand-active');
+                    $(this).text('Hide Similar');
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $(".similar-slider").slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: false,
+                infinite: true,
+                autoplay: false,
+                speed: 400,
+                responsive: [
+                    {
+                        breakpoint: 640,
+                        settings: {
+                            slidesToShow: 1,
+                        },
+                    },
+                ],
+            });
+        });
+
+        const togglePrice = document.getElementById('togglePrice');
+        const priceMore = document.getElementById('priceMore');
+
+        togglePrice.addEventListener('click', () => {
+            priceMore.classList.toggle('hidden');
+            togglePrice.innerHTML = priceMore.classList.contains('hidden') ? '▼ 10 More' : '▲ Show Less';
+        });
+
+        const toggleProductType = document.getElementById('toggleProductType');
+        const productTypeMore = document.getElementById('productTypeMore');
+
+        toggleProductType.addEventListener('click', () => {
+            productTypeMore.classList.toggle('hidden');
+            toggleProductType.innerHTML = productTypeMore.classList.contains('hidden') ? '▼ 13 More' : '▲ Show Less';
+        });
+    </script>
+
+</body>
+
+</html>
