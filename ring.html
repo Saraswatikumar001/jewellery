@@ -18,23 +18,10 @@
             color: #6b21a8;
             font-size: 20px;
         }
-
-        .expand-enter {
-            max-height: 0;
-            opacity: 0;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .expand-active {
-            max-height: 400px;
-            opacity: 1;
-            transition: all 0.3s ease;
-        }
     </style>
 </head>
 
-<body class="bg-gray-50  justify-center items-center min-h-screen">
+<body class="bg-gray-50  justify-center items-center min-h-screen relative">
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3">
@@ -365,14 +352,13 @@
         </div>
         <!-- All Card -->
         <div class="pt-48 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-            <!-- Product Card Template (Repeatable) -->
-            <div class="bg-white w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
-                <div class="product-slider">
+            <!-- Card-1-->
+            <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+                <a href="./product.html" class="product-slider">
                     <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
                     <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
                     <div><img src="./asset/img-1.jpg" alt="Side View" class="w-full h-40 object-cover"></div>
-                </div>
-
+                </a>
                 <div class="p-3 text-center">
                     <h3 class="text-sm font-medium">Classic Gold Studs</h3>
                     <p class="text-gray-500 text-xs mb-2">₹15,999</p>
@@ -380,42 +366,16 @@
                         class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
                         View Similar
                     </button>
-                </div>
-
-                <!-- Hidden Similar Items Section -->
-                <div class="similar-section expand-enter bg-gray-50 border-t p-3">
-                    <h4 class="text-xs font-semibold text-gray-700 mb-3">Similar Products</h4>
-                    <!-- Slick Slider Container -->
-                    <div class="similar-slider">
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹14,999</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹16,299</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹18,999</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹17,499</p>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <!-- Copy same structure for more cards -->
-            <div class="bg-white w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+            <!-- Card-2-->
+            <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
                 <div class="product-slider">
                     <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
                     <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
                     <div><img src="./asset/img-1.jpg" alt="Side View" class="w-full h-40 object-cover"></div>
                 </div>
+
                 <div class="p-3 text-center">
                     <h3 class="text-sm font-medium">Classic Gold Studs</h3>
                     <p class="text-gray-500 text-xs mb-2">₹15,999</p>
@@ -423,35 +383,10 @@
                         class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
                         View Similar
                     </button>
-                </div>
-                <!-- Hidden Similar Items Section -->
-                <div class="similar-section expand-enter bg-gray-50 border-t p-3">
-                    <h4 class="text-xs font-semibold text-gray-700 mb-3">Similar Products</h4>
-                    <!-- Slick Slider Container -->
-                    <div class="similar-slider">
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹14,999</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹16,299</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹18,999</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹17,499</p>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div class="bg-white w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+            <!-- Card-3-->
+            <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
                 <div class="product-slider">
                     <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
                     <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
@@ -465,36 +400,10 @@
                         class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
                         View Similar
                     </button>
-                </div>
-
-                <!-- Hidden Similar Items Section -->
-                <div class="similar-section expand-enter bg-gray-50 border-t p-3">
-                    <h4 class="text-xs font-semibold text-gray-700 mb-3">Similar Products</h4>
-                    <!-- Slick Slider Container -->
-                    <div class="similar-slider">
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹14,999</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹16,299</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹18,999</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹17,499</p>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div class="bg-white w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+            <!-- Card-4-->
+            <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
                 <div class="product-slider">
                     <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
                     <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
@@ -508,36 +417,10 @@
                         class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
                         View Similar
                     </button>
-                </div>
-
-                <!-- Hidden Similar Items Section -->
-                <div class="similar-section expand-enter bg-gray-50 border-t p-3">
-                    <h4 class="text-xs font-semibold text-gray-700 mb-3">Similar Products</h4>
-                    <!-- Slick Slider Container -->
-                    <div class="similar-slider">
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹14,999</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹16,299</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹18,999</p>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹17,499</p>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div class="bg-white w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+            <!-- Card-5-->
+            <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
                 <div class="product-slider">
                     <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
                     <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
@@ -552,31 +435,122 @@
                         View Similar
                     </button>
                 </div>
-                <!-- Hidden Similar Items Section -->
-                <div class="similar-section expand-enter bg-gray-50 border-t p-3">
-                    <h4 class="text-xs font-semibold text-gray-700 mb-3">Similar Products</h4>
-                    <!-- Slick Slider Container -->
-                    <div class="similar-slider">
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹14,999</p>
-                        </div>
+            </div>
+            <!-- Card-6-->
+            <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+                <div class="product-slider">
+                    <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Side View" class="w-full h-40 object-cover"></div>
+                </div>
 
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹16,299</p>
-                        </div>
+                <div class="p-3 text-center">
+                    <h3 class="text-sm font-medium">Classic Gold Studs</h3>
+                    <p class="text-gray-500 text-xs mb-2">₹15,999</p>
+                    <button
+                        class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
+                        View Similar
+                    </button>
+                </div>
+            </div>
+            <!-- Card-7-->
+            <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+                <div class="product-slider">
+                    <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Side View" class="w-full h-40 object-cover"></div>
+                </div>
 
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹18,999</p>
-                        </div>
+                <div class="p-3 text-center">
+                    <h3 class="text-sm font-medium">Classic Gold Studs</h3>
+                    <p class="text-gray-500 text-xs mb-2">₹15,999</p>
+                    <button
+                        class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
+                        View Similar
+                    </button>
+                </div>
+            </div>
+            <!-- Card-8-->
+            <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
+                <div class="product-slider">
+                    <div><img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Back View" class="w-full h-40 object-cover"></div>
+                    <div><img src="./asset/img-1.jpg" alt="Side View" class="w-full h-40 object-cover"></div>
+                </div>
 
-                        <div class="bg-white p-2 rounded-md shadow-sm text-center mx-1">
-                            <img src="./asset/img-1.jpg" class="h-16 w-full object-cover rounded" />
-                            <p class="text-[10px] mt-1 text-gray-600">₹17,499</p>
-                        </div>
+                <div class="p-3 text-center">
+                    <h3 class="text-sm font-medium">Classic Gold Studs</h3>
+                    <p class="text-gray-500 text-xs mb-2">₹15,999</p>
+                    <button
+                        class="viewSimilarBtn  w-full bg-purple-600 text-white py-2 rounded-md text-sm hover:bg-purple-700 transition">
+                        View Similar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="h-64 close fixed bottom-0 left-0 z-10 w-full hidden show-similar rounded-t-3xl">
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Slick CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        <!-- Similar Section -->
+        <div class="close fixed bottom-0 left-0 z-50 w-full hidden show-similar bg-gray-50 rounded-t-3xl shadow-xl">
+            <!-- ❌ Close Button -->
+            <button class="absolute top-2 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold closeSimilar">
+                &times;
+            </button>
+            <div class="max-w-7xl mx-auto py-8 px-4">
+                <h3 class="text-2xl font-bold text-[#6E002C] mb-4 ml-1">
+                    Similar Designs
+                </h3>
+                <!-- Slick Slider -->
+                <div class="similar">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-xl shadow-md p-2 text-center hover:shadow-lg transition">
+                        <img src="./asset/img-1.jpg" alt="Ring 1" class="h-40 w-full object-cover rounded-md mb-2" />
+                        <p class="text-[#7e22ce] font-medium text-sm">₹20,603</p>
+                        <p class="text-[11px] text-black font-bold mt-1">
+                            Mesmerizing Duet Gemstone Ring
+                        </p>
                     </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-xl shadow-md p-2 text-center hover:shadow-lg transition">
+                        <img src="./asset/img-1.jpg" alt="Ring 2" class="h-40 w-full object-cover rounded-md mb-2" />
+                        <p class="text-[#7e22ce] font-medium text-sm">₹21,382</p>
+                        <p class="text-[11px] text-black font-bold mt-1">
+                            Sunbeam Square Gemstone Ring
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-xl shadow-md p-2 text-center hover:shadow-lg transition">
+                        <img src="./asset/img-1.jpg" alt="Ring 3" class="h-40 w-full object-cover rounded-md mb-2" />
+                        <p class="text-[#7e22ce] font-medium text-sm">₹22,620</p>
+                        <p class="text-[11px] text-gray-600 text-black font-bold mt-1">
+                            Glinty Pair Gemstone Ring
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-xl shadow-md p-2 text-center hover:shadow-lg transition">
+                        <img src="./asset/img-1.jpg" alt="Ring 3" class="h-40 w-full object-cover rounded-md mb-2" />
+                        <p class="text-[#7e22ce] font-medium text-sm">₹22,620</p>
+                        <p class="text-[11px] text-gray-600 mt-1 text-black font-bold">
+                            Glinty Pair Gemstone Ring
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-xl shadow-md p-2 text-center hover:shadow-lg transition">
+                        <img src="./asset/img-1.jpg" alt="Ring 3" class="h-40 w-full object-cover rounded-md mb-2" />
+                        <p class="text-[#7e22ce] font-medium text-sm">₹22,620</p>
+                        <p class="text-[11px] text-gray-600 mt-1 text-black font-bold">
+                            Glinty Pair Gemstone Ring
+                        </p>
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -650,23 +624,6 @@
                 slidesToScroll: 1,
             });
 
-            // Toggle similar section inside each card
-            $('.viewSimilarBtn').on('click', function (e) {
-                e.stopPropagation();
-                const card = $(this).closest('.group');
-                const section = card.find('.similar-section');
-
-                if (section.hasClass('expand-active')) {
-                    section.removeClass('expand-active').addClass('expand-enter');
-                    $(this).text('View Similar');
-                } else {
-                    section.removeClass('expand-enter').addClass('expand-active');
-                    $(this).text('Hide Similar');
-                }
-            });
-        });
-
-        $(document).ready(function () {
             $(".similar-slider").slick({
                 slidesToShow: 2,
                 slidesToScroll: 1,
@@ -684,22 +641,41 @@
                     },
                 ],
             });
-        });
 
-        const togglePrice = document.getElementById('togglePrice');
-        const priceMore = document.getElementById('priceMore');
 
-        togglePrice.addEventListener('click', () => {
-            priceMore.classList.toggle('hidden');
-            togglePrice.innerHTML = priceMore.classList.contains('hidden') ? '▼ 10 More' : '▲ Show Less';
-        });
+            // Initialize slick only once
+            $('.similar').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                infinite: true,
+                arrows: true,
+                dots: false,
+                responsive: [
+                    { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                    { breakpoint: 768, settings: { slidesToShow: 2 } },
+                    { breakpoint: 480, settings: { slidesToShow: 1 } },
+                ],
+            });
 
-        const toggleProductType = document.getElementById('toggleProductType');
-        const productTypeMore = document.getElementById('productTypeMore');
+            // Show similar section
+            $(document).on('click', '.viewSimilarBtn', function () {
+                $('.show-similar').removeClass('hidden').addClass('block');
+                $('.similar').slick('setPosition'); // Refresh slick after showing
+            });
 
-        toggleProductType.addEventListener('click', () => {
-            productTypeMore.classList.toggle('hidden');
-            toggleProductType.innerHTML = productTypeMore.classList.contains('hidden') ? '▼ 13 More' : '▲ Show Less';
+            // Close the similar section
+            $(document).on('click', '.closeSimilar', function () {
+                $('.show-similar').addClass('hidden').removeClass('block');
+            });
+
+
+            $(this).on('click', '.viewSimilarBtn', function () {
+                $('.show-similar').removeClass('hidden');
+            });
+
+            $(this).on('click', '.close', function () {
+                $('.close').addClass('hidden');
+            });
         });
     </script>
 

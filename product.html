@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flipkart-style Product Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                    <span class="text-xl font-bold">ShopCart</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-4">
+                    <div class="flex">
+                        <input type="text" placeholder="Search for products, brands and more"
+                            class="w-full px-4 py-2 rounded-l text-gray-800 focus:outline-none">
+                        <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-r">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-6">
+                    <div class="flex flex-col items-center cursor-pointer">
+                        <i class="fas fa-user text-xl"></i>
+                        <span class="text-sm">Login</span>
+                    </div>
+                    <div class="flex flex-col items-center cursor-pointer">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                        <span class="text-sm">Cart</span>
+                    </div>
+                    <div class="flex flex-col items-center cursor-pointer">
+                        <i class="fas fa-store text-xl"></i>
+                        <span class="text-sm">Become a Seller</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="bg-white shadow-sm p-5">
+            <div class="container mx-auto px-4 py-2">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-8">
+                        <!-- RINGS MENU ITEM -->
+                        <div class="relative" id="rings-menu">
+                            <a href="./ring.html" id="rings-link"
+                                class="text-black hover:text-[#6E002C] font-medium block py-2">
+                                Rings
+                            </a>
+                            <!-- Mega Menu -->
+                            <div id="rings-dropdown"
+                                class="absolute left-0 top-full hidden w-screen bg-white shadow-lg border-t mt-2 transition-all duration-300 ease-out opacity-0">
+                                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 p-8">
+                                    <!-- Featured -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">Featured</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Latest Designs</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Bestsellers</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Fast Delivery</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Special Deals</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- By Style -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Style</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">All Rings</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Solitaire</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Couple Rings</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Adjustable</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- By Metal & Stone -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Metal & Stone</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Diamond</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Gold</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Platinum</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Gemstone</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- By Price -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Price</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Under ₹10k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹10k - ₹20k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹20k - ₹30k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹30k & Above</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Image Section -->
+                                    <div class="hidden md:block">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="relative">
+                                                <img src="./asset/img-3.jpg" alt="Switch"
+                                                    class="rounded-lg w-full h-40 object-cover">
+                                                <span
+                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Switch</span>
+                                            </div>
+                                            <div class="relative">
+                                                <img src="./asset/img-8.jpg" alt="Dancing Hoops"
+                                                    class="rounded-lg w-full h-40 object-cover">
+                                                <span
+                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Dancing
+                                                    Hoops</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="#" class="text-black hover:text-[#6E002C]">Necklaces</a></li>
+                        <li><a href="#" class="text-black hover:text-[#6E002C] font-medium">Bracelets & Bangles</a></li>
+                        <li><a href="#" class="text-black hover:text-[#6E002C] font-medium">Solitaires</a></li>
+                    </div>
+                    <div>
+                        <a href="#"
+                            class="text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
+                            Offers
+                            <span
+                                class="bg-yellow-400 text-red-800 px-2 py-1 rounded-full text-xs ml-1 font-bold animate-pulse">
+                                New
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- MOBILE MENU -->
+                <div id="mobile-menu" class="lg:hidden hidden bg-white border-t shadow-md">
+                    <ul class="flex flex-col space-y-4 p-4 font-medium">
+                        <li><a href="#" class="block hover:text-[#6E002C]">Rings</a></li>
+                        <li><a href="#" class="block hover:text-[#6E002C]">Earrings</a></li>
+                        <li><a href="#" class="block hover:text-[#6E002C]">Bracelets</a></li>
+                        <li><a href="#" class="block hover:text-[#6E002C]">Necklaces</a></li>
+                    </ul>
+                </div>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+    <div class="max-w-6xl mx-auto p-6 flex flex-col md:flex-row gap-8 mt-40">
+        <!-- Left side: Images -->
+        <div class="flex gap-4">
+            <!-- Thumbnails -->
+            <div class="flex flex-col gap-3 h-full w-64">
+                <img src="./asset/img-3.jpg" alt="Thumbnail 1"
+                    class="w-20 h-20 object-cover rounded cursor-pointer border-blue-600"
+                    data-large="./asset/img-3.jpg" />
+                <img src="./asset/img-4.jpg" alt="Thumbnail 2"
+                    class="w-20 h-20 object-cover rounded cursor-pointer  border-gray-300"
+                    data-large="./asset/img-4.jpg" />
+                <img src="./asset/img-5.jpg" alt="Thumbnail 3"
+                    class="w-20 h-20 object-cover rounded cursor-pointer  border-gray-300"
+                    data-large="./asset/img-5.jpg" />
+                <img src="./asset/img-6.jpg" alt="Thumbnail 4"
+                    class="w-20 h-20 object-cover rounded cursor-pointer  border-gray-300"
+                    data-large="./asset/img-6.jpg" />
+            </div>
+            <!-- Large Image -->
+            <div class="flex-1 flex items-center justify-center  border-gray-200 rounded">
+                <img id="mainImage" src="./asset/img-10.jpg" alt="Main Product"
+                    class="max-w-full max-h-[450px] object-contain" />
+            </div>
+        </div>
+        <!-- Right side: Product Details -->
+        <div class="flex-1 flex flex-col gap-4">
+            <!-- Breadcrumb -->
+            <nav class="text-sm text-gray-500">
+                <ol class="list-reset flex space-x-2">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li>›</li>
+                    <li><a href="#" class="hover:underline">Furniture</a></li>
+                    <li>›</li>
+                    <li><a href="#" class="hover:underline">Furniture Accessories</a></li>
+                    <li>›</li>
+                    <li><a href="#" class="hover:underline">Home Temple</a></li>
+                    <li>›</li>
+                    <li class="font-semibold">HOODWIN Pooja Mandir</li>
+                </ol>
+            </nav>
+
+            <!-- Title -->
+            <h1 class="text-xl md:text-2xl font-semibold leading-tight">
+                HOODWIN Pooja Mandir Home Office with LED Light H- 18 L- 16 W -8.75 In Wood Temple Engineered Wood Home
+                Temple (Height: 41, DIY(Do-It-Yourself))
+            </h1>
+
+            <!-- Rating and Reviews -->
+            <div class="flex items-center space-x-2">
+                <span class="bg-green-600 text-white text-xs font-semibold px-2 py-0.5 rounded">3.8 ★</span>
+                <span class="text-sm text-gray-600">1,459 Ratings & 88 Reviews</span>
+            </div>
+
+            <!-- Price -->
+            <div class="space-x-4 flex items-baseline">
+                <span class="text-3xl font-bold">₹947</span>
+                <span class="text-gray-500 line-through text-lg">₹2,999</span>
+                <span class="text-green-600 font-semibold">68% off</span>
+            </div>
+
+            <!-- Available offers -->
+            <div>
+                <h2 class="font-semibold mb-1">Available offers</h2>
+                <ul class="list-disc list-inside text-sm space-y-1">
+                    <li><span class="font-semibold text-green-600">Special Price</span> Get extra ₹52 off <a href="#"
+                            class="text-blue-600 underline">T&C</a></li>
+                    <li><span class="font-semibold text-green-600">Bank Offer</span> 5% cashback on Axis Bank Flipkart
+                        Debit Card up to ₹750 <a href="#" class="text-blue-600 underline">T&C</a></li>
+                    <li><span class="font-semibold text-green-600">Bank Offer</span> 5% cashback on Flipkart SBI Credit
+                        Card upto ₹4,000 per calendar quarter <a href="#" class="text-blue-600 underline">T&C</a></li>
+                    <li><span class="font-semibold text-green-600">Bank Offer</span> Flat ₹50 off on Flipkart Bajaj
+                        Finserv Insta EMI Card. Min Booking Amount: ₹2,500 <a href="#"
+                            class="text-blue-600 underline">T&C</a></li>
+                    <li><a href="#" class="text-blue-600 underline">View 5 more offers</a></li>
+                </ul>
+            </div>
+
+            <!-- Delivery -->
+            <div>
+                <label for="pincode" class="font-semibold block mb-1">Delivery</label>
+                <div class="flex gap-2">
+                    <input id="pincode" type="text" placeholder="Enter Delivery Pincode" maxlength="6"
+                        class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 flex-1" />
+                    <button id="checkPincode"
+                        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Check</button>
+                </div>
+                <p id="deliveryInfo" class="mt-2 text-sm text-gray-600 italic"></p>
+            </div>
+
+            <!-- Highlights -->
+            <div class="flex justify-between gap-6 mt-4">
+                <div>
+                    <h3 class="font-semibold mb-1">Highlights</h3>
+                    <ul class="list-disc list-inside text-sm space-y-1 max-w-xs">
+                        <li>Material: Engineered Wood</li>
+                        <li>H x W x D: 41 cm x 46 cm x 22 cm (1 ft 6 in x 1 ft 4 in x 8 in)</li>
+                        <li>Weight: 2 kg</li>
+                        <li>Color: White</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-1">Easy Payment Options</h3>
+                    <ul class="list-disc list-inside text-sm space-y-1 max-w-xs">
+                        <li>Cash on Delivery</li>
+                        <li>Net banking & Credit/ Debit/ ATM card <a href="#" class="text-blue-600 underline">View
+                                Details</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex gap-4 mt-6">
+                <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded flex-1">Add
+                    to Cart</button>
+                <button class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded flex-1">Buy
+                    Now</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-10 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">ABOUT</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">HELP</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Payments</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cancellation & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">POLICY</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Return Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms Of Use</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">SOCIAL</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Facebook</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">YouTube</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span class="text-xl font-bold">ShopCart</span>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    &copy; 2023 ShopCart. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Image thumbnail click handler
+        const thumbnails = document.querySelectorAll('img[data-large]');
+        const mainImage = document.getElementById('mainImage');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                // Remove blue border from all thumbnails
+                thumbnails.forEach(t => t.classList.remove('border-blue-600'));
+                thumbnails.forEach(t => t.classList.add('border-gray-300'));
+                // Add blue border to clicked thumbnail
+                thumb.classList.add('border-blue-600');
+                thumb.classList.remove('border-gray-300');
+
+                // Change main image
+                mainImage.src = thumb.getAttribute('data-large');
+            });
+        });
+
+        // Delivery pincode check simulation
+        const checkBtn = document.getElementById('checkPincode');
+        const pincodeInput = document.getElementById('pincode');
+        const deliveryInfo = document.getElementById('deliveryInfo');
+
+        checkBtn.addEventListener('click', () => {
+            const pincode = pincodeInput.value.trim();
+            if (!/^\d{6}$/.test(pincode)) {
+                deliveryInfo.textContent = 'Please enter a valid 6-digit pincode.';
+                deliveryInfo.classList.add('text-red-600');
+                deliveryInfo.classList.remove('text-gray-600');
+                return;
+            }
+            // Simulate delivery check (you can replace with real API)
+            deliveryInfo.textContent = `Delivery by 6 Nov, Thursday if ordered before 3:59 PM`;
+            deliveryInfo.classList.remove('text-red-600');
+            deliveryInfo.classList.add('text-gray-600');
+        });
+    </script>
+</body>
+
+</html>

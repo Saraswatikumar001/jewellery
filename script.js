@@ -58,3 +58,4 @@ menus.forEach(({ menu, dropdown }) => {
     timer = setTimeout(() => dropdownEl.classList.add('hidden'), 200);
   });
 });
+
