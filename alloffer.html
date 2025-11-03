@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring Silver - ShopCart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-white text-gray-800">
+    <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                    <a href="index.html" class="text-xl font-bold">ShopCart</a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-4">
+                    <div class="flex">
+                        <input type="text" placeholder="Search for products, brands and more"
+                            class="w-full px-4 py-2 rounded-l text-gray-800 focus:outline-none">
+                        <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-r">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-6">
+                    <div class="flex flex-col items-center cursor-pointer">
+                        <i class="fas fa-user text-xl"></i>
+                        <span class="text-sm">Login</span>
+                    </div>
+                    <div class="flex flex-col items-center cursor-pointer">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                        <span class="text-sm">Cart</span>
+                    </div>
+                    <div class="flex flex-col items-center cursor-pointer">
+                        <i class="fas fa-store text-xl"></i>
+                        <span class="text-sm">Become a Seller</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="bg-white shadow-sm p-5">
+            <div class="container mx-auto px-4 py-2">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-8">
+                        <!-- RINGS MENU ITEM -->
+                        <div class="relative" id="rings-menu">
+                            <a href="./ring.html" id="rings-link"
+                                class="text-black hover:text-[#6E002C] font-medium block py-2">
+                                Rings
+                            </a>
+                            <!-- Mega Menu -->
+                            <div id="rings-dropdown"
+                                class="absolute left-0 top-full hidden w-screen bg-white shadow-lg border-t mt-2 transition-all duration-300 ease-out opacity-0">
+                                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 p-8">
+                                    <!-- Featured -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">Featured</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Latest Designs</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Bestsellers</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Fast Delivery</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Special Deals</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- By Style -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Style</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">All Rings</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Solitaire</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Couple Rings</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Adjustable</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- By Metal & Stone -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Metal & Stone</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Diamond</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Gold</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Platinum</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Gemstone</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- By Price -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Price</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Under ₹10k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹10k - ₹20k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹20k - ₹30k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹30k & Above</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Image Section -->
+                                    <div class="hidden md:block">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="relative">
+                                                <img src="./asset/img-3.jpg" alt="Switch"
+                                                    class="rounded-lg w-full h-40 object-cover">
+                                                <span
+                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Switch</span>
+                                            </div>
+                                            <div class="relative">
+                                                <img src="./asset/img-8.jpg" alt="Dancing Hoops"
+                                                    class="rounded-lg w-full h-40 object-cover">
+                                                <span
+                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Dancing
+                                                    Hoops</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="#" class="text-black hover:text-[#6E002C]">Necklaces</a></li>
+                        <li><a href="#" class="text-black hover:text-[#6E002C] font-medium">Bracelets & Bangles</a></li>
+                        <li><a href="#" class="text-black hover:text-[#6E002C] font-medium">Solitaires</a></li>
+                    </div>
+                    <div>
+                        <button id="offer-button"
+                            class="text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
+                            Offers
+                            <span
+                                class="bg-yellow-400 text-red-800 px-2 py-1 rounded-full text-xs ml-1 font-bold animate-pulse">
+                                New
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <!-- MOBILE MENU -->
+                <div id="mobile-menu" class="lg:hidden hidden bg-white border-t shadow-md">
+                    <ul class="flex flex-col space-y-4 p-4 font-medium">
+                        <li><a href="#" class="block hover:text-[#6E002C]">Rings</a></li>
+                        <li><a href="#" class="block hover:text-[#6E002C]">Earrings</a></li>
+                        <li><a href="#" class="block hover:text-[#6E002C]">Bracelets</a></li>
+                        <li><a href="#" class="block hover:text-[#6E002C]">Necklaces</a></li>
+                    </ul>
+                </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- ======= HEADER BAR ======= -->
+    <div class="border-b p-4 flex justify-between items-center bg-white sticky top-0 z-10 mt-40">
+        <div>
+            <h1 class="text-xl font-semibold">Exploring <span class="text-[#6E002C]">Silver</span></h1>
+        </div>
+        <div class="flex space-x-3">
+            <button class="border px-4 py-2 rounded hover:bg-gray-100">SORT BY <span
+                    class="font-medium ml-1">Popular</span></button>
+            <button class="border px-4 py-2 rounded hover:bg-gray-100"><i class="fas fa-filter mr-1"></i>
+                FILTER</button>
+        </div>
+        <div class="text-sm text-gray-500">1222 Designs</div>
+    </div>
+
+    <!-- ======= FILTER TAGS ======= -->
+    <div class="px-6 py-3 flex items-center space-x-2 border-b bg-gray-50">
+        <span class="text-sm text-gray-600">Filters:</span>
+        <button class="bg-gray-200 text-sm px-3 py-1 rounded-full hover:bg-gray-300">Silver <i
+                class="fas fa-times ml-1"></i></button>
+        <button class="bg-gray-200 text-sm px-3 py-1 rounded-full hover:bg-gray-300">Brass <i
+                class="fas fa-times ml-1"></i></button>
+    </div>
+
+    <!-- ======= PRODUCT GRID ======= -->
+    <main class="max-w-7xl mx-auto px-6 py-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Product Card 1 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-1.jpg"
+                    alt="Earrings" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">Venturarium Bloom Earrings in Antique Silver</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹4,100</p>
+                </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-2.jpg"
+                    alt="Silver Earrings" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">Paakhi Earrings in Oxidized 925 Silver</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹2,900</p>
+                </div>
+            </div>
+            <!-- Product Card 3 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-8.jpg"
+                    alt="Necklace" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">Venturarium Bloom Necklace in Antique Gold</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹12,250</p>
+                </div>
+            </div>
+            <!-- Product Card 4 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-7.jpg"
+                    alt="Necklace" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">Owning My Obely Self Mangalsutra Necklace</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹4,050</p>
+                </div>
+            </div>
+            <!-- Product Card 5 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-8.jpg"
+                    alt="Bracelet" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">Midnight Memories Bracelet in 925 Silver</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹3,799</p>
+                </div>
+            </div>
+            <!-- Product Card 6 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-6.jpg"
+                    alt="Bracelet" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">The Monarch Elephant Bracelet Crafted in Silver</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹7,110</p>
+                </div>
+            </div>
+            <!-- Product Card 7 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-4.jpg"
+                    alt="Earrings" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">Oxidized Antique Narchi Piler Earrings</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹5,570</p>
+                </div>
+            </div>
+            <!-- Product Card 8 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-8.jpg"
+                    alt="Bracelet" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">Party All Night Bracelet Crafted in Gold Plating</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹4,980</p>
+                </div>
+            </div>
+            <!-- Product Card 9 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-8.jpg"
+                    alt="Bracelet" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">Midnight Memories Bracelet in 925 Silver</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹3,799</p>
+                </div>
+            </div>
+            <!-- Product Card 10 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-6.jpg"
+                    alt="Bracelet" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">The Monarch Elephant Bracelet Crafted in Silver</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹7,110</p>
+                </div>
+            </div>
+            <!-- Product Card 11 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-9.jpg"
+                    alt="Earrings" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">Oxidized Antique Narchi Piler Earrings</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹5,570</p>
+                </div>
+            </div>
+            <!-- Product Card 12 -->
+            <div
+                class="group relative bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <img src="./asset/img-3.jpg"
+                    alt="Bracelet" class="w-full h-72 object-cover">
+                <button class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">
+                    <i class="far fa-heart"></i>
+                </button>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium truncate">Party All Night Bracelet Crafted in Gold Plating</h3>
+                    <p class="text-[#6E002C] font-semibold mt-1">₹4,980</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ======= SCRIPT (optional: heart toggle) ======= -->
+    <script>
+        // Toggle heart (favorite) icon
+        document.querySelectorAll('.fa-heart').forEach(btn => {
+            btn.addEventListener('click', function () {
+                this.classList.toggle('far');
+                this.classList.toggle('fas');
+                this.classList.toggle('text-red-500');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

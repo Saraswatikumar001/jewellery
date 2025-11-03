@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flipkart Style Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-shopping-cart text-2xl"></i>
+          <a href="index.html" class="text-xl font-bold">ShopCart</a>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="flex-1 max-w-2xl mx-4">
+          <div class="flex">
+            <input type="text" placeholder="Search for products, brands and more"
+              class="w-full px-4 py-2 rounded-l text-gray-800 focus:outline-none">
+            <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-r">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- User Actions -->
+        <div class="flex items-center space-x-6">
+          <div class="flex flex-col items-center cursor-pointer">
+            <i class="fas fa-user text-xl"></i>
+            <span class="text-sm">Login</span>
+          </div>
+          <div class="flex flex-col items-center cursor-pointer">
+            <i class="fas fa-shopping-bag text-xl"></i>
+            <span class="text-sm">Cart</span>
+          </div>
+          <div class="flex flex-col items-center cursor-pointer">
+            <i class="fas fa-store text-xl"></i>
+            <span class="text-sm">Become a Seller</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="bg-white shadow-sm p-5">
+      <div class="container mx-auto px-4 py-2">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-8">
+            <!-- RINGS MENU ITEM -->
+            <div class="relative" id="rings-menu">
+              <a href="./ring.html" id="rings-link" class="text-black hover:text-[#6E002C] font-medium block py-2">
+                Rings
+              </a>
+              <!-- Mega Menu -->
+              <div id="rings-dropdown"
+                class="absolute left-0 top-full hidden w-screen bg-white shadow-lg border-t mt-2 transition-all duration-300 ease-out opacity-0">
+                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 p-8">
+                  <!-- Featured -->
+                  <div>
+                    <h4 class="text-[#6E002C] font-semibold mb-3">Featured</h4>
+                    <ul class="space-y-2 text-gray-700">
+                      <li><a href="#" class="hover:text-[#6E002C]">Latest Designs</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">Bestsellers</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">Fast Delivery</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">Special Deals</a></li>
+                    </ul>
+                  </div>
+                  <!-- By Style -->
+                  <div>
+                    <h4 class="text-[#6E002C] font-semibold mb-3">By Style</h4>
+                    <ul class="space-y-2 text-gray-700">
+                      <li><a href="#" class="hover:text-[#6E002C]">All Rings</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">Solitaire</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">Couple Rings</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">Adjustable</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- By Metal & Stone -->
+                  <div>
+                    <h4 class="text-[#6E002C] font-semibold mb-3">By Metal & Stone</h4>
+                    <ul class="space-y-2 text-gray-700">
+                      <li><a href="#" class="hover:text-[#6E002C]">Diamond</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">Gold</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">Platinum</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">Gemstone</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- By Price -->
+                  <div>
+                    <h4 class="text-[#6E002C] font-semibold mb-3">By Price</h4>
+                    <ul class="space-y-2 text-gray-700">
+                      <li><a href="#" class="hover:text-[#6E002C]">Under ₹10k</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">₹10k - ₹20k</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">₹20k - ₹30k</a></li>
+                      <li><a href="#" class="hover:text-[#6E002C]">₹30k & Above</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Image Section -->
+                  <div class="hidden md:block">
+                    <div class="grid grid-cols-2 gap-3">
+                      <div class="relative">
+                        <img src="./asset/img-3.jpg" alt="Switch" class="rounded-lg w-full h-40 object-cover">
+                        <span
+                          class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Switch</span>
+                      </div>
+                      <div class="relative">
+                        <img src="./asset/img-8.jpg" alt="Dancing Hoops" class="rounded-lg w-full h-40 object-cover">
+                        <span class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Dancing
+                          Hoops</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <li><a href="#" class="text-black hover:text-[#6E002C]">Necklaces</a></li>
+            <li><a href="#" class="text-black hover:text-[#6E002C] font-medium">Bracelets & Bangles</a></li>
+            <li><a href="#" class="text-black hover:text-[#6E002C] font-medium">Solitaires</a></li>
+          </div>
+          <div>
+            <button id="offer-button"
+              class="text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
+              Offers
+              <span class="bg-yellow-400 text-red-800 px-2 py-1 rounded-full text-xs ml-1 font-bold animate-pulse">
+                New
+              </span>
+            </button>
+          </div>
+        </div>
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t shadow-md">
+          <ul class="flex flex-col space-y-4 p-4 font-medium">
+            <li><a href="#" class="block hover:text-[#6E002C]">Rings</a></li>
+            <li><a href="#" class="block hover:text-[#6E002C]">Earrings</a></li>
+            <li><a href="#" class="block hover:text-[#6E002C]">Bracelets</a></li>
+            <li><a href="#" class="block hover:text-[#6E002C]">Necklaces</a></li>
+          </ul>
+        </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- Main Content -->
+  <div class="max-w-5xl mx-auto mt-40 p-4">
+    <!-- Login/Signup Section -->
+    <div class="bg-white shadow-md rounded-md">
+      <!-- Header -->
+      <div class="bg-[#6E002C] text-white flex items-center px-5 py-3 rounded-t-md">
+        <span class="bg-[#EAB308] text-xs px-2 py-1 rounded mr-3">1</span>
+        <h2 class="font-semibold text-sm">LOGIN OR SIGNUP</h2>
+      </div>
+      <!-- Body -->
+      <div class="flex flex-col md:flex-row justify-between p-6">
+        <!-- Left Form -->
+        <div class="flex-1">
+          <label class="block text-sm text-gray-700 mb-1">Enter Email/Mobile number</label>
+          <input type="text" class="w-full border-b border-gray-300 focus:outline-none focus:border-blue-600 mb-4" />
+
+          <p class="text-xs text-gray-500 mb-6">
+            By continuing, you agree to Flipkart’s
+            <a href="#" class="text-blue-600">Terms of Use</a> and
+            <a href="#" class="text-blue-600">Privacy Policy</a>.
+          </p>
+
+          <button class="bg-orange-500 hover:bg-orange-600 text-white w-full py-2 rounded text-sm font-semibold">
+            CONTINUE
+          </button>
+        </div>
+
+        <!-- Right Info -->
+        <div class="flex-1 text-sm text-gray-700 mt-6 md:mt-0 md:ml-10">
+          <h3 class="font-medium mb-2 text-gray-600">Advantages of our secure login</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <span class="text-blue-600 mr-2">🚚</span> Easily Track Orders, Hassle free Returns
+            </li>
+            <li class="flex items-center">
+              <span class="text-blue-600 mr-2">🔔</span> Get Relevant Alerts and Recommendations
+            </li>
+            <li class="flex items-center">
+              <span class="text-blue-600 mr-2">⭐</span> Wishlist, Reviews, Ratings and more
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion Section -->
+    <div class="mt-4 space-y-2">
+      <!-- Accordion Item -->
+      <div class="bg-white shadow rounded">
+        <button
+          class="w-full flex items-center justify-between px-5 py-3 text-gray-700 font-medium border-b border-gray-200"
+          onclick="toggleSection(1)">
+          <div><span class="bg-[#EAB308] text-white text-xs px-2 py-1 rounded mr-2">2</span> DELIVERY ADDRESS</div>
+          <span id="icon1">+</span>
+        </button>
+        <div id="content1" class="hidden px-6 py-4 text-sm text-gray-600">
+          Enter your address details here.
+        </div>
+      </div>
+
+      <div class="bg-white shadow rounded">
+        <button
+          class="w-full flex items-center justify-between px-5 py-3 text-gray-700 font-medium border-b border-gray-200"
+          onclick="toggleSection(2)">
+          <div><span class="bg-[#EAB308] text-white text-xs px-2 py-1 rounded mr-2">3</span> ORDER SUMMARY</div>
+          <span id="icon2">+</span>
+        </button>
+        <div id="content2" class="hidden px-6 py-4 text-sm text-gray-600">
+          Your order summary details will appear here.
+        </div>
+      </div>
+
+      <div class="bg-white shadow rounded">
+        <button
+          class="w-full flex items-center justify-between px-5 py-3 text-gray-700 font-medium border-b border-gray-200"
+          onclick="toggleSection(3)">
+          <div><span class="bg-[#EAB308] text-white text-xs px-2 py-1 rounded mr-2">4</span> PAYMENT OPTIONS</div>
+          <span id="icon3">+</span>
+        </button>
+        <div id="content3" class="hidden px-6 py-4 text-sm text-gray-600">
+          Choose your preferred payment method.
+        </div>
+      </div>
+    </div>
+
+    <!-- Security Info -->
+    <div class="flex items-center mt-6 text-sm text-gray-600">
+      <span class="text-2xl mr-2">🛡️</span>
+      <p>
+        Safe and Secure Payments. Easy returns. <br />
+        100% Authentic products.
+      </p>
+    </div>
+  </div>
+  <!-- Offer Modal -->
+  <div id="offer-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-[9999]">
+    <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3 p-6 relative">
+      <button id="close-offer-modal"
+        class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+
+      <h2 class="text-2xl font-bold text-[#6E002C] mb-4">Exclusive Offers Just for You!</h2>
+      <p class="text-gray-700 mb-4">
+        🎉 Grab up to <span class="font-semibold text-[#6E002C]">50% OFF</span> on selected jewelry collections.
+      </p>
+
+      <ul class="list-disc pl-6 text-gray-600 mb-6">
+        <li>✨ Flat 20% off on all rings</li>
+        <li>💎 Buy 1 Get 1 Free on earrings</li>
+        <li>🎁 Free shipping for orders above ₹4999</li>
+      </ul>
+
+      <div class="flex justify-end space-x-3">
+        <button id="close-modal-btn"
+          class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded">Close</button>
+        <a href="./alloffer.html" class="px-4 py-2 bg-[#6E002C] hover:bg-[#8E003A] text-white rounded">View All
+          Offers</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS for Accordion -->
+  <script>
+    function toggleSection(id) {
+      const content = document.getElementById(`content${id}`);
+      const icon = document.getElementById(`icon${id}`);
+
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.textContent = '-';
+      } else {
+        content.classList.add('hidden');
+        icon.textContent = '+';
+      }
+    }
+
+     
+        const offerBtn = document.getElementById('offer-button');
+        const offerModal = document.getElementById('offer-modal');
+        const closeOfferModal = document.getElementById('close-offer-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        offerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            offerModal.classList.remove('hidden');
+        });
+
+        closeOfferModal.addEventListener('click', () => {
+            offerModal.classList.add('hidden');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            offerModal.classList.add('hidden');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === offerModal) {
+                offerModal.classList.add('hidden');
+            }
+        });
+    
+  </script>
+</body>
+
+</html>

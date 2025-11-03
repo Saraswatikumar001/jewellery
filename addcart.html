@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopCart Jewellery | My Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- ================= HEADER ================= -->
+    <header class="bg-[#6E002C] text-white px-6 py-3 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-gem text-xl"></i>
+            <h1 class="text-2xl font-bold">ShopCart</h1>
+        </div>
+
+        <!-- Search -->
+        <div class="flex flex-1 mx-6">
+            <input type="text" placeholder="Search for jewellery, styles and more"
+                class="w-full px-4 py-2 rounded-l focus:outline-none text-gray-700">
+            <button class="bg-yellow-400 text-gray-800 px-4 rounded-r">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <!-- User Icon -->
+        <div class="flex items-center space-x-4">
+            <!-- User Icon (Dropdown Trigger) -->
+            <div class="relative group flex flex-col items-center cursor-pointer">
+                <!-- Login Button -->
+                <button id="loginBtn" class="flex flex-col items-center focus:outline-none">
+                    <i class="fas fa-user text-xl"></i>
+                    <a class="text-xs">Login</a>
+                </button>
+                <!-- Dropdown Menu -->
+                <div id="dropdownMenu" class="absolute right-0 top-12 bg-white text-gray-800 rounded-lg shadow-lg w-56 z-50 hidden">
+                    <div class="px-4 py-3 border-b">
+                        <p class="text-sm text-gray-600">
+                            New customer?
+                            <button id="openModalBtn" class="text-blue-600 hover:underline font-semibold">Sign
+                                Up</button>
+                        </p>
+                    </div>
+                    <ul class="py-2">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">My Profile</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Orders</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Wishlist</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Rewards</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Gift Cards</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="max-w-7xl mx-auto mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 px-4">
+        <!-- Left Section -->
+        <section class="lg:col-span-2 bg-white rounded shadow-sm border">
+            <div class="border-b p-4 flex justify-between items-center">
+                <h2 class="font-semibold">Deliver to</h2>
+                <button class="text-[#6E002C] border px-3 py-1 rounded text-sm hover:bg-pink-50">Enter Delivery
+                    Pincode</button>
+            </div>
+
+            <!-- PRODUCT ITEM 1 -->
+            <div class="product p-4 border-b flex flex-col md:flex-row gap-4">
+                <img src="./asset/img-1.jpg" class="w-32 h-40 object-cover rounded">
+                <div class="flex-1">
+                    <h3 class="font-semibold text-gray-800 text-lg">Elegant Diamond Ring</h3>
+
+                    <!-- Quantity Controls -->
+                    <div class="mt-4 flex items-center space-x-4">
+                        <div class="flex items-center border rounded">
+                            <button class="dec px-2 py-1 text-gray-500 hover:bg-gray-100">−</button>
+                            <input type="text" value="1" class="qty w-8 text-center border-l border-r text-gray-800">
+                            <button class="inc px-2 py-1 text-gray-500 hover:bg-gray-100">+</button>
+                        </div>
+                        <button class="text-[#6E002C] text-sm font-semibold hover:underline">SAVE FOR LATER</button>
+                        <button class="text-[#6E002C] text-sm font-semibold hover:underline">REMOVE</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- CARE PLAN -->
+            <div class="border-b p-4 bg-pink-50 flex justify-between items-center">
+                <div>
+                    <h4 class="font-semibold text-gray-700">Jewellery Protection Plan</h4>
+                    <p class="text-sm text-gray-500 mb-1">1 Year • Covers polishing and minor repairs.</p>
+                    <p class="text-sm text-green-600 font-semibold">₹199 <span
+                            class="line-through text-gray-400 ml-2">₹499</span> 60% off</p>
+                </div>
+                <button
+                    class="bg-yellow-400 text-gray-800 px-5 py-2 font-semibold rounded hover:bg-yellow-500">Add</button>
+            </div>
+
+            <!-- PRODUCT ITEM 2 -->
+            <div class="product p-4 border-b flex flex-col md:flex-row gap-4">
+                <img src="./asset/img-4.jpg" class="w-32 h-40 object-cover rounded">
+                <div class="flex-1">
+                    <h3 class="font-semibold text-gray-800 text-lg">Elegant Diamond Ring</h3>
+
+                    <!-- Quantity Controls -->
+                    <div class="mt-4 flex items-center space-x-4">
+                        <div class="flex items-center border rounded">
+                            <button class="dec px-2 py-1 text-gray-500 hover:bg-gray-100">−</button>
+                            <input type="text" value="1" class="qty w-8 text-center border-l border-r text-gray-800">
+                            <button class="inc px-2 py-1 text-gray-500 hover:bg-gray-100">+</button>
+                        </div>
+                        <button class="text-[#6E002C] text-sm font-semibold hover:underline">SAVE FOR LATER</button>
+                        <button class="text-[#6E002C] text-sm font-semibold hover:underline">REMOVE</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLACE ORDER BUTTON -->
+            <div class="sticky bottom-0 p-4 border-t flex justify-end bg-white">
+                <a href="./placeorder.html"
+                    class="bg-[#6E002C] text-white px-8 py-3 font-semibold rounded hover:bg-[#8e0045]">
+                    PLACE ORDER
+                </a>
+            </div>
+        </section>
+
+        <!-- Right Section: PRICE DETAILS -->
+        <aside class="bg-white p-5 rounded shadow-sm border h-fit">
+            <h3 class="text-gray-500 font-semibold mb-4 border-b pb-2">PRICE DETAILS</h3>
+            <div class="space-y-3 text-sm">
+                <div class="flex justify-between">
+                    <span>Price (2 items)</span>
+                    <span>₹22,498</span>
+                </div>
+                <div class="flex justify-between text-green-600 font-semibold">
+                    <span>Discount</span>
+                    <span>- ₹4,100</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Protection Plan</span>
+                    <span>₹199</span>
+                </div>
+                <hr>
+                <div class="flex justify-between text-lg font-semibold">
+                    <span>Total Amount</span>
+                    <span>₹18,597</span>
+                </div>
+                <p class="text-green-600 text-sm mt-1">You will save ₹4,100 on this order</p>
+            </div>
+            <div class="mt-6 flex items-center space-x-2 text-sm text-gray-500 border-t pt-3">
+                <i class="fas fa-shield-alt text-gray-400"></i>
+                <p>Secure payments • Free returns • 100% Authentic jewellery</p>
+            </div>
+        </aside>
+    </main>
+    <!-- Signup Modal -->
+    <div id="signupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-md shadow-xl w-[600px] relative">
+            <!-- Close Button -->
+            <button id="closeModal"
+                class="absolute top-2 right-3 text-gray-500 text-2xl font-bold hover:text-gray-700">&times;</button>
+            <div class="flex">
+                <!-- Left Blue Section -->
+                <div class="bg-[#6E002C] text-white p-6 w-[45%] flex flex-col justify-center rounded-l-md">
+                    <h2 class="text-2xl font-semibold mb-2 leading-tight">Looks like you're new here!</h2>
+                    <p class="text-sm text-gray-200">Sign up with your mobile number to get started</p>
+                </div>
+
+                <!-- Right White Section -->
+                <div class="p-6 w-[55%]">
+                    <form class="space-y-5">
+                        <!-- Mobile Input -->
+                        <div>
+                            <label for="mobile" class="block text-sm text-gray-700 mb-1 font-medium">Enter Mobile
+                                number</label>
+                            <input type="text" id="mobile" placeholder="10-digit mobile number"
+                                class="w-full border-b border-gray-300 focus:border-[#2874f0] outline-none py-1 text-gray-700" />
+                        </div>
+
+                        <!-- Terms -->
+                        <p class="text-xs text-gray-500 leading-4">
+                            By continuing, you agree to Flipkart's
+                            <a href="#" class="text-blue-600 hover:underline">Terms of Use</a> and
+                            <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>.
+                        </p>
+
+                        <!-- Continue Button -->
+                        <button type="button"
+                            class="w-full bg-[#fb641b] text-white font-semibold py-2 rounded hover:bg-[#e45a16] transition">
+                            CONTINUE
+                        </button>
+
+                        <!-- Existing User -->
+                        <button type="button"
+                            class="w-full border border-gray-300 text-[#2874f0] font-semibold py-2 rounded hover:bg-gray-50 transition">
+                            Existing User? Log in
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================= JS ================= -->
+    <script>
+        document.querySelectorAll('.product').forEach((product) => {
+            const qtyInput = product.querySelector('.qty');
+            const incBtn = product.querySelector('.inc');
+            const decBtn = product.querySelector('.dec');
+
+            incBtn.addEventListener('click', () => {
+                qtyInput.value = parseInt(qtyInput.value) + 1;
+            });
+
+            decBtn.addEventListener('click', () => {
+                if (parseInt(qtyInput.value) > 1)
+                    qtyInput.value = parseInt(qtyInput.value) - 1;
+            });
+        });
+
+
+        const openModalBtn = document.getElementById("openModalBtn");
+        const signupModal = document.getElementById("signupModal");
+        const closeModal = document.getElementById("closeModal");
+
+        openModalBtn.addEventListener("click", () => {
+            signupModal.classList.remove("hidden");
+        });
+
+        closeModal.addEventListener("click", () => {
+            signupModal.classList.add("hidden");
+        });
+
+        // Close when clicking outside modal
+        window.addEventListener("click", (e) => {
+            if (e.target === signupModal) {
+                signupModal.classList.add("hidden");
+            }
+        });
+
+
+        const loginBtn = document.getElementById("loginBtn");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        // Toggle dropdown on click (mimics group-click:block)
+        loginBtn.addEventListener("click", () => {
+            dropdownMenu.classList.toggle("hidden");
+        });
+
+        // Close when clicking outside
+        window.addEventListener("click", (e) => {
+            if (!e.target.closest(".group")) {
+                dropdownMenu.classList.add("hidden");
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
