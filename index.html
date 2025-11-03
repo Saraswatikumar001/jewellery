@@ -63,16 +63,89 @@
         <!-- Navigation -->
         <div class="bg-white shadow-sm p-5">
             <div class="container mx-auto px-4 py-2">
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between relative">
                     <div class="flex items-center space-x-8">
                         <!-- RINGS MENU ITEM -->
-                        <div class="relative" id="rings-menu">
+                        <div id="rings-menu">
                             <a href="./ring.html" id="rings-link"
                                 class="text-black hover:text-[#6E002C] font-medium block py-2">
                                 Rings
                             </a>
                             <!-- Mega Menu -->
                             <div id="rings-dropdown"
+                                class="absolute left-0 top-14  w-full bg-white shadow-lg opacity-0 border-t mt-4 transition-all duration-300 ease-out">
+                                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 p-8">
+                                    <!-- Featured -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">Featured</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Latest Designs</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Bestsellers</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Fast Delivery</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Special Deals</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- By Style -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Style</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">All Rings</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Solitaire</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Couple Rings</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Adjustable</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- By Metal & Stone -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Metal & Stone</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Diamond</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Gold</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Platinum</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">Gemstone</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- By Price -->
+                                    <div>
+                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Price</h4>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li><a href="#" class="hover:text-[#6E002C]">Under ₹10k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹10k - ₹20k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹20k - ₹30k</a></li>
+                                            <li><a href="#" class="hover:text-[#6E002C]">₹30k & Above</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Image Section -->
+                                    <div class="hidden md:block">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="relative">
+                                                <img src="./asset/img-3.jpg" alt="Switch"
+                                                    class="rounded-lg w-full h-40 object-cover">
+                                                <span
+                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Switch</span>
+                                            </div>
+                                            <div class="relative">
+                                                <img src="./asset/img-8.jpg" alt="Dancing Hoops"
+                                                    class="rounded-lg w-full h-40 object-cover">
+                                                <span
+                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Dancing
+                                                    Hoops</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative" id="earrings-menu">
+                            <a href="./ring.html" id="rings-link"
+                                class="text-black hover:text-[#6E002C] font-medium block py-2">
+                                Necklaces
+                            </a>
+                            <!-- Mega Menu -->
+                            <div id="earrings-dropdown"
                                 class="absolute left-0 top-full hidden w-screen bg-white shadow-lg border-t mt-2 transition-all duration-300 ease-out opacity-0">
                                 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 p-8">
                                     <!-- Featured -->
@@ -139,7 +212,6 @@
                                 </div>
                             </div>
                         </div>
-                        <li><a href="#" class="text-black hover:text-[#6E002C]">Necklaces</a></li>
                         <li><a href="#" class="text-black hover:text-[#6E002C] font-medium">Bracelets & Bangles</a></li>
                         <li><a href="#" class="text-black hover:text-[#6E002C] font-medium">Solitaires</a></li>
                     </div>
