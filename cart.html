@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jewellery Cart | SparkleZone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gradient-to-br from-pink-50 via-amber-50 to-white min-h-screen py-10">
+
+  <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-amber-400 to-yellow-500 text-white py-4 px-8 flex justify-between items-center">
+      <h1 class="text-2xl font-serif font-bold">Your Cart</h1>
+      <a href="./index.html" class="hover:underline">Continue Shopping</a>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 p-8">
+      <!-- Cart Items -->
+      <div class="md:col-span-2 space-y-6">
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://cdn.pixabay.com/photo/2017/08/06/22/01/jewelry-2594302_1280.jpg" alt="Necklace" class="w-20 h-20 object-cover rounded-lg">
+            <div>
+              <h2 class="font-semibold text-gray-800">Elegant Gold Necklace</h2>
+              <p class="text-sm text-gray-500">18K Gold • Women</p>
+              <p class="text-amber-600 font-semibold">₹12,999</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <button class="bg-gray-200 px-2 rounded" onclick="changeQty(-1)">−</button>
+            <span id="qty" class="font-semibold">1</span>
+            <button class="bg-gray-200 px-2 rounded" onclick="changeQty(1)">+</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://cdn.pixabay.com/photo/2018/03/27/23/08/jewellery-3261674_1280.jpg" alt="Earrings" class="w-20 h-20 object-cover rounded-lg">
+            <div>
+              <h2 class="font-semibold text-gray-800">Diamond Earrings</h2>
+              <p class="text-sm text-gray-500">Silver • Women</p>
+              <p class="text-amber-600 font-semibold">₹8,499</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <button class="bg-gray-200 px-2 rounded" onclick="changeQty(-1)">−</button>
+            <span id="qty2" class="font-semibold">1</span>
+            <button class="bg-gray-200 px-2 rounded" onclick="changeQty(1)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order Summary + Payment -->
+      <div class="bg-amber-50 p-6 rounded-xl shadow-inner">
+        <h2 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">Order Summary</h2>
+
+        <div class="flex justify-between text-gray-600">
+          <p>Subtotal</p>
+          <p id="subtotal">₹21,498</p>
+        </div>
+        <div class="flex justify-between text-gray-600">
+          <p>Shipping</p>
+          <p>₹100</p>
+        </div>
+        <div class="flex justify-between text-gray-800 font-semibold border-t pt-2">
+          <p>Total</p>
+          <p id="total">₹21,598</p>
+        </div>
+
+        <!-- Payment Method -->
+        <h3 class="mt-6 text-gray-800 font-semibold mb-2">Select Payment Method</h3>
+        <div class="space-y-3">
+          <label class="flex items-center space-x-2">
+            <input type="radio" name="payment" value="card" class="text-amber-600">
+            <span>Credit / Debit Card</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="radio" name="payment" value="upi" class="text-amber-600">
+            <span>UPI / NetBanking</span>
+          </label>
+          <label class="flex items-center space-x-2">
+            <input type="radio" name="payment" value="cod" class="text-amber-600">
+            <span>Cash on Delivery</span>
+          </label>
+        </div>
+
+        <!-- Payment Input (Only shows when selected) -->
+        <div id="paymentDetails" class="hidden mt-4 space-y-3">
+          <input type="text" id="cardNumber" placeholder="Enter Card / UPI ID"
+                 class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-amber-500 outline-none">
+          <input type="text" id="expiry" placeholder="Expiry (MM/YY)" 
+                 class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-amber-500 outline-none">
+          <input type="text" id="cvv" placeholder="CVV"
+                 class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-amber-500 outline-none">
+        </div>
+
+        <button onclick="placeOrder()" 
+          class="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 mt-6 rounded-lg font-semibold transition-all duration-300">
+          Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const subtotalEl = document.getElementById('subtotal');
+    const totalEl = document.getElementById('total');
+    let subtotal = 12999 + 8499;
+
+    // Quantity handlers
+    function changeQty(amount) {
+      alert('Quantity buttons are just UI — you can link to backend later.');
+    }
+
+    // Payment toggle
+    const paymentOptions = document.querySelectorAll('input[name="payment"]');
+    const paymentDetails = document.getElementById('paymentDetails');
+
+    paymentOptions.forEach(option => {
+      option.addEventListener('change', (e) => {
+        if (e.target.value === 'card' || e.target.value === 'upi') {
+          paymentDetails.classList.remove('hidden');
+        } else {
+          paymentDetails.classList.add('hidden');
+        }
+      });
+    });
+
+    // Order placing
+    function placeOrder() {
+      const selected = document.querySelector('input[name="payment"]:checked');
+      if (!selected) {
+        alert('Please select a payment method.');
+        return;
+      }
+
+      if ((selected.value === 'card' || selected.value === 'upi') && !document.getElementById('cardNumber').value.trim()) {
+        alert('Please fill in your payment details.');
+        return;
+      }
+
+      alert('✅ Order placed successfully! Thank you for shopping at SparkleZone 💎');
+    }
+  </script>
+
+</body>
+</html>

@@ -2,26 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopCart - Online Shopping</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - Circle of Chain Necklace</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Slick CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
-<body class="bg-gray-100">
-    <!-- Header -->
+<body class="bg-gray-50 text-gray-800">
     <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3">
             <div class="flex items-center justify-between">
@@ -378,329 +371,254 @@
             </div>
         </div>
     </header>
-    <!-- Main Content -->
-    <main class="container mt-40 mx-auto px-4 py-6">
-        <!-- Hero Banner -->
-        <section class="ecardslider">
-            <!-- Card 1 -->
-            <div style="background-image: url('./asset/img-8.jpg');"
-                class="relative rounded-lg p-8 mb-8 text-white bg-gradient-to-r from-blue-500/70 to-purple-600/70 bg-cover bg-center bg-blend-overlay">
-                <div class="max-w-lg">
-                    <h1 class="text-4xl font-bold mb-4">Great Indian Festival</h1>
-                    <p class="text-xl mb-6">Up to 70% off on electronics, fashion, home appliances and more!</p>
-                    <button
-                        class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-3 px-8 rounded-lg shadow-lg">
-                        Shop Now
-                    </button>
-                </div>
+    <!-- Container -->
+    <div class="mt-48 max-w-6xl mx-auto p-6 grid md:grid-cols-2 gap-10">
+        <!-- Left Image Section -->
+        <div>
+            <div class="border rounded-lg overflow-hidden">
+                <img id="mainImage" src="./asset/img-1.jpg" alt="Necklace" class="w-full object-cover h-[400px]">
             </div>
 
-            <!-- Card 2 -->
-            <div style="background-image: url('./asset/img-6.jpg');"
-                class="relative rounded-lg p-8 mb-8 text-white bg-gradient-to-r from-blue-500/70 to-purple-600/70 bg-cover bg-center bg-blend-overlay">
-                <div class="max-w-lg">
-                    <h1 class="text-4xl font-bold mb-4">Great Indian Festival</h1>
-                    <p class="text-xl mb-6">Up to 70% off on electronics, fashion, home appliances and more!</p>
-                    <button
-                        class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-3 px-8 rounded-lg shadow-lg">
-                        Shop Now
-                    </button>
-                </div>
+            <!-- Thumbnails -->
+            <div class="flex gap-4 mt-4">
+                <img src="./asset/img-1.jpg" alt="thumb1"
+                    class="w-20 h-20 object-cover rounded cursor-pointer border hover:border-black"
+                    onclick="changeImage(this.src)">
+                <img src="./asset/img-2.jpg" alt="thumb2"
+                    class="w-20 h-20 object-cover rounded cursor-pointer border hover:border-black"
+                    onclick="changeImage(this.src)">
             </div>
+        </div>
 
-            <!-- Card 3 -->
-            <div style="background-image: url('./asset/img-7.jpg');"
-                class="relative rounded-lg p-8 mb-8 text-white bg-gradient-to-r from-blue-500/70 to-purple-600/70 bg-cover bg-center bg-blend-overlay">
-                <div class="max-w-lg">
-                    <h1 class="text-4xl font-bold mb-4">Great Indian Festival</h1>
-                    <p class="text-xl mb-6">Up to 70% off on electronics, fashion, home appliances and more!</p>
-                    <button
-                        class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-3 px-8 rounded-lg shadow-lg">
-                        Shop Now
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div style="background-image: url('./asset/img-4.jpg');"
-                class="relative rounded-lg p-8 mb-8 text-white bg-gradient-to-r from-blue-500/70 to-purple-600/70 bg-cover bg-center bg-blend-overlay">
-                <div class="max-w-lg">
-                    <h1 class="text-4xl font-bold mb-4">Great Indian Festival</h1>
-                    <p class="text-xl mb-6">Up to 70% off on electronics, fashion, home appliances and more!</p>
-                    <button
-                        class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-3 px-8 rounded-lg shadow-lg">
-                        Shop Now
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div style="background-image: url('./asset/img-7.jpg');"
-                class="relative rounded-lg p-8 mb-8 text-white bg-gradient-to-r from-blue-500/70 to-purple-600/70 bg-cover bg-center bg-blend-overlay">
-                <div class="max-w-lg">
-                    <h1 class="text-4xl font-bold mb-4">Great Indian Festival</h1>
-                    <p class="text-xl mb-6">Up to 70% off on electronics, fashion, home appliances and more!</p>
-                    <button
-                        class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-3 px-8 rounded-lg shadow-lg">
-                        Shop Now
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Deals of the Day -->
-        <section class="mb-12">
-            <div class="flex items-center justify-between mb-6">
-                <h2 class="text-2xl font-bold text-gray-800">Deals of the Day</h2>
-                <a href="./viewall.html" class="text-blue-600 font-medium flex items-center">
-                    View All <i class="fas fa-chevron-right ml-1"></i>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Deal Card 1 -->
-                <div class="deal-card rounded-lg shadow-md overflow-hidden text-white bg-[#AD4870]">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Rings</h3>
-                        <p class="mb-4">Up to 40% off</p>
-                        <button class="bg-white text-pink-600 font-medium py-2 px-4 rounded">
-                            Shop Now
-                        </button>
-                    </div>
-                    <div class="h-40 bg-white flex items-center justify-center">
-                        <img src="./asset/img-3.jpg" alt="" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Deal Card 2 -->
-                <div class="deal-card rounded-lg shadow-md overflow-hidden text-white bg-[#AD4870]">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Smartphones</h3>
-                        <p class="mb-4">Up to 40% off</p>
-                        <button class="bg-white text-pink-600 font-medium py-2 px-4 rounded">
-                            Shop Now
-                        </button>
-                    </div>
-                    <div class="h-40 bg-white flex items-center justify-center">
-                        <img src="./asset/img-8.jpg" alt="" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Deal Card 3 -->
-                <div class="deal-card rounded-lg shadow-md overflow-hidden text-white bg-[#AD4870]">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Smartphones</h3>
-                        <p class="mb-4">Up to 40% off</p>
-                        <button class="bg-white text-pink-600 font-medium py-2 px-4 rounded">
-                            Shop Now
-                        </button>
-                    </div>
-                    <div class="h-40 bg-white flex items-center justify-center">
-                        <img src="./asset/img-7.jpg" alt="" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Deal Card 4 -->
-                <div class="deal-card rounded-lg shadow-md overflow-hidden text-white bg-[#AD4870]">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Smartphones</h3>
-                        <p class="mb-4">Up to 40% off</p>
-                        <button class="bg-white text-pink-600 font-medium py-2 px-4 rounded">
-                            Shop Now
-                        </button>
-                    </div>
-                    <div class="h-40 bg-white flex items-center justify-center">
-                        <img src="./asset/img-5.jpg" alt="" class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Top Products -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6">Top Products</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Product Card 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
-                    <div class="p-4 flex justify-center">
-                        <img src="./asset/img-1.jpg" alt="" class="object-cover">
-                    </div>
-                    <div class="p-4 border-t">
-                        <h3 class="font-bold text-lg mb-2">Smartphone XYZ</h3>
-                        <div class="flex items-center mb-2">
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="text-gray-600 text-sm ml-2">(4.5)</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-lg font-bold">₹18,999</span>
-                                <span class="text-gray-500 line-through text-sm ml-2">₹24,999</span>
-                                <span class="text-green-600 text-sm ml-2">24% off</span>
-                            </div>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
-                    <div class="p-4 flex justify-center">
-                        <img src="./asset/img-10.jpg" alt="" class="object-cover">
-                    </div>
-                    <div class="p-4 border-t">
-                        <h3 class="font-bold text-lg mb-2">Laptop ABC</h3>
-                        <div class="flex items-center mb-2">
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <span class="text-gray-600 text-sm ml-2">(4.0)</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-lg font-bold">₹54,999</span>
-                                <span class="text-gray-500 line-through text-sm ml-2">₹69,999</span>
-                                <span class="text-green-600 text-sm ml-2">21% off</span>
-                            </div>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
-                    <div class="p-4 flex justify-center">
-                        <img src="./asset/img-2.jpg" alt="" class="object-cover">
-                    </div>
-                    <div class="p-4 border-t">
-                        <h3 class="font-bold text-lg mb-2">Wireless Headphones</h3>
-                        <div class="flex items-center mb-2">
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="text-gray-600 text-sm ml-2">(5.0)</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-lg font-bold">₹2,499</span>
-                                <span class="text-gray-500 line-through text-sm ml-2">₹4,999</span>
-                                <span class="text-green-600 text-sm ml-2">50% off</span>
-                            </div>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card 4 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
-                    <div class="p-4 flex justify-center">
-                        <img src="./asset/img-4.jpg" alt="" class="object-cover">
-                    </div>
-                    <div class="p-4 border-t">
-                        <h3 class="font-bold text-lg mb-2">Men's Casual Shirt</h3>
-                        <div class="flex items-center mb-2">
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <span class="text-gray-600 text-sm ml-2">(3.5)</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-lg font-bold">₹799</span>
-                                <span class="text-gray-500 line-through text-sm ml-2">₹1,599</span>
-                                <span class="text-green-600 text-sm ml-2">50% off</span>
-                            </div>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Categories -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6">Shop by Category</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <div
-                    class="bg-white rounded-lg shadow-sm p-4 text-center cursor-pointer hover:shadow-md transition-shadow">
-                    <img src="./asset/img-3.jpg" alt="img-3" class="object-cover">
-                    <p class="font-medium">Ring</p>
-                </div>
-                <div
-                    class="bg-white rounded-lg shadow-sm p-4 text-center cursor-pointer hover:shadow-md transition-shadow">
-                    <img src="./asset/img-3.jpg" alt="img-3" class="object-cover">
-                    <p class="font-medium">Necklace</p>
-                </div>
-                <div
-                    class="bg-white rounded-lg shadow-sm p-4 text-center cursor-pointer hover:shadow-md transition-shadow">
-                    <img src="./asset/img-3.jpg" alt="img-3" class="object-cover">
-                    <p class="font-medium">Earrings</p>
-                </div>
-                <div
-                    class="bg-white rounded-lg shadow-sm p-4 text-center cursor-pointer hover:shadow-md transition-shadow">
-                    <img src="./asset/img-3.jpg" alt="img-3" class="object-cover">
-                    <p class="font-medium">Bracelet</p>
-                </div>
-                <div
-                    class="bg-white rounded-lg shadow-sm p-4 text-center cursor-pointer hover:shadow-md transition-shadow">
-                    <img src="./asset/img-3.jpg" alt="img-3" class="object-cover">
-                    <p class="font-medium">Jewellery</p>
-                </div>
-                <div
-                    class="bg-white rounded-lg shadow-sm p-4 text-center cursor-pointer hover:shadow-md transition-shadow">
-                    <img src="./asset/img-3.jpg" alt="img-3" class="object-cover">
-                    <p class="font-medium">Bangle</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- Offer Modal -->
-    <div id="offer-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-[9999]">
-        <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3 p-6 relative">
-            <button id="close-offer-modal"
-                class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-
-            <h2 class="text-2xl font-bold text-[#6E002C] mb-4">Exclusive Offers Just for You!</h2>
-            <p class="text-gray-700 mb-4">
-                🎉 Grab up to <span class="font-semibold text-[#6E002C]">50% OFF</span> on selected jewelry collections.
+        <!-- Right Details Section -->
+        <div>
+            <h1 class="text-2xl font-semibold mb-2">Circle of Chain Necklace</h1>
+            <p class="text-xl font-bold text-gray-700">$285.00
+                <span class="text-gray-400 line-through text-sm ml-2">$365.00</span>
+            </p>
+            <p class="text-sm text-gray-600 mt-2">
+                This regular has a rolled diaphragm and high flow rate with reduced pressure drop.
+                It has an excellent degree of condensation.
             </p>
 
-            <ul class="list-disc pl-6 text-gray-600 mb-6">
-                <li>✨ Flat 20% off on all rings</li>
-                <li>💎 Buy 1 Get 1 Free on earrings</li>
-                <li>🎁 Free shipping for orders above ₹4999</li>
-            </ul>
+            <p class="mt-3"><span class="font-semibold">Availability:</span>
+                <span class="text-green-600">In Stock</span>
+            </p>
 
-            <div class="flex justify-end space-x-3">
-                <button id="close-modal-btn"
-                    class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded">Close</button>
-                <a href="./alloffer.html" class="px-4 py-2 bg-[#6E002C] hover:bg-[#8E003A] text-white rounded">View All
-                    Offers</a>
+            <!-- Quantity + Add to Cart -->
+            <div class="flex items-center mt-5 gap-3">
+                <button onclick="decreaseQty()" class="px-3 py-1 border rounded">−</button>
+                <span id="quantity" class="px-3">1</span>
+                <button onclick="increaseQty()" class="px-3 py-1 border rounded">+</button>
+            </div>
+
+            <div class="mt-5 flex gap-3">
+                <button class="bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition">ADD TO CART</button>
+                <button onclick="openPayment()"
+                    class="bg-amber-500 text-white px-6 py-2 rounded hover:bg-amber-600 transition">
+                    BUY IT NOW
+                </button>
+            </div>
+
+            <!-- Wishlist & Info -->
+            <div class="mt-6 space-y-2 text-sm">
+                <p>♡ Add to wishlist</p>
+                <p>🚚 Delivery & Return</p>
+                <p>📅 Estimated Delivery: <b>07 November - 11 November</b></p>
+                <p>👁️ 27 People viewing this product right now!</p>
+            </div>
+
+            <!-- Features -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 text-center border-t pt-4">
+                <div>
+                    <p>🚛</p>
+                    <p class="text-sm">Free Shipping</p>
+                </div>
+                <div>
+                    <p>🛡️</p>
+                    <p class="text-sm">1 Year Warranty</p>
+                </div>
+                <div>
+                    <p>💳</p>
+                    <p class="text-sm">Secure Payment</p>
+                </div>
+                <div>
+                    <p>↩️</p>
+                    <p class="text-sm">30 Days Return</p>
+                </div>
+            </div>
+
+            <!-- Payment Gateway -->
+            <div class="mt-8 border-t pt-4">
+                <h3 class="font-semibold mb-2">Guaranteed Safe Checkout</h3>
+                <div class="flex gap-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" class="h-6" alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mastercard-logo.png" class="h-6"
+                        alt="MasterCard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Apple_Pay_logo.svg" class="h-6"
+                        alt="Apple Pay">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-6" alt="PayPal">
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="mt-6 text-sm text-gray-600">
+                <p><b>Category:</b> Necklaces</p>
+                <p><b>Tags:</b> Brand, Mens</p>
+            </div>
+
+            <!-- Share -->
+            <div class="mt-4 flex gap-3 text-xl text-gray-600">
+                <a href="#" class="hover:text-black"></a>
+                <a href="#" class="hover:text-black"></a>
+                <a href="#" class="hover:text-black"></a>
+                <a href="#" class="hover:text-black"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-96 text-center">
+            <h2 class="text-xl font-semibold mb-4">Select Payment Method</h2>
+            <div class="space-y-3">
+                <button class="w-full bg-blue-600 text-white py-2 rounded" onclick="payNow('PayPal')">Pay with
+                    PayPal</button>
+                <button class="w-full bg-orange-500 text-white py-2 rounded" onclick="payNow('Razorpay')">Pay with
+                    Razorpay</button>
+                <button class="w-full bg-gray-800 text-white py-2 rounded" onclick="payNow('Stripe')">Pay with
+                    Stripe</button>
+            </div>
+            <button onclick="closePayment()" class="mt-5 text-sm text-gray-500 hover:text-gray-700">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Product Description Section -->
+    <div class="max-w-6xl mx-auto mt-12 px-4">
+        <!-- Tabs -->
+        <div class="border-b border-gray-300 flex justify-start gap-8">
+            <button id="descTab" class="py-2 text-lg font-semibold text-amber-600 border-b-2 border-amber-600">
+                Description
+            </button>
+            <button id="reviewTab" class="py-2 text-lg font-semibold text-gray-600 hover:text-amber-600 transition">
+                Reviews (0)
+            </button>
+        </div>
+
+        <!-- Description Content -->
+        <div id="descContent" class="mt-8 grid md:grid-cols-2 gap-8">
+            <div>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Cookie dragée oatcake dessert. Powder marshmallow pie wafer dessert sweet roll tootsie roll cupcake.
+                    Tart caramels lollipop lollipop halvah chupa chups bonbon sugar plum dessert jujubes danish.
+                    Macaroon topping chocolate. Cake jelly beans icing tart tiramisu.
+                </p>
+
+                <h3 class="text-lg font-semibold mb-2">PRODUCT DETAILS</h3>
+                <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                    <li>Part of our responsible edit</li>
+                    <li>Super high rise</li>
+                    <li>Zip fly</li>
+                    <li>Double turn-up cuffs</li>
+                    <li>Five-pocket design</li>
+                    <li>Oversized, tapered fit</li>
+                    <li>Sits on the ankle</li>
+                    <li>Cut loosely around the thigh with a tapered leg</li>
+                </ul>
+            </div>
+
+            <!-- Right Image -->
+            <div>
+                <img src="./asset/img-6.jpg" alt="Product Detail" class="rounded-lg shadow-md w-full object-cover">
+            </div>
+        </div>
+
+        <!-- Two images below -->
+        <div class="mt-10 grid md:grid-cols-2 gap-8">
+            <img src="./asset/img-3.jpg" alt="Model wearing" class="rounded-lg shadow-md w-full object-cover">
+            <img src="./asset/img-5.jpg" alt="Another view" class="rounded-lg shadow-md w-full object-cover">
+        </div>
+
+        <!-- Brand Section -->
+        <div class="mt-10">
+            <h3 class="text-lg font-semibold mb-3">BRAND</h3>
+            <p class="text-gray-700 leading-relaxed">
+                Tart oat cake lollipop lollipop halvah chupa chups bonbon sugar plum dessert.
+                Carrot cake marzipan cupcake candy powder wafer sugar plum powder powder.
+                Macaroon topping chocolate. Cake jelly beans icing tiramisu.
+            </p>
+        </div>
+    </div>
+
+    <!-- Related Products Section -->
+    <div class="max-w-6xl mx-auto mt-16 px-4">
+
+        <!-- Related Products -->
+        <h2 class="text-center text-xl font-semibold mb-8 relative inline-block w-full">
+            <span class="border-b-2 border-amber-600 pb-1">Related Products</span>
+        </h2>
+
+        <div class="related-slider">
+            <!-- Product 1 -->
+            <div class="group cursor-pointer border rounded-lg hover:shadow-lg transition p-4 text-center mx-2">
+                <img src="./asset/img-3.jpg" alt="Ring"
+                    class="w-full h-40 object-cover mx-auto mb-3 group-hover:scale-105 transition-transform duration-300">
+                <p class="text-gray-600 text-sm uppercase">Ring</p>
+                <h3 class="font-medium">Four-leaf Clover Ring</h3>
+                <p class="text-gray-500 text-sm">$129.00 – $189.00</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div
+                class="group cursor-pointer border rounded-lg hover:shadow-lg transition p-4 text-center mx-2 relative">
+                <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded">NEW</span>
+                <img src="./asset/img-3.jpg" alt="Necklace"
+                    class="w-full h-40 object-cover mx-auto mb-3 group-hover:scale-105 transition-transform duration-300">
+                <p class="text-gray-600 text-sm uppercase">Chain & Pendant</p>
+                <h3 class="font-medium">Echoes Necklace Emotion Piece</h3>
+                <p class="text-gray-500 text-sm">$198.00</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="group cursor-pointer border rounded-lg hover:shadow-lg transition p-4 text-center mx-2">
+                <img src="./asset/img-10.jpg" alt="Earrings"
+                    class="w-full h-40 object-cover mx-auto mb-3 group-hover:scale-105 transition-transform duration-300">
+                <p class="text-gray-600 text-sm uppercase">Earrings</p>
+                <h3 class="font-medium">Sterling Silver Dangle Earrings</h3>
+                <p class="text-gray-500 text-sm">$179.00</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="group cursor-pointer border rounded-lg hover:shadow-lg transition p-4 text-center mx-2">
+                <img src="./asset/img-7.jpg" alt="Diamond Ring"
+                    class="w-full h-40 object-cover mx-auto mb-3 group-hover:scale-105 transition-transform duration-300">
+                <p class="text-gray-600 text-sm uppercase">Ring</p>
+                <h3 class="font-medium">Kalevas Diamond Twig Ring</h3>
+                <p class="text-gray-500 text-sm">$269.00 – $295.00</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="group cursor-pointer border rounded-lg hover:shadow-lg transition p-4 text-center mx-2">
+                <img src="./asset/img-9.jpg" alt="Bracelet"
+                    class="w-full h-40 object-cover mx-auto mb-3 group-hover:scale-105 transition-transform duration-300">
+                <p class="text-gray-600 text-sm uppercase">Bracelet</p>
+                <h3 class="font-medium">Echoes Swing World Bracelet</h3>
+                <p class="text-gray-500 text-sm">$179.00 – $199.00</p>
+            </div>
+        </div>
+
+        <!-- Recently Viewed -->
+        <h2 class="text-center text-xl font-semibold mt-16 mb-8 relative inline-block w-full">
+            <span class="border-b-2 border-amber-600 pb-1">Recently Viewed</span>
+        </h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+            <div class="group cursor-pointer border rounded-lg hover:shadow-lg transition p-4">
+                <img src="./asset/img-7.jpg" alt="Bracelet"
+                    class="w-full h-40 object-cover mx-auto mb-3 group-hover:scale-105 transition-transform duration-300">
+                <p class="text-gray-600 text-sm uppercase">Bracelet</p>
+                <h3 class="font-medium">Echoes Swing World Bracelet</h3>
+                <p class="text-gray-500 text-sm">$179.00 – $199.00</p>
             </div>
         </div>
     </div>
@@ -772,36 +690,81 @@
             </div>
         </div>
     </footer>
+    <!-- JavaScript -->
     <script>
-        const offerBtn = document.getElementById('offer-button');
-        const offerModal = document.getElementById('offer-modal');
-        const closeOfferModal = document.getElementById('close-offer-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
 
-        offerBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            offerModal.classList.remove('hidden');
+        let quantity = 1;
+        function increaseQty() {
+            quantity++;
+            document.getElementById('quantity').innerText = quantity;
+        }
+        function decreaseQty() {
+            if (quantity > 1) quantity--;
+            document.getElementById('quantity').innerText = quantity;
+        }
+
+        function openPayment() {
+            document.getElementById('paymentModal').classList.remove('hidden');
+        }
+
+        function closePayment() {
+            document.getElementById('paymentModal').classList.add('hidden');
+        }
+
+        function payNow(method) {
+            alert(`Redirecting to ${method} Payment Gateway...`);
+            closePayment();
+        }
+
+
+        // For Reviews Section
+        const descTab = document.getElementById('descTab');
+        const reviewTab = document.getElementById('reviewTab');
+        const descContent = document.getElementById('descContent');
+
+        reviewTab.addEventListener('click', () => {
+            descTab.classList.remove('text-amber-600', 'border-b-2', 'border-amber-600');
+            reviewTab.classList.add('text-amber-600', 'border-b-2', 'border-amber-600');
+            descContent.innerHTML = `<p class="text-gray-600 mt-6">No reviews yet. Be the first to review this product!</p>`;
         });
 
-        closeOfferModal.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
+        descTab.addEventListener('click', () => {
+            reviewTab.classList.remove('text-amber-600', 'border-b-2', 'border-amber-600');
+            descTab.classList.add('text-amber-600', 'border-b-2', 'border-amber-600');
+            location.reload(); // reloads to restore original description
         });
 
-        closeModalBtn.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === offerModal) {
-                offerModal.classList.add('hidden');
+        function subscribeNewsletter() {
+            const email = document.getElementById("newsletterEmail").value;
+            if (email === "") {
+                alert("Please enter your email address.");
+            } else {
+                alert(`Thank you for subscribing, ${email}!`);
+                document.getElementById("newsletterEmail").value = "";
             }
+        }
+
+        $(document).ready(function () {
+            $('.related-slider').slick({
+                dots: false,
+                infinite: true,
+                speed: 2000,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                responsive: [
+                    { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                    { breakpoint: 768, settings: { slidesToShow: 2 } },
+                    { breakpoint: 480, settings: { slidesToShow: 1 } }
+                ]
+            });
         });
     </script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Slick JS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="./script.js"></script>
 </body>
 
 </html>

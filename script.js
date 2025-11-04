@@ -38,7 +38,8 @@ $('.ecardslider').slick({
 const menus = [
   { menu: 'rings-menu', dropdown: 'rings-dropdown' },
   { menu: 'earrings-menu', dropdown: 'earrings-dropdown' },
-  { menu: 'bracelets-menu', dropdown: 'bracelets-dropdown' }
+  { menu: 'bracelets-menu', dropdown: 'bracelets-dropdown' },
+  { menu: 'Solitaires-menu', dropdown: 'Solitaires-dropdown' }
 ];
 
 let timer;

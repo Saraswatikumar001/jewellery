@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flipkart Style Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -284,31 +285,31 @@
       }
     }
 
-     
-        const offerBtn = document.getElementById('offer-button');
-        const offerModal = document.getElementById('offer-modal');
-        const closeOfferModal = document.getElementById('close-offer-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
 
-        offerBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            offerModal.classList.remove('hidden');
-        });
+    const offerBtn = document.getElementById('offer-button');
+    const offerModal = document.getElementById('offer-modal');
+    const closeOfferModal = document.getElementById('close-offer-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
 
-        closeOfferModal.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
+    offerBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      offerModal.classList.remove('hidden');
+    });
 
-        closeModalBtn.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
+    closeOfferModal.addEventListener('click', () => {
+      offerModal.classList.add('hidden');
+    });
 
-        window.addEventListener('click', (e) => {
-            if (e.target === offerModal) {
-                offerModal.classList.add('hidden');
-            }
-        });
-    
+    closeModalBtn.addEventListener('click', () => {
+      offerModal.classList.add('hidden');
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === offerModal) {
+        offerModal.classList.add('hidden');
+      }
+    });
+
   </script>
 </body>
 
