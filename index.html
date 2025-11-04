@@ -23,358 +23,96 @@
 <body class="bg-gray-100">
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-shopping-cart text-2xl"></i>
-                    <a href="index.html" class="text-xl font-bold">ShopCart</a>
-                </div>
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-shopping-cart text-2xl"></i>
+                <a href="index.html" class="text-xl font-bold">ShopCart</a>
+            </div>
 
-                <!-- Search Bar -->
-                <div class="flex-1 max-w-2xl mx-4">
-                    <div class="flex">
-                        <input type="text" placeholder="Search for products, brands and more"
-                            class="w-full px-4 py-2 rounded-l text-gray-800 focus:outline-none">
-                        <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-r">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
+            <!-- Search Bar (hidden on small screens) -->
+            <div class="hidden md:flex flex-1 max-w-2xl mx-4">
+                <input type="text" placeholder="Search for products, brands and more"
+                    class="w-full px-4 py-2 rounded-l text-gray-800 focus:outline-none" />
+                <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-r">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
 
-                <!-- User Actions -->
-                <div class="flex items-center space-x-6">
-                    <a href="./login.html"
-                        class="flex flex-col text-white items-center cursor-pointer text-gray-700 hover:text-[#EAB308]">
-                        <i class="fas fa-user text-xl text-white"></i>
-                        <span class="text-sm">Login</span>
-                    </a>
-                    <a href="./cart.html"
-                        class="flex flex-col text-white items-center cursor-pointer text-gray-700 hover:text-[#EAB308]">
-                        <i class="fas fa-shopping-bag text-xl"></i>
-                        <span class="text-sm">Cart</span>
-                    </a>
-                    <a href="./became-seller.html"
-                        class="flex flex-col text-white items-center cursor-pointer text-gray-700 hover:text-[#EAB308]">
-                        <i class="fas fa-store text-xl"></i>
-                        <span class="text-sm">Become a Seller</span>
-                    </a>
-                </div>
+            <!-- User Actions -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="./login.html" class="flex flex-col items-center hover:text-[#EAB308]">
+                    <i class="fas fa-user text-xl"></i>
+                    <span class="text-sm">Login</span>
+                </a>
+                <a href="./cart.html" class="flex flex-col items-center hover:text-[#EAB308]">
+                    <i class="fas fa-shopping-bag text-xl"></i>
+                    <span class="text-sm">Cart</span>
+                </a>
+                <a href="./became-seller.html" class="flex flex-col items-center hover:text-[#EAB308]">
+                    <i class="fas fa-store text-xl"></i>
+                    <span class="text-sm">Seller</span>
+                </a>
+            </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Search -->
+        <div class="md:hidden px-4 pb-2">
+            <div class="flex">
+                <input type="text" placeholder="Search products..."
+                    class="w-full px-4 py-2 rounded-l text-gray-800 focus:outline-none" />
+                <button class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-4 py-2 rounded-r">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
         </div>
 
         <!-- Navigation -->
-
-        <div class="bg-white shadow-sm p-5">
+        <div class="bg-white shadow-sm">
             <div class="container mx-auto px-4 py-2">
-                <div class="flex items-center justify-between relative">
-                    <div class="flex items-center space-x-8">
-                        <!-- RINGS MENU ITEM -->
-                        <div id="rings-menu">
-                            <a href="./ring.html" id="rings-link"
-                                class="text-black hover:text-[#6E002C] font-medium block py-2">
-                                Rings
-                            </a>
-                            <!-- Mega Menu -->
-                            <div id="rings-dropdown"
-                                class="absolute left-0 top-14  w-full bg-white shadow-lg opacity-0 border-t mt-4 transition-all duration-300 ease-out">
-                                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 p-8">
-                                    <!-- Featured -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">Featured</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Latest Designs</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Bestsellers</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Fast Delivery</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Special Deals</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- By Style -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Style</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">All Rings</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Solitaire</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Couple Rings</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Adjustable</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <!-- By Metal & Stone -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Metal & Stone</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Diamond</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Gold</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Platinum</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Gemstone</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <!-- By Price -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Price</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Under ₹10k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹10k - ₹20k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹20k - ₹30k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹30k & Above</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <!-- Image Section -->
-                                    <div class="hidden md:block">
-                                        <div class="grid grid-cols-2 gap-3">
-                                            <div class="relative">
-                                                <img src="./asset/img-3.jpg" alt="Switch"
-                                                    class="rounded-lg w-full h-40 object-cover">
-                                                <span
-                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Switch</span>
-                                            </div>
-                                            <div class="relative">
-                                                <img src="./asset/img-8.jpg" alt="Dancing Hoops"
-                                                    class="rounded-lg w-full h-40 object-cover">
-                                                <span
-                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Dancing
-                                                    Hoops</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="earrings-menu">
-                            <a href="./ring.html" id="rings-link"
-                                class="text-black hover:text-[#6E002C] font-medium block py-2">
-                                Necklaces
-                            </a>
-                            <!-- Mega Menu -->
-                            <div id="earrings-dropdown"
-                                class="absolute left-0 top-14 w-full bg-white shadow-lg opacity-0 border-t mt-4 transition-all duration-300 ease-out">
-                                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 p-8">
-                                    <!-- Featured -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">Featured</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Latest Designs</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Bestsellers</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Fast Delivery</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Special Deals</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- By Style -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Style</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">All Rings</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Solitaire</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Couple Rings</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Adjustable</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- By Metal & Stone -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Metal & Stone</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Diamond</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Gold</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Platinum</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Gemstone</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- By Price -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Price</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Under ₹10k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹10k - ₹20k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹20k - ₹30k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹30k & Above</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- Image Section -->
-                                    <div class="hidden md:block">
-                                        <div class="grid grid-cols-2 gap-3">
-                                            <div class="relative">
-                                                <img src="./asset/img-3.jpg" alt="Switch"
-                                                    class="rounded-lg w-full h-40 object-cover">
-                                                <span
-                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Switch</span>
-                                            </div>
-                                            <div class="relative">
-                                                <img src="./asset/img-8.jpg" alt="Dancing Hoops"
-                                                    class="rounded-lg w-full h-40 object-cover">
-                                                <span
-                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Dancing
-                                                    Hoops</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="bracelets-menu">
-                            <a href="./ring.html" id="rings-link"
-                                class="text-black hover:text-[#6E002C] font-medium block py-2">
-                                Bracelets
-                            </a>
-                            <!-- Mega Menu -->
-                            <div id="bracelets-dropdown"
-                                class="absolute left-0 top-14 w-full bg-white shadow-lg opacity-0 border-t mt-4 transition-all duration-300 ease-out">
-                                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 p-8">
-                                    <!-- Featured -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">Featured</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Latest Designs</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Bestsellers</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Fast Delivery</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Special Deals</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- By Style -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Style</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">All Rings</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Solitaire</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Couple Rings</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Adjustable</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- By Metal & Stone -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Metal & Stone</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Diamond</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Gold</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Platinum</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Gemstone</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- By Price -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Price</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Under ₹10k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹10k - ₹20k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹20k - ₹30k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹30k & Above</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- Image Section -->
-                                    <div class="hidden md:block">
-                                        <div class="grid grid-cols-2 gap-3">
-                                            <div class="relative">
-                                                <img src="./asset/img-3.jpg" alt="Switch"
-                                                    class="rounded-lg w-full h-40 object-cover">
-                                                <span
-                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Switch</span>
-                                            </div>
-                                            <div class="relative">
-                                                <img src="./asset/img-8.jpg" alt="Dancing Hoops"
-                                                    class="rounded-lg w-full h-40 object-cover">
-                                                <span
-                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Dancing
-                                                    Hoops</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="Solitaires-menu">
-                            <a href="./ring.html" id="rings-link"
-                                class="text-black hover:text-[#6E002C] font-medium block py-2">
-                                Solitaires
-                            </a>
-                            <!-- Mega Menu -->
-                            <div id="Solitaires-dropdown"
-                                class="absolute left-0 top-14 w-full bg-white shadow-lg opacity-0 border-t mt-4 transition-all duration-300 ease-out">
-                                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 p-8">
-                                    <!-- Featured -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">Featured</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Latest Designs</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Bestsellers</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Fast Delivery</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Special Deals</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- By Style -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Style</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">All Rings</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Solitaire</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Couple Rings</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Adjustable</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- By Metal & Stone -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Metal & Stone</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Diamond</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Gold</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Platinum</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">Gemstone</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- By Price -->
-                                    <div>
-                                        <h4 class="text-[#6E002C] font-semibold mb-3">By Price</h4>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li><a href="#" class="hover:text-[#6E002C]">Under ₹10k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹10k - ₹20k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹20k - ₹30k</a></li>
-                                            <li><a href="#" class="hover:text-[#6E002C]">₹30k & Above</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- Image Section -->
-                                    <div class="hidden md:block">
-                                        <div class="grid grid-cols-2 gap-3">
-                                            <div class="relative">
-                                                <img src="./asset/img-3.jpg" alt="Switch"
-                                                    class="rounded-lg w-full h-40 object-cover">
-                                                <span
-                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Switch</span>
-                                            </div>
-                                            <div class="relative">
-                                                <img src="./asset/img-8.jpg" alt="Dancing Hoops"
-                                                    class="rounded-lg w-full h-40 object-cover">
-                                                <span
-                                                    class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Dancing
-                                                    Hoops</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center justify-between font-medium text-black">
+                    <div class="flex space-x-8">
+                        <a href="./ring.html" class="hover:text-[#6E002C]">Rings</a>
+                        <a href="./necklace.html" class="hover:text-[#6E002C]">Necklaces</a>
+                        <a href="./bracelets.html" class="hover:text-[#6E002C]">Bracelets</a>
+                        <a href="./solita.html" class="hover:text-[#6E002C]">Solitaires</a>
                     </div>
-                    <div>
-                        <button id="offer-button"
-                            class="text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
-                            Offers
-                            <span
-                                class="bg-yellow-400 text-red-800 px-2 py-1 rounded-full text-xs ml-1 font-bold animate-pulse">
-                                New
-                            </span>
-                        </button>
-                    </div>
-                </div>
-                <!-- MOBILE MENU -->
-                <div id="mobile-menu" class="lg:hidden hidden bg-white border-t shadow-md">
-                    <ul class="flex flex-col space-y-4 p-4 font-medium">
-                        <li><a href="#" class="block hover:text-[#6E002C]">Rings</a></li>
-                        <li><a href="#" class="block hover:text-[#6E002C]">Earrings</a></li>
-                        <li><a href="#" class="block hover:text-[#6E002C]">Bracelets</a></li>
-                        <li><a href="#" class="block hover:text-[#6E002C]">Necklaces</a></li>
+
+                    <button
+                        class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
+                        Offers
+                        <span
+                            class="bg-yellow-400 text-red-800 px-2 py-1 rounded-full text-xs ml-1 font-bold animate-pulse">New</span>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu (Hidden by Default) -->
+                <div id="mobile-menu"
+                    class="absolute top-[72px] left-0 w-full bg-white border-t shadow-md hidden md:hidden">
+                    <ul class="flex text-lg flex-col justify-center items-center space-y-4 p-4 font-medium text-black">
+                        <li><a href="./ring.html" class="block hover:text-[#EAB308]">Rings</a></li>
+                        <li><a href="./necklace.html" class="block hover:text-[#EAB308]">Necklaces</a></li>
+                        <li><a href="./bracelets.html" class="block hover:text-[#EAB308]">Bracelets</a></li>
+                        <li><a href="./solita.html" class="block hover:text-[#EAB308]">Solitaires</a></li>
+                        <li><a href="./login.html" class="block hover:text-[#EAB308]">Login</a></li>
+                        <li><a href="./cart.html" class="block hover:text-[#EAB308]">Cart</a></li>
+                        <li><a href="./became-seller.html" class="block hover:text-[#EAB308]">Become a Seller</a></li>
+                        <li>
+                            <button
+                                class="w-full text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
+                                Offers
+                                <span
+                                    class="bg-yellow-400 text-red-800 px-2 py-1 rounded-full text-xs ml-1 font-bold animate-pulse">New</span>
+                            </button>
+                        </li>
                     </ul>
                 </div>
-                </nav>
             </div>
         </div>
     </header>
@@ -461,7 +199,7 @@
                 <!-- Deal Card 1 -->
                 <div class="deal-card rounded-lg shadow-md overflow-hidden text-white bg-[#AD4870]">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Rings</h3>
+                        <h3 class="text-xl font-bold mb-2">Ring</h3>
                         <p class="mb-4">Up to 40% off</p>
                         <button class="bg-white text-pink-600 font-medium py-2 px-4 rounded">
                             Shop Now
@@ -773,30 +511,51 @@
         </div>
     </footer>
     <script>
-        const offerBtn = document.getElementById('offer-button');
-        const offerModal = document.getElementById('offer-modal');
-        const closeOfferModal = document.getElementById('close-offer-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
+        document.addEventListener("DOMContentLoaded", () => {
+            // Mobile Hamburger Menu Toggle
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            let isOpen = false;
 
-        offerBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            offerModal.classList.remove('hidden');
-        });
+            menuBtn.addEventListener("click", () => {
+                isOpen = !isOpen;
+                mobileMenu.classList.toggle("hidden");
 
-        closeOfferModal.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
+                // Change hamburger icon to close icon
+                menuBtn.innerHTML = isOpen
+                    ? '<i class="fas fa-times"></i>'
+                    : '<i class="fas fa-bars"></i>';
+            });
 
-        closeModalBtn.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
+            // Offer Modal Logic (you had this too)
+            const offerBtn = document.getElementById('offer-button');
+            const offerModal = document.getElementById('offer-modal');
+            const closeOfferModal = document.getElementById('close-offer-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
 
-        window.addEventListener('click', (e) => {
-            if (e.target === offerModal) {
-                offerModal.classList.add('hidden');
+            if (offerBtn) {
+                offerBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    offerModal.classList.remove('hidden');
+                });
             }
+
+            closeOfferModal.addEventListener('click', () => {
+                offerModal.classList.add('hidden');
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                offerModal.classList.add('hidden');
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === offerModal) {
+                    offerModal.classList.add('hidden');
+                }
+            });
         });
     </script>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Slick JS -->
