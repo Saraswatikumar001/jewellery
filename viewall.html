@@ -672,63 +672,74 @@
     </div>
 
     <script>
-        function toggleFilter(id) {
-            const content = document.getElementById(`content-${id}`);
-            const icon = document.getElementById(`icon-${id}`);
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.textContent = '–';
-            } else {
-                content.classList.add('hidden');
-                icon.textContent = '+';
-            }
-        }
-
-
         document.addEventListener("DOMContentLoaded", () => {
-            // Mobile Hamburger Menu Toggle
+
+            // 🔹 FILTER TOGGLE FUNCTION
+            function toggleFilter(id) {
+                const content = document.getElementById(`content-${id}`);
+                const icon = document.getElementById(`icon-${id}`);
+                if (content && icon) {
+                    const isHidden = content.classList.contains('hidden');
+                    content.classList.toggle('hidden');
+                    icon.textContent = isHidden ? '–' : '+';
+                }
+            }
+
+            // Expose toggleFilter globally so HTML onclick can use it
+            window.toggleFilter = toggleFilter;
+
+            // 🔹 MOBILE MENU
             const menuBtn = document.getElementById("menu-btn");
             const mobileMenu = document.getElementById("mobile-menu");
             let isOpen = false;
 
-            menuBtn.addEventListener("click", () => {
-                isOpen = !isOpen;
-                mobileMenu.classList.toggle("hidden");
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    isOpen = !isOpen;
+                    mobileMenu.classList.toggle("hidden");
 
-                // Change hamburger icon to close icon
-                menuBtn.innerHTML = isOpen
-                    ? '<i class="fas fa-times"></i>'
-                    : '<i class="fas fa-bars"></i>';
-            });
+                    // Toggle icon
+                    menuBtn.innerHTML = isOpen
+                        ? '<i class="fas fa-times"></i>'
+                        : '<i class="fas fa-bars"></i>';
+                });
+            }
 
-            // Offer Modal Logic (you had this too)
+            // 🔹 OFFER MODAL
             const offerBtn = document.getElementById('offer-button');
             const offerModal = document.getElementById('offer-modal');
             const closeOfferModal = document.getElementById('close-offer-modal');
             const closeModalBtn = document.getElementById('close-modal-btn');
 
-            if (offerBtn) {
+            if (offerBtn && offerModal) {
                 offerBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     offerModal.classList.remove('hidden');
                 });
             }
 
-            closeOfferModal.addEventListener('click', () => {
-                offerModal.classList.add('hidden');
-            });
+            if (closeOfferModal) {
+                closeOfferModal.addEventListener('click', () => {
+                    offerModal?.classList.add('hidden');
+                });
+            }
 
-            closeModalBtn.addEventListener('click', () => {
-                offerModal.classList.add('hidden');
-            });
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', () => {
+                    offerModal?.classList.add('hidden');
+                });
+            }
 
+            // Close modal when clicking outside it
             window.addEventListener('click', (e) => {
                 if (e.target === offerModal) {
-                    offerModal.classList.add('hidden');
+                    offerModal?.classList.add('hidden');
                 }
             });
+
         });
     </script>
+
 </body>
 
 </html>

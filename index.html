@@ -364,7 +364,7 @@
                         </div>
                     </div>
 
-                    <button
+                    <button id="offer-button"
                         class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                         Offers
                         <span
@@ -384,7 +384,7 @@
                         <li><a href="./cart.html" class="block hover:text-[#EAB308]">Cart</a></li>
                         <li><a href="./became-seller.html" class="block hover:text-[#EAB308]">Become a Seller</a></li>
                         <li>
-                            <button
+                            <button id="offer-button"
                                 class="w-full text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                                 Offers
                                 <span
@@ -477,58 +477,94 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Deal Card 1 -->
-                <div class="deal-card rounded-lg shadow-md overflow-hidden text-white bg-[#AD4870]">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2"></h3>
-                        <p class="mb-4">Up to 40% off</p>
-                        <button class="bg-white text-pink-600 font-medium py-2 px-4 rounded">
-                            Shop Now
+                <div
+                    class="deal-card rounded-2xl shadow-lg overflow-hidden bg-gradient-to-r from-[#7B5E57] to-[#3E2723] text-white relative transition-transform transform hover:scale-105 hover:shadow-2xl duration-500">
+                    <!-- Golden light overlay -->
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.15),transparent_70%)]">
+                    </div>
+                    <div class="p-6 relative z-10">
+                        <h3 class="text-2xl font-bold font-serif mb-2 text-yellow-300">Gold Necklace Set</h3>
+                        <p class="mb-4 text-yellow-200 text-lg">Up to <span class="font-semibold text-yellow-400">40%
+                                OFF</span></p>
+                        <button
+                            class="bg-gradient-to-r from-yellow-300 to-yellow-500 hover:from-yellow-400 hover:to-yellow-600 text-gray-900 font-semibold py-2 px-6 rounded-full shadow-md transition-all duration-300">
+                            💎 Shop Now
                         </button>
                     </div>
-                    <div class="h-40 bg-white flex items-center justify-center">
-                        <img src="./asset/img-3.jpg" alt="" class="w-full h-full object-cover">
+
+                    <div class="h-48 bg-white flex items-center justify-center">
+                        <img src="./asset/img-3.jpg" alt="Gold Necklace"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
                     </div>
                 </div>
 
                 <!-- Deal Card 2 -->
-                <div class="deal-card rounded-lg shadow-md overflow-hidden text-white bg-[#AD4870]">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Smartphones</h3>
-                        <p class="mb-4">Up to 40% off</p>
-                        <button class="bg-white text-pink-600 font-medium py-2 px-4 rounded">
-                            Shop Now
+                <div
+                    class="deal-card rounded-2xl shadow-lg overflow-hidden bg-gradient-to-r from-[#7B5E57] to-[#3E2723] text-white relative transition-transform transform hover:scale-105 hover:shadow-2xl duration-500">
+                    <!-- Golden light overlay -->
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.15),transparent_70%)]">
+                    </div>
+                    <div class="p-6 relative z-10">
+                        <h3 class="text-2xl font-bold font-serif mb-2 text-yellow-300">Gold Necklace Set</h3>
+                        <p class="mb-4 text-yellow-200 text-lg">Up to <span class="font-semibold text-yellow-400">40%
+                                OFF</span></p>
+                        <button
+                            class="bg-gradient-to-r from-yellow-300 to-yellow-500 hover:from-yellow-400 hover:to-yellow-600 text-gray-900 font-semibold py-2 px-6 rounded-full shadow-md transition-all duration-300">
+                            💎 Shop Now
                         </button>
                     </div>
-                    <div class="h-40 bg-white flex items-center justify-center">
-                        <img src="./asset/img-8.jpg" alt="" class="w-full h-full object-cover">
+
+                    <div class="h-48 bg-white flex items-center justify-center">
+                        <img src="./asset/img-8.jpg" alt="Gold Necklace"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
                     </div>
                 </div>
 
                 <!-- Deal Card 3 -->
-                <div class="deal-card rounded-lg shadow-md overflow-hidden text-white bg-[#AD4870]">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Smartphones</h3>
-                        <p class="mb-4">Up to 40% off</p>
-                        <button class="bg-white text-pink-600 font-medium py-2 px-4 rounded">
-                            Shop Now
+                <div
+                    class="deal-card rounded-2xl shadow-lg overflow-hidden bg-gradient-to-r from-[#7B5E57] to-[#3E2723] text-white relative transition-transform transform hover:scale-105 hover:shadow-2xl duration-500">
+                    <!-- Golden light overlay -->
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.15),transparent_70%)]">
+                    </div>
+                    <div class="p-6 relative z-10">
+                        <h3 class="text-2xl font-bold font-serif mb-2 text-yellow-300">Gold Necklace Set</h3>
+                        <p class="mb-4 text-yellow-200 text-lg">Up to <span class="font-semibold text-yellow-400">40%
+                                OFF</span></p>
+                        <button
+                            class="bg-gradient-to-r from-yellow-300 to-yellow-500 hover:from-yellow-400 hover:to-yellow-600 text-gray-900 font-semibold py-2 px-6 rounded-full shadow-md transition-all duration-300">
+                            💎 Shop Now
                         </button>
                     </div>
-                    <div class="h-40 bg-white flex items-center justify-center">
-                        <img src="./asset/img-7.jpg" alt="" class="w-full h-full object-cover">
+
+                    <div class="h-48 bg-white flex items-center justify-center">
+                        <img src="./asset/img-9.jpg" alt="Gold Necklace"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
                     </div>
                 </div>
 
                 <!-- Deal Card 4 -->
-                <div class="deal-card rounded-lg shadow-md overflow-hidden text-white bg-[#AD4870]">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Smartphones</h3>
-                        <p class="mb-4">Up to 40% off</p>
-                        <button class="bg-white text-pink-600 font-medium py-2 px-4 rounded">
-                            Shop Now
+                <div
+                    class="deal-card rounded-2xl shadow-lg overflow-hidden bg-gradient-to-r from-[#7B5E57] to-[#3E2723] text-white relative transition-transform transform hover:scale-105 hover:shadow-2xl duration-500">
+                    <!-- Golden light overlay -->
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.15),transparent_70%)]">
+                    </div>
+                    <div class="p-6 relative z-10">
+                        <h3 class="text-2xl font-bold font-serif mb-2 text-yellow-300">Gold Necklace Set</h3>
+                        <p class="mb-4 text-yellow-200 text-lg">Up to <span class="font-semibold text-yellow-400">40%
+                                OFF</span></p>
+                        <button
+                            class="bg-gradient-to-r from-yellow-300 to-yellow-500 hover:from-yellow-400 hover:to-yellow-600 text-gray-900 font-semibold py-2 px-6 rounded-full shadow-md transition-all duration-300">
+                            💎 Shop Now
                         </button>
                     </div>
-                    <div class="h-40 bg-white flex items-center justify-center">
-                        <img src="./asset/img-5.jpg" alt="" class="w-full h-full object-cover">
+
+                    <div class="h-48 bg-white flex items-center justify-center">
+                        <img src="./asset/img-2.jpg" alt="Gold Necklace"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
                     </div>
                 </div>
             </div>
@@ -737,6 +773,7 @@
             </button>
         </div>
     </div>
+   
     <!-- Footer Section -->
     <footer class="bg-[#1F2937]  py-12 px-6 border-t">
         <div class="text-white max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-gray-700">
@@ -749,7 +786,7 @@
             <div>
                 <h4 class="font-semibold mb-3 text-white text-lg">About Alukas</h4>
                 <ul class="space-y-2 text-sm text-gray-600 text-white">
-                    <li><a href="#" class="hover:text-amber-600 text-white">About Us</a></li>
+                    <li><a href="./aboutus.html" class="hover:text-amber-600 text-white">About Us</a></li>
                     <li><a href="#" class="hover:text-amber-600 text-white">Core Values</a></li>
                     <li><a href="#" class="hover:text-amber-600 text-white">Careers</a></li>
                     <li><a href="#" class="hover:text-amber-600 text-white">Press Releases</a></li>
@@ -877,7 +914,7 @@
                 offerModal.classList.add('hidden');
             }
         });
-    
+
     </script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

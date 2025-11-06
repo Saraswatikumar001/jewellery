@@ -508,7 +508,7 @@
                 <!-- Card 1 -->
                 <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
                     <div class="product-slider">
-                        <img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover">
+                        <img src="./asset/img-5.jpg" alt="Front View" class="w-full h-40 object-cover">
                     </div>
                     <div class="p-3 text-center">
                         <h3 class="text-sm font-medium">Classic Gold Studs</h3>
@@ -522,7 +522,7 @@
                 <!-- Card 2 -->
                 <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
                     <div class="product-slider">
-                        <img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover">
+                        <img src="./asset/img-6.jpg" alt="Front View" class="w-full h-40 object-cover">
                     </div>
                     <div class="p-3 text-center">
                         <h3 class="text-sm font-medium">Classic Gold Studs</h3>
@@ -536,7 +536,7 @@
                 <!-- Card 3 -->
                 <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
                     <div class="product-slider">
-                        <img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover">
+                        <img src="./asset/img-7.jpg" alt="Front View" class="w-full h-40 object-cover">
                     </div>
                     <div class="p-3 text-center">
                         <h3 class="text-sm font-medium">Classic Gold Studs</h3>
@@ -550,7 +550,7 @@
                 <!-- Card 4 -->
                 <div class="w-full rounded-xl shadow-md overflow-hidden hover:shadow-lg transition relative group">
                     <div class="product-slider">
-                        <img src="./asset/img-1.jpg" alt="Front View" class="w-full h-40 object-cover">
+                        <img src="./asset/img-8.jpg" alt="Front View" class="w-full h-40 object-cover">
                     </div>
                     <div class="p-3 text-center">
                         <h3 class="text-sm font-medium">Classic Gold Studs</h3>
@@ -563,13 +563,7 @@
                 </div>
             </div>
         </div>
-        <div class="h-64 close fixed bottom-0 left-0 z-10 w-full hidden show-similar rounded-t-3xl">
-            <!-- Tailwind CSS -->
-            <script src="https://cdn.tailwindcss.com"></script>
-            <!-- Slick CSS -->
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-            <!-- Similar Section -->
+        <div class="h-64 close fixed bottom-0 left-0 z-10 w-full hidden show-similar rounded-t-3xl">           
             <div class="close fixed bottom-0 left-0 z-50 w-full hidden show-similar bg-gray-50 rounded-t-3xl shadow-xl">
                 <!-- ❌ Close Button -->
                 <button class="absolute top-2 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold closeSimilar">
@@ -694,7 +688,7 @@
     <!-- JS -->
     <script>
         $(document).ready(function () {
-            // Initialize Slick sliders
+            // Initialize product slider
             $('.product-slider').slick({
                 dots: false,
                 infinite: true,
@@ -704,7 +698,8 @@
                 slidesToScroll: 1,
             });
 
-            $('.similar-slider').slick({
+            // Initialize similar-slider
+            $(".similar-slider").slick({
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 arrows: false,
@@ -722,7 +717,7 @@
                 ],
             });
 
-            // Initialize main similar section slider
+            // Initialize slick for similar section
             $('.similar').slick({
                 slidesToShow: 4,
                 slidesToScroll: 1,
@@ -736,95 +731,49 @@
                 ],
             });
 
-            // Show similar section
+            // ✅ Filter Sidebar Toggle (Mobile)
+            const filterBtn = document.getElementById('filterBtn');
+            const filterSidebar = document.getElementById('filterSidebar');
+            const overlay = document.getElementById('overlay');
+
+            if (filterBtn && filterSidebar && overlay) {
+                // Open sidebar
+                filterBtn.addEventListener('click', () => {
+                    filterSidebar.classList.toggle('-translate-x-full');
+                    overlay.classList.toggle('hidden');
+                });
+
+                // Close sidebar when clicking overlay
+                overlay.addEventListener('click', () => {
+                    filterSidebar.classList.add('-translate-x-full');
+                    overlay.classList.add('hidden');
+                });
+            }
+
+            // ✅ Show "View Similar" Section
             $(document).on('click', '.viewSimilarBtn', function () {
                 $('.show-similar').removeClass('hidden').addClass('block');
-                $('.similar').slick('setPosition'); // Recalculate positions
+                $('.similar').slick('setPosition'); // Refresh slick layout
             });
 
-            // Close similar section
+            // ✅ Close "View Similar" Section
             $(document).on('click', '.closeSimilar', function () {
                 $('.show-similar').addClass('hidden').removeClass('block');
             });
-        });
-
-        document.addEventListener("DOMContentLoaded", () => {
-            // Mobile menu
+            // Mobile Hamburger Menu Toggle
             const menuBtn = document.getElementById("menu-btn");
             const mobileMenu = document.getElementById("mobile-menu");
-            if (menuBtn && mobileMenu) {
-                let isOpen = false;
-                menuBtn.addEventListener("click", () => {
-                    isOpen = !isOpen;
-                    mobileMenu.classList.toggle("hidden");
-                    menuBtn.innerHTML = isOpen
-                        ? '<i class="fas fa-times"></i>'
-                        : '<i class="fas fa-bars"></i>';
-                });
-            }
+            let isOpen = false;
 
-            // Offer Modal
-            const offerBtn = document.getElementById('offer-button');
-            const offerModal = document.getElementById('offer-modal');
-            const closeOfferModal = document.getElementById('close-offer-modal');
-            const closeModalBtn = document.getElementById('close-modal-btn');
+            menuBtn.addEventListener("click", () => {
+                isOpen = !isOpen;
+                mobileMenu.classList.toggle("hidden");
 
-            if (offerBtn && offerModal) {
-                offerBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    offerModal.classList.remove('hidden');
-                });
-            }
-            if (closeOfferModal) {
-                closeOfferModal.addEventListener('click', () => {
-                    offerModal.classList.add('hidden');
-                });
-            }
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', () => {
-                    offerModal.classList.add('hidden');
-                });
-            }
-            window.addEventListener('click', (e) => {
-                if (e.target === offerModal) {
-                    offerModal.classList.add('hidden');
-                }
+                // Change hamburger icon to close icon
+                menuBtn.innerHTML = isOpen
+                    ? '<i class="fas fa-times"></i>'
+                    : '<i class="fas fa-bars"></i>';
             });
-
-            // Filter Sidebar
-            const filterSidebar = document.getElementById("filterSidebar");
-            const overlay = document.getElementById("overlay");
-            const openFilter = document.getElementById("openFilter");
-
-            if (filterSidebar && overlay && openFilter) {
-                // Open sidebar
-                openFilter.addEventListener("click", () => {
-                    filterSidebar.classList.remove("-translate-x-full");
-                    overlay.classList.remove("hidden");
-                });
-
-                // Close sidebar on overlay click
-                overlay.addEventListener("click", () => {
-                    filterSidebar.classList.add("-translate-x-full");
-                    overlay.classList.add("hidden");
-                });
-            }
-
-            // Expandable lists
-            const togglePrice = document.getElementById("togglePrice");
-            const toggleProductType = document.getElementById("toggleProductType");
-
-            if (togglePrice) {
-                togglePrice.addEventListener("click", () => {
-                    document.getElementById("priceMore")?.classList.toggle("hidden");
-                });
-            }
-
-            if (toggleProductType) {
-                toggleProductType.addEventListener("click", () => {
-                    document.getElementById("productTypeMore")?.classList.toggle("hidden");
-                });
-            }
         });
     </script>
 
