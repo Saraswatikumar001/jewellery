@@ -4,14 +4,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>SparkleZone — Jewellery</title>
+    <title>Jewellery</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
-
     <!-- Swiper for slider -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
     <style>
@@ -42,7 +45,6 @@
 </head>
 
 <body class="bg-amber-50 text-gray-800">
-
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -418,11 +420,10 @@
             </div>
         </div>
     </header>
-
     <!-- HERO + SLIDER -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-40">
         <!-- Slider -->
-        <div class="grid lg:grid-cols-3 gap-6 items-start">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 items-start">
             <!-- Left: Slider (spans 2 cols on large screens) -->
             <div class="lg:col-span-2">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl">
@@ -515,11 +516,11 @@
                 <!-- Breadcrumb -->
                 <nav class="mt-4 text-sm text-gray-600" aria-label="Breadcrumb">
                     <ol class="list-reset flex items-center gap-2">
-                        <li><a href="#" class="hover:underline">Home</a></li>
+                        <li><a href="./index.html" class="hover:underline">Home</a></li>
                         <li>/</li>
-                        <li><a href="#" class="hover:underline">Collections</a></li>
+                        <li><a href="./viewall.html" class="hover:underline">Collections</a></li>
                         <li>/</li>
-                        <li class="text-amber-700 font-medium">Heritage Gold</li>
+                        <li class="/">Heritage Gold</li>
                     </ol>
                 </nav>
 
@@ -592,7 +593,6 @@
                 </section>
 
             </div>
-
             <!-- Right column: Deals & categories -->
             <aside class="space-y-6">
                 <!-- Deal card -->
@@ -642,76 +642,249 @@
                 </div>
             </aside>
         </div>
-
         <!-- More collections / long design below (mobile collapses) -->
-        <section class="mt-10">
-            <h3 class="text-2xl font-semibold mb-4">Explore Collections</h3>
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                <!-- sample small card -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./asset/img-5.jpg" alt="" class="w-full h-48 object-cover" />
+        <section class="mt-10 max-w-7xl mx-auto px-4">
+            <h3 class="text-4xl font-bold mb-6 text-center text-[#6E002C]"><i class="fa-solid fa-grip me-4"></i>Explore
+                Collections</h3>
+            <!-- Slick Slider Container -->
+            <div class="collection-slider">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden me-5">
+                    <img src="./asset/img-5.jpg" alt="" class="w-full h-56 object-cover" />
                     <div class="p-4">
-                        <h4 class="font-medium">Royal Gold</h4>
-                        <p class="text-sm text-gray-500">Handcrafted picks</p>
+                        <h4 class="font-semibold text-black text-xl">Royal Gold</h4>
+                        <p class="font-semibold text-black text-lg text-gray-500">Handcrafted picks</p>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./asset/img-2.jpg" alt="" class="w-full h-48 object-cover" />
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden me-5 me-5">
+                    <img src="./asset/img-2.jpg" alt="" class="w-full h-56 object-cover" />
                     <div class="p-4">
-                        <h4 class="font-medium">Diamond Classics</h4>
-                        <p class="text-sm text-gray-500">Timeless pieces</p>
+                        <h4 class="font-semibold text-black text-xl">Diamond Classics</h4>
+                        <p class="font-semibold text-black text-lg text-gray-500">Timeless pieces</p>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./asset/img-9.jpg" alt="" class="w-full h-48 object-cover" />
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden me-5">
+                    <img src="./asset/img-9.jpg" alt="" class="w-full h-56 object-cover" />
                     <div class="p-4">
-                        <h4 class="font-medium">Pearl Collection</h4>
-                        <p class="text-sm text-gray-500">Soft & elegant</p>
+                        <h4 class="font-semibold text-black text-xl">Pearl Collection</h4>
+                        <p class="font-semibold text-black text-lg text-gray-500">Soft & elegant</p>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./asset/img-6.jpg" alt="" class="w-full h-48 object-cover" />
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden me-5">
+                    <img src="./asset/img-6.jpg" alt="" class="w-full h-56 object-cover" />
                     <div class="p-4">
-                        <h4 class="font-medium">Contemporary</h4>
-                        <p class="text-sm text-gray-500">Modern designs</p>
+                        <h4 class="font-semibold text-black text-xl">Contemporary</h4>
+                        <p class="font-semibold text-black text-lg text-gray-500">Modern designs</p>
                     </div>
                 </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden me-5">
+                    <img src="./asset/img-5.jpg" alt="" class="w-full h-56 object-cover" />
+                    <div class="p-4">
+                        <h4 class="font-semibold text-black text-xl">Royal Gold</h4>
+                        <p class="font-semibold text-black text-lg text-gray-500">Handcrafted picks</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden me-5">
+                    <img src="./asset/img-2.jpg" alt="" class="w-full h-56 object-cover" />
+                    <div class="p-4">
+                        <h4 class="font-semibold text-black text-xl">Diamond Classics</h4>
+                        <p class="font-semibold text-black text-lg text-gray-500">Timeless pieces</p>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden me-5">
+                    <img src="./asset/img-9.jpg" alt="" class="w-full h-56 object-cover" />
+                    <div class="p-4">
+                        <h4 class="font-semibold text-black text-xl">Pearl Collection</h4>
+                        <p class="font-semibold text-black text-lg text-gray-500">Soft & elegant</p>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden me-5">
+                    <img src="./asset/img-6.jpg" alt="" class="w-full h-56 object-cover" />
+                    <div class="p-4">
+                        <h4 class="font-semibold text-black text-xl">Contemporary</h4>
+                        <p class="font-semibold text-black text-lg text-gray-500">Modern designs</p>
+                    </div>
+                </div>
+
             </div>
         </section>
-
-        <!-- Testimonials & brand logos -->
-        <section class="mt-12 bg-white rounded-2xl shadow-lg p-8">
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="col-span-2">
-                    <h3 class="text-2xl font-semibold">What our customers say</h3>
-                    <div class="mt-4 space-y-4">
-                        <blockquote class="p-4 bg-amber-50 rounded-lg">
-                            <p class="text-gray-700">"Beautiful craftsmanship and amazing service — my wife loved the
-                                anniversary set!"</p>
-                            <footer class="mt-3 text-sm text-gray-500">— Rohan</footer>
-                        </blockquote>
-                        <blockquote class="p-4 bg-amber-50 rounded-lg">
-                            <p class="text-gray-700">"Fast delivery and great packaging. Highly recommended!"</p>
-                            <footer class="mt-3 text-sm text-gray-500">— Ananya</footer>
-                        </blockquote>
+        <!-- Testimonials -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-12 tracking-wide text-[#6E002C]"><i
+                        class="fa-regular fa-message me-3"></i>What
+                    Our Customers Say <i class="fa-solid fa-diamond"></i></h2>
+                <!-- Slick Slider Container -->
+                <div class="testimonial-slider">
+                    <!-- Testimonial 1 -->
+                    <div
+                        class="bg-white border border-yellow-300 hover:border-yellow-500 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 mx-3 min-h-[360px] flex flex-col justify-center">
+                        <div class="flex flex-col items-center">
+                            <div class="relative">
+                                <img src="./asset/img-1.jpg" alt="Customer"
+                                    class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-yellow-400 shadow-md" />
+                                <span class="absolute -bottom-2 right-0 bg-yellow-400 rounded-full w-4 h-4"></span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 mt-2">“Absolutely stunning jewellery! The craftsmanship
+                                is flawless, and I get compliments every time I wear their pieces.”</p>
+                            <h4 class="font-semibold text-lg text-gray-800">Ananya Sharma</h4>
+                            <p class="text-sm text-yellow-600 font-medium">Kolkata, India</p>
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <h4 class="font-semibold mb-3">Featured in</h4>
-                    <div class="flex flex-wrap gap-3 items-center">
-                        <img src="./asset/img-1.jpg" alt="logo" class="h-8 object-contain" />
-                        <img src="./asset/img-2.jpg" alt="logo" class="h-8 object-contain" />
-                        <img src="./asset/img-4.jpg" alt="logo" class="h-8 object-contain" />
+                    <!-- Testimonial 2 -->
+                    <div
+                        class="bg-white border border-yellow-300 hover:border-yellow-500 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 mx-3 min-h-[360px] flex flex-col justify-center">
+                        <div class="flex flex-col items-center">
+                            <div class="relative">
+                                <img src="./asset/img-2.jpg" alt="Customer"
+                                    class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-yellow-400 shadow-md" />
+                                <span class="absolute -bottom-2 right-0 bg-yellow-400 rounded-full w-4 h-4"></span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 mt-2">“Loved the diamond collection! It’s elegant yet
+                                modern — perfect for special occasions.”</p>
+                            <h4 class="font-semibold text-lg text-gray-800">Ritika Das</h4>
+                            <p class="text-sm text-yellow-600 font-medium">Mumbai, India</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div
+                        class="bg-white border border-yellow-300 hover:border-yellow-500 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 mx-3 min-h-[360px] flex flex-col justify-center">
+                        <div class="flex flex-col items-center">
+                            <div class="relative">
+                                <img src="./asset/img-4.jpg" alt="Customer"
+                                    class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-yellow-400 shadow-md" />
+                                <span class="absolute -bottom-2 right-0 bg-yellow-400 rounded-full w-4 h-4"></span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 mt-2">“The packaging and detailing were amazing. You can
+                                feel the luxury the moment you open it!”</p>
+                            <h4 class="font-semibold text-lg text-gray-800">Priya Nair</h4>
+                            <p class="text-sm text-yellow-600 font-medium">Bangalore, India</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div
+                        class="bg-white border border-yellow-300 hover:border-yellow-500 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 mx-3 min-h-[360px] flex flex-col justify-center">
+                        <div class="flex flex-col items-center">
+                            <div class="relative">
+                                <img src="./asset/img-4.jpg" alt="Customer"
+                                    class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-yellow-400 shadow-md" />
+                                <span class="absolute -bottom-2 right-0 bg-yellow-400 rounded-full w-4 h-4"></span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 mt-2">“Exceptional service and such beautiful pieces —
+                                truly a gem of a brand!”</p>
+                            <h4 class="font-semibold text-lg text-gray-800">Megha Patel</h4>
+                            <p class="text-sm text-yellow-600 font-medium">Delhi, India</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 6 -->
+                    <div
+                        class="bg-white border border-yellow-300 hover:border-yellow-500 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 mx-3 min-h-[360px] flex flex-col justify-center">
+                        <div class="flex flex-col items-center">
+                            <div class="relative">
+                                <img src="./asset/img-1.jpg" alt="Customer"
+                                    class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-yellow-400 shadow-md" />
+                                <span class="absolute -bottom-2 right-0 bg-yellow-400 rounded-full w-4 h-4"></span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 mt-2">“Absolutely stunning jewellery! The craftsmanship
+                                is flawless, and I get compliments every time I wear their pieces.”</p>
+                            <h4 class="font-semibold text-lg text-gray-800">Ananya Sharma</h4>
+                            <p class="text-sm text-yellow-600 font-medium">Kolkata, India</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 7 -->
+                    <div
+                        class="bg-white border border-yellow-300 hover:border-yellow-500 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 mx-3 min-h-[360px] flex flex-col justify-center">
+                        <div class="flex flex-col items-center">
+                            <div class="relative">
+                                <img src="./asset/img-2.jpg" alt="Customer"
+                                    class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-yellow-400 shadow-md" />
+                                <span class="absolute -bottom-2 right-0 bg-yellow-400 rounded-full w-4 h-4"></span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 mt-2">“Loved the diamond collection! It’s elegant yet
+                                modern — perfect for special occasions.”</p>
+                            <h4 class="font-semibold text-lg text-gray-800">Ritika Das</h4>
+                            <p class="text-sm text-yellow-600 font-medium">Mumbai, India</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 8 -->
+                    <div
+                        class="bg-white border border-yellow-300 hover:border-yellow-500 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 mx-3 min-h-[360px] flex flex-col justify-center">
+                        <div class="flex flex-col items-center">
+                            <div class="relative">
+                                <img src="./asset/img-4.jpg" alt="Customer"
+                                    class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-yellow-400 shadow-md" />
+                                <span class="absolute -bottom-2 right-0 bg-yellow-400 rounded-full w-4 h-4"></span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 mt-2">“The packaging and detailing were amazing. You can
+                                feel the luxury the moment you open it!”</p>
+                            <h4 class="font-semibold text-lg text-gray-800">Priya Nair</h4>
+                            <p class="text-sm text-yellow-600 font-medium">Bangalore, India</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 9 -->
+                    <div
+                        class="bg-white border border-yellow-300 hover:border-yellow-500 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 mx-3 min-h-[360px] flex flex-col justify-center">
+                        <div class="flex flex-col items-center">
+                            <div class="relative">
+                                <img src="./asset/img-4.jpg" alt="Customer"
+                                    class="w-20 h-20 rounded-full object-cover mb-4 border-4 border-yellow-400 shadow-md" />
+                                <span class="absolute -bottom-2 right-0 bg-yellow-400 rounded-full w-4 h-4"></span>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 mt-2">“Exceptional service and such beautiful pieces —
+                                truly a gem of a brand!”</p>
+                            <h4 class="font-semibold text-lg text-gray-800">Megha Patel</h4>
+                            <p class="text-sm text-yellow-600 font-medium">Delhi, India</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <!-- Offer Modal -->
+    <div id="offer-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-[9999]">
+        <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3 p-6 relative">
+            <button id="close-offer-modal"
+                class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
 
+            <h2 class="text-2xl font-bold text-[#6E002C] mb-4">Exclusive Offers Just for You!</h2>
+            <p class="text-gray-700 mb-4">
+                🎉 Grab up to <span class="font-semibold text-[#6E002C]">50% OFF</span> on selected jewelry collections.
+            </p>
+
+            <ul class="list-disc pl-6 text-gray-600 mb-6">
+                <li>✨ Flat 20% off on all rings</li>
+                <li>💎 Buy 1 Get 1 Free on earrings</li>
+                <li>🎁 Free shipping for orders above ₹4999</li>
+            </ul>
+
+            <div class="flex justify-end space-x-3">
+                <button id="close-modal-btn"
+                    class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded">Close</button>
+                <a href="./alloffer.html" class="px-4 py-2 bg-[#6E002C] hover:bg-[#8E003A] text-white rounded">View All
+                    Offers</a>
+            </div>
+        </div>
+    </div>
     <!-- Subscribe Newsletter Section -->
     <div class="bg-gray-100 py-10 px-4 text-center">
         <h2 class="text-2xl font-semibold mb-2">Subscribe Newsletter</h2>
@@ -727,87 +900,216 @@
             </button>
         </div>
     </div>
-
     <!-- Footer Section -->
-    <footer class="bg-[#1F2937]  py-12 px-6 border-t">
-        <div class="text-white max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-gray-700">
-            <!-- Logo and Description -->
+    <footer class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-14 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+            <!-- Logo + Description -->
             <div>
-                <h3 class="text-2xl font-semibold">ALUKAS & CO</h3>
-                <p class="text-sm text-white mt-1">Gold & Diamond</p>
+                <h2
+                    class="text-4xl font-bold bg-gradient-to-r from-amber-400 to-yellow-600 bg-clip-text text-transparent">
+                    Alukas & Co
+                </h2>
+                <p class="mt-2 text-lg text-gray-300">Exquisite Gold & Diamond Jewellery</p>
+                <p class="mt-4 text-sm text-gray-400 leading-relaxed">
+                    Discover timeless elegance with our handcrafted jewellery. Designed to shine as bright as you.
+                </p>
+
+                <!-- Social Icons -->
+                <div class="flex space-x-5 mt-6 text-2xl">
+                    <a href="#"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-amber-400 transition-all duration-300 shadow-lg hover:shadow-amber-400/50">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-rose-400 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-rose-400/50">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#"
+                        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-amber-400 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-amber-400/50">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                </div>
+
             </div>
-            <!-- About Alukas -->
+
+            <!-- About Section -->
             <div>
-                <h4 class="font-semibold mb-3 text-white text-lg">About Alukas</h4>
-                <ul class="space-y-2 text-sm text-gray-600 text-white">
-                    <li><a href="./aboutus.html" class="hover:text-amber-600 text-white">About Us</a></li>
-                    <li><a href="#" class="hover:text-amber-600 text-white">Core Values</a></li>
-                    <li><a href="#" class="hover:text-amber-600 text-white">Careers</a></li>
-                    <li><a href="#" class="hover:text-amber-600 text-white">Press Releases</a></li>
-                    <li><a href="#" class="hover:text-amber-600 text-white">Blog</a></li>
-                    <li><a href="#" class="hover:text-amber-600 text-white">Sitemap</a></li>
+                <h3 class="text-2xl font-semibold text-amber-400 mb-4">About Us</h3>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="./aboutus.html" class="hover:text-amber-400 transition">Our Story</a></li>
+                    <li><a href="./corevalues.html" class="hover:text-amber-400 transition">Core Values</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Careers</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Blog</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Press Releases</a></li>
                 </ul>
             </div>
 
             <!-- Our Company -->
             <div>
-                <h4 class="font-semibold text-lg mb-3">Our Company</h4>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li><a href="#" class="hover:text-amber-600 text-white">Shopping App</a></li>
-                    <li><a href="#" class="hover:text-amber-600 text-white">Be an Affiliate</a></li>
-                    <li><a href="#" class="hover:text-amber-600 text-white">Advertise Your Product</a></li>
-                    <li><a href="#" class="hover:text-amber-600 text-white">Media Enquiries</a></li>
-                    <li><a href="#" class="hover:text-amber-600 text-white">Other Services</a></li>
+                <h3 class="text-2xl font-semibold text-amber-400 mb-4">Our Company</h3>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="#" class="hover:text-amber-400 transition">Shopping App</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Affiliate Program</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Advertise with Us</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Customer Reviews</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Media Enquiries</a></li>
                 </ul>
             </div>
 
-            <!-- Store Details -->
+            <!-- Contact Info -->
             <div>
-                <h4 class="font-semibold mb-3 text-lg">Store Details</h4>
-                <ul class="text-sm text-white space-y-2">
-                    <li><span class="font-medium text-white">Need Any Help?</span><br />123 45678 90</li>
-                    <li><span class="font-medium text-white">Address:</span> 502 New Design Str,<br />Melbourne,
-                        Australia</li>
-                    <li><span class="font-medium text-white">Email:</span> alukas@domain.com</li>
+                <h3 class="text-2xl font-semibold text-amber-400 mb-4">Contact Us</h3>
+                <ul class="space-y-3 text-gray-300 text-lg">
+                    <li>
+                        <i class="fas fa-phone-alt text-amber-400 mr-2"></i> +91 98765 43210
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope text-amber-400 mr-2"></i> contact@alukas.com
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt text-amber-400 mr-2"></i>
+                        502 New Design Street, Melbourne, Australia
+                    </li>
                 </ul>
-
-                <!-- Social Icons -->
-                <div class="flex space-x-4 mt-4 text-gray-500">
-                    <a href="#" class="hover:text-amber-600 text-white"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-amber-600 text-white"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="hover:text-amber-600 text-white"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#" class="hover:text-amber-600 text-white"><i class="fab fa-instagram"></i></a>
-                </div>
             </div>
+
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="mt-12 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+            © <span id="year"></span> Alukas & Co. All Rights Reserved. | Crafted with 💛 for Jewellery Lovers
         </div>
     </footer>
-
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- Page JS -->
     <script>
-        // initialize Swiper
-        const swiper = new Swiper('.mySwiper', {
-            loop: true,
-            autoplay: { delay: 5000, disableOnInteraction: false },
-            pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        $(document).ready(function () {
+            // === Collection Slider ===
+            if ($('.collection-slider').length) {
+                $('.collection-slider').slick({
+                    dots: false,
+                    infinite: true,
+                    speed: 600,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    responsive: [
+                        { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                        { breakpoint: 768, settings: { slidesToShow: 2 } },
+                        { breakpoint: 480, settings: { slidesToShow: 1 } }
+                    ]
+                });
+            }
+
+            // === Testimonial Slider ===
+            if ($('.testimonial-slider').length) {
+                $('.testimonial-slider').slick({
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    speed: 600,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    responsive: [
+                        { breakpoint: 1024, settings: { slidesToShow: 2 } },
+                        { breakpoint: 768, settings: { slidesToShow: 1 } }
+                    ]
+                });
+            }
         });
 
-        // mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isOpen = false;
-        menuBtn?.addEventListener('click', () => {
-            isOpen = !isOpen;
-            mobileMenu.classList.toggle('hidden');
-            menuBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-        });
+        // === Swiper Initialization (Safe Check) ===
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof Swiper !== "undefined") {
+                new Swiper(".mySwiper", {
+                    loop: true,
+                    autoplay: { delay: 5000, disableOnInteraction: false },
+                    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                });
+            }
 
-        // footer year
-        document.getElementById('year').textContent = new Date().getFullYear();
+            // === Mobile Menu Toggle ===
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            let isOpen = false;
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    isOpen = !isOpen;
+                    mobileMenu.classList.toggle("hidden");
+                    menuBtn.innerHTML = isOpen
+                        ? '<i class="fa-solid fa-xmark"></i>'
+                        : '<i class="fa-solid fa-bars"></i>';
+                });
+            }
+
+            // === Footer Year ===
+            const yearEl = document.getElementById("year");
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // === Offer Modal Logic ===
+            const offerBtn = document.getElementById("offer-button");
+            const offerModal = document.getElementById("offer-modal");
+            const closeOfferModal = document.getElementById("close-offer-modal");
+            const closeModalBtn = document.getElementById("close-modal-btn");
+
+            if (offerBtn && offerModal) {
+                offerBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    offerModal.classList.remove("hidden");
+                });
+            }
+
+            [closeOfferModal, closeModalBtn].forEach((btn) => {
+                if (btn && offerModal) {
+                    btn.addEventListener("click", () => offerModal.classList.add("hidden"));
+                }
+            });
+
+            window.addEventListener("click", (e) => {
+                if (offerModal && e.target === offerModal) {
+                    offerModal.classList.add("hidden");
+                }
+            });
+
+            // === Dropdown Menus ===
+            const menus = [
+                { menu: "rings-menu", dropdown: "rings-dropdown" },
+                { menu: "earrings-menu", dropdown: "earrings-dropdown" },
+                { menu: "bracelets-menu", dropdown: "bracelets-dropdown" },
+                { menu: "Solitaires-menu", dropdown: "Solitaires-dropdown" }
+            ];
+
+            let timer;
+
+            menus.forEach(({ menu, dropdown }) => {
+                const menuEl = document.getElementById(menu);
+                const dropdownEl = document.getElementById(dropdown);
+
+                if (menuEl && dropdownEl) {
+                    menuEl.addEventListener("mouseenter", () => {
+                        clearTimeout(timer);
+                        dropdownEl.classList.remove("hidden");
+                        setTimeout(() => dropdownEl.classList.remove("opacity-0"), 10);
+                    });
+
+                    menuEl.addEventListener("mouseleave", () => {
+                        dropdownEl.classList.add("opacity-0");
+                        timer = setTimeout(() => dropdownEl.classList.add("hidden"), 200);
+                    });
+                }
+            });
+        });
     </script>
+
 </body>
 
 </html>
