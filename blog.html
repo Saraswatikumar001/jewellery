@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alukas & Co | Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -386,12 +391,11 @@
         </div>
     </header>
     <!-- ====== Blog Hero Section ====== -->
-    <section class="relative bg-cover bg-center bg-no-repeat mt-32"
-        style="background-image: url('./assets/img-2');">
+    <section class="relative bg-cover bg-center bg-no-repeat mt-32" style="background-image: url('./asset/img-4.jpg');">
         <div class="absolute inset-0 bg-black/50"></div>
 
         <div class="relative z-10 py-28 text-center text-white">
-            <h1 class="text-5xl font-extrabold mb-3">Our Blog</h1>
+            <h1 class="text-6xl font-extrabold mb-3">Our Blog</h1>
             <p class="text-lg max-w-xl mx-auto text-gray-200">Discover the artistry, craftsmanship, and elegance behind
                 every
                 Alukas & Co creation.</p>
@@ -406,68 +410,147 @@
             </nav>
         </div>
     </section>
-
     <!-- ====== Blog Section ====== -->
     <section class="py-16 px-6 lg:px-20 bg-gradient-to-b from-amber-50 via-white to-pink-50">
-        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Latest Articles</h2>
-
-        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <h2 class="text-5xl font-bold text-center mb-12 text-[#6E002C]">Latest Articles</h2>
+        <div class="blog-slider">
             <!-- Blog Card 1 -->
-            <div
-                class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
-                <img src="./assets/blog1.jpg" alt="Blog 1" class="w-full h-56 object-cover">
-                <div class="p-6 text-left">
+            <div class="bg-white me-5 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl 
+           transition transform hover:-translate-y-2 w-[350px] h-[480px] flex flex-col">
+                <img src="./asset/img-4.jpg" alt="Blog 1" class="w-full h-56 object-cover">
+                <div class="p-6 text-left flex-grow flex flex-col">
                     <span class="text-amber-600 text-sm font-semibold">Oct 25, 2025 • By Alukas</span>
                     <h3 class="text-xl font-bold mt-2 mb-3">The Art of Diamond Crafting</h3>
-                    <p class="text-gray-600 mb-4">Explore how each diamond at Alukas & Co undergoes a meticulous
-                        crafting process
-                        to achieve perfection.</p>
+                    <p class="text-gray-600 mb-4 flex-grow">Explore how each diamond at Alukas & Co undergoes a
+                        meticulous
+                        crafting process to achieve perfection.</p>
                     <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
                 </div>
             </div>
-
             <!-- Blog Card 2 -->
-            <div
-                class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
-                <img src="./assets/blog2.jpg" alt="Blog 2" class="w-full h-56 object-cover">
-                <div class="p-6 text-left">
+            <div class="bg-white me-5 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl 
+           transition transform hover:-translate-y-2 w-[350px] h-[480px] flex flex-col">
+                <img src="./asset/img-3.jpg" alt="Blog 2" class="w-full h-56 object-cover">
+                <div class="p-6 text-left flex-grow flex flex-col">
                     <span class="text-amber-600 text-sm font-semibold">Sep 12, 2025 • By Alukas</span>
                     <h3 class="text-xl font-bold mt-2 mb-3">Choosing the Perfect Engagement Ring</h3>
-                    <p class="text-gray-600 mb-4">A timeless guide to finding the engagement ring that captures your
-                        love story.
-                    </p>
+                    <p class="text-gray-600 mb-4 flex-grow">A timeless guide to finding the engagement ring that
+                        captures your
+                        love story.</p>
                     <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
                 </div>
             </div>
-
             <!-- Blog Card 3 -->
-            <div
-                class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
-                <img src="./assets/blog3.jpg" alt="Blog 3" class="w-full h-56 object-cover">
-                <div class="p-6 text-left">
-                    <span class="text-amber-600 text-sm font-semibold">Aug 03, 2025 • By Alukas</span>
-                    <h3 class="text-xl font-bold mt-2 mb-3">Top 5 Jewellery Trends for 2025</h3>
-                    <p class="text-gray-600 mb-4">From minimal gold designs to bold gemstone statements — here’s what’s
-                        trending
-                        this year.</p>
+            <div class="bg-white me-5 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl 
+           transition transform hover:-translate-y-2 w-[350px] h-[480px] flex flex-col">
+                <img src="./asset/img-5.jpg" alt="Blog 1" class="w-full h-56 object-cover">
+                <div class="p-6 text-left flex-grow flex flex-col">
+                    <span class="text-amber-600 text-sm font-semibold">Oct 25, 2025 • By Alukas</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3">The Art of Diamond Crafting</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Explore how each diamond at Alukas & Co undergoes a
+                        meticulous
+                        crafting process to achieve perfection.</p>
+                    <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
+                </div>
+            </div>
+            <!-- Blog Card 4 -->
+            <div class="bg-white me-5 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl 
+           transition transform hover:-translate-y-2 w-[350px] h-[480px] flex flex-col">
+                <img src="./asset/img-4.jpg" alt="Blog 2" class="w-full h-56 object-cover">
+                <div class="p-6 text-left flex-grow flex flex-col">
+                    <span class="text-amber-600 text-sm font-semibold">Sep 12, 2025 • By Alukas</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3">Choosing the Perfect Engagement Ring</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">A timeless guide to finding the engagement ring that
+                        captures your
+                        love story.</p>
+                    <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
+                </div>
+            </div>
+            <!-- Blog Card 5 -->
+            <div class="bg-white me-5 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl 
+           transition transform hover:-translate-y-2 w-[350px] h-[480px] flex flex-col">
+                <img src="./asset/img-2.jpg" alt="Blog 1" class="w-full h-56 object-cover">
+                <div class="p-6 text-left flex-grow flex flex-col">
+                    <span class="text-amber-600 text-sm font-semibold">Oct 25, 2025 • By Alukas</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3">The Art of Diamond Crafting</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Explore how each diamond at Alukas & Co undergoes a
+                        meticulous
+                        crafting process to achieve perfection.</p>
+                    <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
+                </div>
+            </div>
+            <!-- Blog Card 6 -->
+            <div class="bg-white me-5 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl 
+           transition transform hover:-translate-y-2 w-[350px] h-[480px] flex flex-col">
+                <img src="./asset/img-4.jpg" alt="Blog 2" class="w-full h-56 object-cover">
+                <div class="p-6 text-left flex-grow flex flex-col">
+                    <span class="text-amber-600 text-sm font-semibold">Sep 12, 2025 • By Alukas</span>
+                    <h3 class="text-xl font-bold mt-2 mb-3">Choosing the Perfect Engagement Ring</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">A timeless guide to finding the engagement ring that
+                        captures your
+                        love story.</p>
                     <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
                 </div>
             </div>
         </div>
     </section>
+    <!-- ====== last section ====== -->
+    <section class="w-full bg-gray-50 py-10 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <!-- Left Image -->
+            <div class="w-full">
+                <img src="./asset/img-1.jpg" alt="left" class="w-full h-[300px] md:h-[420px] object-cover rounded-lg">
+            </div>
+            <!-- Middle Content -->
+            <div class="text-center md:text-left px-4">
+                <p class="text-xs tracking-widest text-gray-500 mb-3">
+                    MADE JUST FOR YOU
+                </p>
+                <h2 class="text-3xl font-semibold mb-4">Jewelo Degin</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Timeless and evolving, unlimited in expression, we build spaces around the lives we lead.
+                    Using furnishings and objects of good design that respect a space’s purpose, creates
+                    environments that are beautiful and livable—this one has the best! Handcrafted furniture,
+                    artisan rugs, wallpaper, classic vases, and lighting accessories—well-made and carefully
+                    considered—whether.
+                </p>
 
-    <!-- ====== Subscribe Section ====== -->
-    <section class="bg-amber-50 py-16 text-center">
-        <h2 class="text-3xl font-bold mb-4 text-gray-800">Stay Updated with Alukas & Co</h2>
-        <p class="text-gray-600 mb-6">Subscribe to receive exclusive offers, new arrivals, and jewellery care tips.</p>
+                <button class="bg-teal-600 text-white px-6 py-2 rounded-md hover:bg-teal-700 transition">
+                    SHOP NOW
+                </button>
+            </div>
 
-        <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4 px-4">
-            <input type="email" placeholder="Enter your email"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
-            <button type="submit"
-                class="bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-700 transition">Subscribe</button>
-        </form>
+            <!-- Right Image -->
+            <div class="w-full">
+                <img src="./asset/img-2.jpg" alt="right" class="w-full h-[300px] md:h-[420px] object-cover rounded-lg">
+            </div>
+        </div>
     </section>
+    <!-- Offer Modal -->
+    <div id="offer-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-[9999]">
+        <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3 p-6 relative">
+            <button id="close-offer-modal"
+                class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+
+            <h2 class="text-2xl font-bold text-[#6E002C] mb-4">Exclusive Offers Just for You!</h2>
+            <p class="text-gray-700 mb-4">
+                🎉 Grab up to <span class="font-semibold text-[#6E002C]">50% OFF</span> on selected jewelry collections.
+            </p>
+
+            <ul class="list-disc pl-6 text-gray-600 mb-6">
+                <li>✨ Flat 20% off on all rings</li>
+                <li>💎 Buy 1 Get 1 Free on earrings</li>
+                <li>🎁 Free shipping for orders above ₹4999</li>
+            </ul>
+
+            <div class="flex justify-end space-x-3">
+                <button id="close-modal-btn"
+                    class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded">Close</button>
+                <a href="./alloffer.html" class="px-4 py-2 bg-[#6E002C] hover:bg-[#8E003A] text-white rounded">View All
+                    Offers</a>
+            </div>
+        </div>
+    </div>
     <!-- Subscribe Newsletter Section -->
     <div class="bg-gray-100 py-10 px-4 text-center">
         <h2 class="text-2xl font-semibold mb-2">Subscribe Newsletter</h2>
@@ -523,7 +606,7 @@
                     <li><a href="./corevalues.html" class="hover:text-amber-400 transition">Core Values</a></li>
                     <li><a href="./careers.html" class="hover:text-amber-400 transition">Careers</a></li>
                     <li><a href="./blog.html" class="hover:text-amber-400 transition">Blog</a></li>
-                    <li><a href="#" class="hover:text-amber-400 transition">Press Releases</a></li>
+                    <li><a href="./press.html" class="hover:text-amber-400 transition">Press Releases</a></li>
                 </ul>
             </div>
 
@@ -555,6 +638,7 @@
                     </li>
                 </ul>
             </div>
+
         </div>
 
         <!-- Bottom Section -->
@@ -562,11 +646,103 @@
             © <span id="year"></span> Alukas & Co. All Rights Reserved. | Crafted with 💛 for Jewellery Lovers
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <!-- ====== JS ====== -->
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
 
+        $(document).ready(function () {
+            $('.blog-slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 2500,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 640,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+
+        // Mobile Hamburger Menu Toggle
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        let isOpen = false;
+        menuBtn.addEventListener("click", () => {
+            isOpen = !isOpen;
+            mobileMenu.classList.toggle("hidden");
+            // Change hamburger icon to close icon
+            menuBtn.innerHTML = isOpen
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Offer Modal Logic (you had this too)
+        const offerBtn = document.getElementById('offer-button');
+        const offerModal = document.getElementById('offer-modal');
+        const closeOfferModal = document.getElementById('close-offer-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        if (offerBtn) {
+            offerBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                offerModal.classList.remove('hidden');
+            });
+        }
+
+        closeOfferModal.addEventListener('click', () => {
+            offerModal.classList.add('hidden');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            offerModal.classList.add('hidden');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === offerModal) {
+                offerModal.classList.add('hidden');
+            }
+        });
+
+        const menus = [
+            { menu: 'rings-menu', dropdown: 'rings-dropdown' },
+            { menu: 'earrings-menu', dropdown: 'earrings-dropdown' },
+            { menu: 'bracelets-menu', dropdown: 'bracelets-dropdown' },
+            { menu: 'Solitaires-menu', dropdown: 'Solitaires-dropdown' }
+        ];
+
+        let timer;
+        menus.forEach(({ menu, dropdown }) => {
+            const menuEl = document.getElementById(menu);
+            const dropdownEl = document.getElementById(dropdown);
+
+            menuEl.addEventListener('mouseenter', () => {
+                clearTimeout(timer);
+                dropdownEl.classList.remove('hidden');
+                setTimeout(() => dropdownEl.classList.remove('opacity-0'), 500);
+            });
+
+            menuEl.addEventListener('mouseleave', () => {
+                dropdownEl.classList.add('opacity-0');
+                timer = setTimeout(() => dropdownEl.classList.add('hidden'), 500);
+            });
+        });
+
+    </script>
 </body>
 
 </html>
