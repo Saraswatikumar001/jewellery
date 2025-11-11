@@ -363,8 +363,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <button id="offer-button"
+                    <button id="offer-button-mobile"
                         class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                         Offers
                         <span
@@ -799,7 +798,6 @@
                         <i class="fab fa-pinterest-p"></i>
                     </a>
                 </div>
-
             </div>
 
             <!-- About Section -->
@@ -820,8 +818,8 @@
                 <ul class="space-y-2 text-gray-300">
                     <li><a href="./affiliate.html" class="hover:text-amber-400 transition">Affiliate Program</a></li>
                     <li><a href="./advertise.html" class="hover:text-amber-400 transition">Advertise with Us</a></li>
-                    <li><a href="#" class="hover:text-amber-400 transition">Customer Reviews</a></li>
-                    <li><a href="#" class="hover:text-amber-400 transition">Media Enquiries</a></li>
+                    <li><a href="./customer.html" class="hover:text-amber-400 transition">Customer Reviews</a></li>
+                    <li><a href="./media.html" class="hover:text-amber-400 transition">Media Enquiries</a></li>
                 </ul>
             </div>
 
@@ -858,94 +856,65 @@
     <script>
         // Auto Year Update
         document.getElementById('year').textContent = new Date().getFullYear();
+
         document.addEventListener("DOMContentLoaded", () => {
+
             // Mobile Hamburger Menu Toggle
             const menuBtn = document.getElementById("menu-btn");
             const mobileMenu = document.getElementById("mobile-menu");
             let isOpen = false;
 
-            menuBtn.addEventListener("click", () => {
-                isOpen = !isOpen;
-                mobileMenu.classList.toggle("hidden");
+            document.addEventListener("DOMContentLoaded", () => {
 
-                // Change hamburger icon to close icon
-                menuBtn.innerHTML = isOpen
-                    ? '<i class="fas fa-times"></i>'
-                    : '<i class="fas fa-bars"></i>';
+                const menuBtn = document.getElementById("menu-btn");
+                const mobileMenu = document.getElementById("mobile-menu");
+
+                let isOpen = false;
+
+                menuBtn.addEventListener("click", () => {
+                    isOpen = !isOpen;
+
+                    mobileMenu.classList.toggle("hidden");
+
+                    // toggle icon safely
+                    const icon = menuBtn.querySelector("i");
+                    icon.classList.toggle("fa-bars", !isOpen);
+                    icon.classList.toggle("fa-times", isOpen);
+                });
+
             });
 
-            // Offer Modal Logic (you had this too)
-            const offerBtn = document.getElementById('offer-button');
-            const offerModal = document.getElementById('offer-modal');
-            const closeOfferModal = document.getElementById('close-offer-modal');
-            const closeModalBtn = document.getElementById('close-modal-btn');
+            // Offer Modal Logic
+            const offerBtnDesktop = document.getElementById("offer-button");
+            const offerBtnMobile = document.getElementById("offer-button-mobile");
+            const offerModal = document.getElementById("offer-modal");
+            const closeOfferModal = document.getElementById("close-offer-modal");
 
-            if (offerBtn) {
-                offerBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    offerModal.classList.remove('hidden');
+            function openOfferModal() {
+                if (offerModal) offerModal.classList.remove("hidden");
+            }
+
+            // Desktop button click
+            if (offerBtnDesktop) {
+                offerBtnDesktop.addEventListener("click", openOfferModal);
+            }
+
+            // Mobile button click
+            if (offerBtnMobile) {
+                offerBtnMobile.addEventListener("click", openOfferModal);
+            }
+
+            // Close button
+            if (closeOfferModal) {
+                closeOfferModal.addEventListener("click", () => {
+                    offerModal.classList.add("hidden");
                 });
             }
 
-            closeOfferModal.addEventListener('click', () => {
-                offerModal.classList.add('hidden');
-            });
-
-            closeModalBtn.addEventListener('click', () => {
-                offerModal.classList.add('hidden');
-            });
-
-            window.addEventListener('click', (e) => {
-                if (e.target === offerModal) {
-                    offerModal.classList.add('hidden');
-                }
-            });
-        });
-
-
-        // Mobile Hamburger Menu Toggle
-        const menuBtn = document.getElementById("menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        let isOpen = false;
-
-        menuBtn.addEventListener("click", () => {
-            isOpen = !isOpen;
-            mobileMenu.classList.toggle("hidden");
-
-            // Change hamburger icon to close icon
-            menuBtn.innerHTML = isOpen
-                ? '<i class="fas fa-times"></i>'
-                : '<i class="fas fa-bars"></i>';
-        });
-
-        // Offer Modal Logic (you had this too)
-        const offerBtn = document.getElementById('offer-button');
-        const offerModal = document.getElementById('offer-modal');
-        const closeOfferModal = document.getElementById('close-offer-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-
-        if (offerBtn) {
-            offerBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                offerModal.classList.remove('hidden');
-            });
-        }
-
-        closeOfferModal.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === offerModal) {
-                offerModal.classList.add('hidden');
-            }
-        });
+        }); // <-- CLOSED DOMContentLoaded
 
     </script>
+
 </body>
 
 </html>

@@ -31,7 +31,7 @@
     </style>
 </head>
 
-<body class="bg-white text-gray-900">    
+<body class="bg-white text-gray-900">
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -546,6 +546,21 @@
             </div>
         </div>
     </div>
+    <!-- Subscribe Newsletter Section -->
+    <div class="bg-gray-100 py-10 px-4 text-center">
+        <h2 class="text-2xl font-semibold mb-2">Subscribe Newsletter</h2>
+        <p class="text-gray-500 mb-6">Sign up to our Newsletter and get the discount code.</p>
+
+        <div class="flex justify-center items-center max-w-lg mx-auto">
+            <input type="email" placeholder="Email Address"
+                class="w-full border border-gray-400 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                id="newsletterEmail" />
+            <button class="bg-black text-white px-6 py-2 ml-2 hover:bg-amber-600 transition"
+                onclick="subscribeNewsletter()">
+                SUBSCRIBE
+            </button>
+        </div>
+    </div>
     <!-- Footer Section -->
     <footer class="bg-gradient-to-b from-black via-gray-900 to-black text-white py-14 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -575,7 +590,6 @@
                         <i class="fab fa-pinterest-p"></i>
                     </a>
                 </div>
-
             </div>
 
             <!-- About Section -->
@@ -594,11 +608,10 @@
             <div>
                 <h3 class="text-2xl font-semibold text-amber-400 mb-4">Our Company</h3>
                 <ul class="space-y-2 text-gray-300">
-                    <li><a href="#" class="hover:text-amber-400 transition">Shopping App</a></li>
-                    <li><a href="#" class="hover:text-amber-400 transition">Affiliate Program</a></li>
-                    <li><a href="#" class="hover:text-amber-400 transition">Advertise with Us</a></li>
-                    <li><a href="#" class="hover:text-amber-400 transition">Customer Reviews</a></li>
-                    <li><a href="#" class="hover:text-amber-400 transition">Media Enquiries</a></li>
+                    <li><a href="./affiliate.html" class="hover:text-amber-400 transition">Affiliate Program</a></li>
+                    <li><a href="./advertise.html" class="hover:text-amber-400 transition">Advertise with Us</a></li>
+                    <li><a href="./customer.html" class="hover:text-amber-400 transition">Customer Reviews</a></li>
+                    <li><a href="./media.html" class="hover:text-amber-400 transition">Media Enquiries</a></li>
                 </ul>
             </div>
 
@@ -618,6 +631,7 @@
                     </li>
                 </ul>
             </div>
+
         </div>
 
         <!-- Bottom Section -->
