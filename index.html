@@ -37,7 +37,7 @@
 </style>
 
 <body class="bg-gray-100">
-     <!-- Header -->
+    <!-- Header -->
     <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <!-- Logo -->
@@ -931,22 +931,31 @@
             });
 
 
-            // ✅ Offer Modal Logic
+            // Offer Modal Logic                  
             const offerBtnDesktop = document.getElementById("offer-button");
             const offerBtnMobile = document.getElementById("offer-button-mobile");
             const offerModal = document.getElementById("offer-modal");
-            const closeOfferModal = document.getElementById("close-offer-modal");
+            const closeOfferModal = document.getElementById("close-offer-modal"); // top-right ×
+            const closeModalBtn = document.getElementById("close-modal-btn"); // bottom "Close" button
 
             const openOfferModal = () => {
                 if (offerModal) offerModal.classList.remove("hidden");
             };
 
+            // Open buttons
             if (offerBtnDesktop) offerBtnDesktop.addEventListener("click", openOfferModal);
             if (offerBtnMobile) offerBtnMobile.addEventListener("click", openOfferModal);
 
-            if (closeOfferModal && offerModal) {
+            // Close buttons
+            if (closeOfferModal) {
                 closeOfferModal.addEventListener("click", () => {
-                    offerModal.classList.add("hidden");
+                    if (offerModal) offerModal.classList.add("hidden");
+                });
+            }
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener("click", () => {
+                    if (offerModal) offerModal.classList.add("hidden");
                 });
             }
 

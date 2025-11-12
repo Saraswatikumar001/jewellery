@@ -723,11 +723,9 @@
         // Auto year
         const yearEl = document.getElementById("year");
         if (yearEl) yearEl.textContent = new Date().getFullYear();
-
         // Mobile Hamburger Menu Toggle
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
-
         if (menuBtn && mobileMenu) {
             let isOpen = false;
             menuBtn.addEventListener("click", () => {
