@@ -337,8 +337,7 @@
               </div>
             </div>
           </div>
-
-          <button id="offer-button"
+          <button id="offer-button-mobile"
             class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
             Offers
             <span
@@ -646,7 +645,6 @@
     // Payment toggle
     const paymentOptions = document.querySelectorAll('input[name="payment"]');
     const paymentDetails = document.getElementById('paymentDetails');
-
     paymentOptions.forEach(option => {
       option.addEventListener('change', (e) => {
         if (e.target.value === 'card' || e.target.value === 'upi') {
@@ -672,6 +670,31 @@
 
       alert('✅ Order placed successfully! Thank you for shopping at SparkleZone 💎');
     }
+
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    let isOpen = false;
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      let isOpen = false;
+
+      menuBtn.addEventListener("click", () => {
+        isOpen = !isOpen;
+
+        mobileMenu.classList.toggle("hidden");
+
+        // toggle icon safely
+        const icon = menuBtn.querySelector("i");
+        icon.classList.toggle("fa-bars", !isOpen);
+        icon.classList.toggle("fa-times", isOpen);
+      });
+
+    });
+
   </script>
 
 </body>

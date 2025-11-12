@@ -16,12 +16,28 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
-
 </head>
 
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .animate-fadeIn {
+        animation: fadeIn 0.4s ease-out;
+    }
+</style>
+
 <body class="bg-gray-100">
-    <!-- Header -->
+     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <!-- Logo -->
@@ -847,74 +863,120 @@
             © <span id="year"></span> Alukas & Co. All Rights Reserved. | Crafted with 💛 for Jewellery Lovers
         </div>
     </footer>
+    <!-- Jewellery Offer Popup -->
+    <div id="popup-modal"
+        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 hidden z-[99999]">
+        <div class="relative bg-white rounded-2xl shadow-2xl w-11/12 md:w-1/2 lg:w-1/3 overflow-hidden animate-fadeIn">
+            <!-- Close Button -->
+            <button id="close-popup"
+                class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-3xl font-bold">
+                &times;
+            </button>
 
+            <!-- Image Banner -->
+            <img src="./asset/img-10.jpg" alt="Jewellery Offer" class="w-full h-56 object-cover">
+
+            <!-- Content -->
+            <div class="p-6 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#6E002C] mb-2">
+                    Exclusive Jewellery Offers ✨
+                </h2>
+                <p class="text-gray-600 mb-4">
+                    Get up to <span class="text-[#6E002C] font-semibold">50% OFF</span> on rings, earrings, and
+                    solitaires.
+                </p>
+                <a href="./alloffer.html"
+                    class="inline-block bg-[#6E002C] hover:bg-[#8E003A] text-white font-semibold px-6 py-2 rounded-full shadow-md transition-all">
+                    View Offers
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Floating Call Button with Tooltip -->
+    <div class="fixed bottom-6 right-6 z-[99999] group">
+        <span
+            class="absolute bottom-16 right-1/2 translate-x-1/2 mb-2 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+            Call Us
+        </span>
+        <a href="tel:+911234567890"
+            class="bg-[#6E002C] hover:bg-[#8E003A] text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+    </div>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Slick JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./script.js"></script>
     <script>
-        // Auto Year Update
-        document.getElementById('year').textContent = new Date().getFullYear();
-
         document.addEventListener("DOMContentLoaded", () => {
+
+            // ✅ Auto Year Update
+            const yearEl = document.getElementById("year");
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
 
             // Mobile Hamburger Menu Toggle
             const menuBtn = document.getElementById("menu-btn");
             const mobileMenu = document.getElementById("mobile-menu");
             let isOpen = false;
-
-            document.addEventListener("DOMContentLoaded", () => {
-
-                const menuBtn = document.getElementById("menu-btn");
-                const mobileMenu = document.getElementById("mobile-menu");
-
-                let isOpen = false;
-
-                menuBtn.addEventListener("click", () => {
-                    isOpen = !isOpen;
-
-                    mobileMenu.classList.toggle("hidden");
-
-                    // toggle icon safely
-                    const icon = menuBtn.querySelector("i");
-                    icon.classList.toggle("fa-bars", !isOpen);
-                    icon.classList.toggle("fa-times", isOpen);
-                });
-
+            menuBtn.addEventListener("click", () => {
+                isOpen = !isOpen;
+                mobileMenu.classList.toggle("hidden");
+                // Change hamburger icon to close icon
+                menuBtn.innerHTML = isOpen
+                    ? '<i class="fas fa-times"></i>'
+                    : '<i class="fas fa-bars"></i>';
             });
 
-            // Offer Modal Logic
+
+            // ✅ Offer Modal Logic
             const offerBtnDesktop = document.getElementById("offer-button");
             const offerBtnMobile = document.getElementById("offer-button-mobile");
             const offerModal = document.getElementById("offer-modal");
             const closeOfferModal = document.getElementById("close-offer-modal");
 
-            function openOfferModal() {
+            const openOfferModal = () => {
                 if (offerModal) offerModal.classList.remove("hidden");
-            }
+            };
 
-            // Desktop button click
-            if (offerBtnDesktop) {
-                offerBtnDesktop.addEventListener("click", openOfferModal);
-            }
+            if (offerBtnDesktop) offerBtnDesktop.addEventListener("click", openOfferModal);
+            if (offerBtnMobile) offerBtnMobile.addEventListener("click", openOfferModal);
 
-            // Mobile button click
-            if (offerBtnMobile) {
-                offerBtnMobile.addEventListener("click", openOfferModal);
-            }
-
-            // Close button
-            if (closeOfferModal) {
+            if (closeOfferModal && offerModal) {
                 closeOfferModal.addEventListener("click", () => {
                     offerModal.classList.add("hidden");
                 });
             }
 
-        }); // <-- CLOSED DOMContentLoaded
+            // ✅ Auto Popup Modal
+            const popupModal = document.getElementById("popup-modal");
+            const closePopup = document.getElementById("close-popup");
 
+            if (popupModal) {
+                // Show popup automatically after 1.5 seconds
+                setTimeout(() => {
+                    popupModal.classList.remove("hidden");
+                }, 1500);
+
+                // Close popup when clicking close button
+                if (closePopup) {
+                    closePopup.addEventListener("click", () => {
+                        popupModal.classList.add("hidden");
+                    });
+                }
+
+                // Close popup when clicking outside the content area
+                popupModal.addEventListener("click", (e) => {
+                    if (e.target === popupModal) {
+                        popupModal.classList.add("hidden");
+                    }
+                });
+            }
+
+        });
     </script>
-
 </body>
 
 </html>

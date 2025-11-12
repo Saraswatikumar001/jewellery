@@ -16,8 +16,8 @@
 
 </head>
 
-<body class="bg-gray-50">
 
+<body class="bg-gray-50">
     <header class="fixed top-0 left-0 right-0 bg-[#6E002C] text-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <!-- Logo -->
@@ -359,8 +359,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <button id="offer-button"
+                    <button id="offer-button-mobile"
                         class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                         Offers
                         <span
@@ -393,7 +392,7 @@
         </div>
     </header>
     <!-- BREADCRUMB -->
-    <section class="relative w-full h-52 md:h-56 lg:h-[450px] flex items-center">
+    <section class="relative w-full h-[450px] flex items-center">
         <!-- Background Image -->
         <img src="./asset/img-11.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50">
         <!-- Dark Overlay -->
@@ -436,7 +435,7 @@
                             and their efficient staff. They completed my project
                             on-time and on-budget. I highly recommend them!
                         </p>
-                        <h3 class="mt-6 text-2xl font-bold text-[#FF6A00]">Olivia Jane</h3>
+                        <h3 class="mt-6 text-2xl font-bold text-[#FF6A00]">puja Das</h3>
                     </div>
                 </div>
             </div>
@@ -632,7 +631,17 @@
             © <span id="year"></span> Alukas & Co. All Rights Reserved. | Crafted with 💛 for Jewellery Lovers
         </div>
     </footer>
-
+    <!-- Floating Call Button with Tooltip -->
+    <div class="fixed bottom-6 right-6 z-[99999] group">
+        <span
+            class="absolute bottom-16 right-1/2 translate-x-1/2 mb-2 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+            Call Us
+        </span>
+        <a href="tel:+911234567890"
+            class="bg-[#6E002C] hover:bg-[#8E003A] text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+    </div>    
     <script>
         $(document).ready(function () {
             $('.testimonial-hero-slider').slick({
@@ -683,36 +692,31 @@
         });
 
 
-        // Offer Modal Logic
-        const offerBtn = document.getElementById('offer-button');
-        const offerModal = document.getElementById('offer-modal');
-        const closeOfferModal = document.getElementById('close-offer-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
+        // Offer Modal Logic                  
+        const offerBtnDesktop = document.getElementById("offer-button");
+        const offerBtnMobile = document.getElementById("offer-button-mobile");
+        const offerModal = document.getElementById("offer-modal");
+        const closeOfferModal = document.getElementById("close-offer-modal"); // top-right ×
+        const closeModalBtn = document.getElementById("close-modal-btn"); // bottom "Close" button
 
-        if (offerBtn && offerModal) {
-            offerBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                offerModal.classList.remove('hidden');
+        const openOfferModal = () => {
+            if (offerModal) offerModal.classList.remove("hidden");
+        };
+
+        // Open buttons
+        if (offerBtnDesktop) offerBtnDesktop.addEventListener("click", openOfferModal);
+        if (offerBtnMobile) offerBtnMobile.addEventListener("click", openOfferModal);
+
+        // Close buttons
+        if (closeOfferModal) {
+            closeOfferModal.addEventListener("click", () => {
+                if (offerModal) offerModal.classList.add("hidden");
             });
         }
 
-        if (closeOfferModal && offerModal) {
-            closeOfferModal.addEventListener('click', () => {
-                offerModal.classList.add('hidden');
-            });
-        }
-
-        if (closeModalBtn && offerModal) {
-            closeModalBtn.addEventListener('click', () => {
-                offerModal.classList.add('hidden');
-            });
-        }
-
-        if (offerModal) {
-            window.addEventListener('click', (e) => {
-                if (e.target === offerModal) {
-                    offerModal.classList.add('hidden');
-                }
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener("click", () => {
+                if (offerModal) offerModal.classList.add("hidden");
             });
         }
 
@@ -735,8 +739,29 @@
             });
         }
 
+        document.addEventListener("DOMContentLoaded", function () {
+            const popupModal = document.getElementById("popup-modal");
+            const closePopup = document.getElementById("close-popup");
 
+            // Show popup automatically after 1.5 seconds
+            setTimeout(() => {
+                popupModal.classList.remove("hidden");
+            }, 1500);
+
+            // Close popup when clicking close button
+            closePopup.addEventListener("click", () => {
+                popupModal.classList.add("hidden");
+            });
+
+            // Optional: close popup when clicking outside the box
+            popupModal.addEventListener("click", (e) => {
+                if (e.target === popupModal) {
+                    popupModal.classList.add("hidden");
+                }
+            });
+        });
     </script>
+
 </body>
 
 </html>

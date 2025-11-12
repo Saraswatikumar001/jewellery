@@ -365,8 +365,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <button
+                    <button id="offer-button-mobile"
                         class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                         Offers
                         <span
@@ -386,7 +385,7 @@
                         <li><a href="./cart.html" class="block hover:text-[#EAB308]">Cart</a></li>
                         <li><a href="./became-seller.html" class="block hover:text-[#EAB308]">Become a Seller</a></li>
                         <li>
-                            <button
+                            <button id="offer-button"
                                 class="w-full text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                                 Offers
                                 <span
@@ -629,6 +628,31 @@
             </div>
         </div>
     </section>
+    <!-- Offer Modal -->
+    <div id="offer-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-[9999]">
+        <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3 p-6 relative">
+            <button id="close-offer-modal"
+                class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+
+            <h2 class="text-2xl font-bold text-[#6E002C] mb-4">Exclusive Offers Just for You!</h2>
+            <p class="text-gray-700 mb-4">
+                🎉 Grab up to <span class="font-semibold text-[#6E002C]">50% OFF</span> on selected jewelry collections.
+            </p>
+
+            <ul class="list-disc pl-6 text-gray-600 mb-6">
+                <li>✨ Flat 20% off on all rings</li>
+                <li>💎 Buy 1 Get 1 Free on earrings</li>
+                <li>🎁 Free shipping for orders above ₹4999</li>
+            </ul>
+
+            <div class="flex justify-end space-x-3">
+                <button id="close-modal-btn"
+                    class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded">Close</button>
+                <a href="./alloffer.html" class="px-4 py-2 bg-[#6E002C] hover:bg-[#8E003A] text-white rounded">View All
+                    Offers</a>
+            </div>
+        </div>
+    </div>
     <!-- Subscribe Newsletter Section -->
     <div class="bg-gray-100 py-10 px-4 text-center">
         <h2 class="text-2xl font-semibold mb-2">Subscribe Newsletter</h2>
@@ -812,9 +836,48 @@
                     : '<i class="fas fa-bars"></i>';
             });
         });
+
+        // Offer Modal Logic
+        const offerBtnDesktop = document.getElementById("offer-button");
+        const offerBtnMobile = document.getElementById("offer-button-mobile");
+        const offerModal = document.getElementById("offer-modal");
+        const closeOfferModal = document.getElementById("close-offer-modal");
+
+        function openOfferModal() {
+            if (offerModal) offerModal.classList.remove("hidden");
+        }
+
+        // Desktop button click
+        if (offerBtnDesktop) {
+            offerBtnDesktop.addEventListener("click", openOfferModal);
+        }
+
+        // Mobile button click
+        if (offerBtnMobile) {
+            offerBtnMobile.addEventListener("click", openOfferModal);
+        }
+
+        // Close button
+        if (closeOfferModal) {
+            closeOfferModal.addEventListener("click", () => {
+                offerModal.classList.add("hidden");
+            });
+        }
+
+        // <-- CLOSED DOMContentLoaded
+
     </script>
-
-
+    <!-- Floating Call Button with Tooltip -->
+    <div class="fixed bottom-6 right-6 z-[99999] group">
+        <span
+            class="absolute bottom-16 right-1/2 translate-x-1/2 mb-2 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+            Call Us
+        </span>
+        <a href="tel:+911234567890"
+            class="bg-[#6E002C] hover:bg-[#8E003A] text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+    </div>
 </body>
 
 </html>

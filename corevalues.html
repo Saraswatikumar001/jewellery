@@ -399,8 +399,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <button id="offer-button"
+                    <button id="offer-button-mobile"
                         class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                         Offers
                         <span
@@ -437,20 +436,17 @@
         style="background-image: url('./asset/img-3.jpg');">
         <!-- Gradient Overlay for Text Clarity -->
         <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/30"></div>
-
         <!-- Content -->
         <div class="relative z-10 px-4">
             <!-- Heading -->
             <h1 class="text-5xl font-extrabold text-white mb-4 tracking-wide drop-shadow-lg">
                 Our Core Values
             </h1>
-
             <!-- Description -->
             <p class="text-white/90 text-lg max-w-2xl mx-auto px-4 drop-shadow-md">
                 At <span class="text-amber-400 font-semibold">Alukas & Co</span>, every jewel tells a story —
                 crafted with passion, precision, and purity.
             </p>
-
             <!-- Breadcrumb -->
             <nav class="text-sm mb-6 mt-6" aria-label="Breadcrumb">
                 <ol class="flex justify-center space-x-2 text-white/80">
@@ -592,7 +588,6 @@
             </div>
         </div>
     </section>
-
     <!-- 💫 Visual Section -->
     <section class="relative fade-up">
         <img src="./asset/img-3.jpg" class="w-full h-[400px] object-cover rounded-none" alt="Craftsmanship">
@@ -766,43 +761,41 @@
         window.addEventListener('scroll', showOnScroll);
         showOnScroll();
 
+        //  Offer Modal Logic            
+        const offerBtnDesktop = document.getElementById("offer-button");
+        const offerBtnMobile = document.getElementById("offer-button-mobile");
+        const offerModal = document.getElementById("offer-modal");
+        const closeOfferModal = document.getElementById("close-offer-modal"); // top-right ×
+        const closeModalBtn = document.getElementById("close-modal-btn"); // bottom "Close" button
 
-        // Offer Modal Logic (you had this too)
-        const offerBtn = document.getElementById('offer-button');
-        const offerModal = document.getElementById('offer-modal');
-        const closeOfferModal = document.getElementById('close-offer-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
+        const openOfferModal = () => {
+            if (offerModal) offerModal.classList.remove("hidden");
+        };
 
-        if (offerBtn) {
-            offerBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                offerModal.classList.remove('hidden');
+        // Open buttons
+        if (offerBtnDesktop) offerBtnDesktop.addEventListener("click", openOfferModal);
+        if (offerBtnMobile) offerBtnMobile.addEventListener("click", openOfferModal);
+
+        // Close buttons
+        if (closeOfferModal) {
+            closeOfferModal.addEventListener("click", () => {
+                if (offerModal) offerModal.classList.add("hidden");
             });
         }
 
-        closeOfferModal.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === offerModal) {
-                offerModal.classList.add('hidden');
-            }
-        });
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener("click", () => {
+                if (offerModal) offerModal.classList.add("hidden");
+            });
+        }
 
         // Mobile Hamburger Menu Toggle
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
         let isOpen = false;
-
         menuBtn.addEventListener("click", () => {
             isOpen = !isOpen;
             mobileMenu.classList.toggle("hidden");
-
             // Change hamburger icon to close icon
             menuBtn.innerHTML = isOpen
                 ? '<i class="fas fa-times"></i>'

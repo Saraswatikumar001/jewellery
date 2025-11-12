@@ -265,7 +265,7 @@
                                     <div class="hidden md:block">
                                         <div class="grid grid-cols-2 gap-3">
                                             <div class="relative">
-                                                <img src="./asset/img-4.jpg" alt="Switch"
+                                                <img src="./asset/img-3.jpg" alt="Switch"
                                                     class="rounded-lg w-full h-40 object-cover">
                                                 <span
                                                     class="absolute bottom-2 left-2 bg-white/80 text-sm text-black px-2 py-1 rounded">Switch</span>
@@ -353,8 +353,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <button id="offer-button"
+                    <button id="offer-button-mobile"
                         class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                         Offers
                         <span
@@ -374,7 +373,7 @@
                         <li><a href="./cart.html" class="block hover:text-[#EAB308]">Cart</a></li>
                         <li><a href="./became-seller.html" class="block hover:text-[#EAB308]">Become a Seller</a></li>
                         <li>
-                            <button
+                            <button id="offer-button"
                                 class="w-full text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                                 Offers
                                 <span
@@ -393,9 +392,9 @@
 
             <!-- Logo / Title -->
             <div class="text-center mb-6">
-                <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Jewellery Logo"
-                    class="mx-auto w-14 h-14 sm:w-16 sm:h-16 mb-3 drop-shadow-md">
-                <h1 class="text-2xl sm:text-3xl font-serif text-amber-700 font-bold">SparkleZone</h1>
+                <img src="./asset/img-3.jpg" alt="Jewellery Logo"
+                    class="mx-auto w-14 h-14 sm:w-16 sm:h-16 mb-3 drop-shadow-md rounded-full object-cover">
+                <h1 class="text-2xl sm:text-3xl font-serif text-amber-700 font-bold">Sign In</h1>
                 <p class="text-gray-500 text-xs sm:text-sm">Exclusive Jewellery Collection</p>
             </div>
 
@@ -425,12 +424,10 @@
                     Login
                 </button>
             </form>
-
             <p class="text-center text-xs sm:text-sm text-gray-600 mt-4 sm:mt-5">
                 Don’t have an account?
                 <a href="#" class="text-amber-700 font-medium hover:underline">Create one</a>
             </p>
-
             <!-- Decorative Background Circles -->
             <div
                 class="absolute -top-6 -right-6 w-14 sm:w-16 h-14 sm:h-16 bg-amber-300 rounded-full blur-2xl opacity-50">
@@ -438,9 +435,7 @@
             <div
                 class="absolute -bottom-6 -left-6 w-16 sm:w-20 h-16 sm:h-20 bg-pink-200 rounded-full blur-2xl opacity-50">
             </div>
-
         </section>
-
     </main>
     <!-- Offer Modal -->
     <div id="offer-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-[9999]">
@@ -544,6 +539,17 @@
             © <span id="year"></span> Alukas & Co. All Rights Reserved. | Crafted with 💛 for Jewellery Lovers
         </div>
     </footer>
+    <!-- Floating Call Button with Tooltip -->
+    <div class="fixed bottom-6 right-6 z-[99999] group">
+        <span
+            class="absolute bottom-16 right-1/2 translate-x-1/2 mb-2 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+            Call Us
+        </span>
+        <a href="tel:+911234567890"
+            class="bg-[#6E002C] hover:bg-[#8E003A] text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+    </div>
     <script>
         const menus = [
             { menu: 'rings-menu', dropdown: 'rings-dropdown' },
@@ -571,32 +577,21 @@
         });
 
 
-        // Offer Modal Logic (you had this too)
-        const offerBtn = document.getElementById('offer-button');
+        // Offer Modal Logic (you had this too)       
+        const offerBtnDesktop = document.getElementById('offer-button');
+        const offerBtnMobile = document.getElementById('offer-button-mobile');
         const offerModal = document.getElementById('offer-modal');
         const closeOfferModal = document.getElementById('close-offer-modal');
         const closeModalBtn = document.getElementById('close-modal-btn');
 
-        if (offerBtn) {
-            offerBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                offerModal.classList.remove('hidden');
-            });
-        }
+        const openOfferModal = () => offerModal?.classList.remove('hidden');
+        const closeOffer = () => offerModal?.classList.add('hidden');
 
-        closeOfferModal.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
+        if (offerBtnDesktop) offerBtnDesktop.addEventListener('click', openOfferModal);
+        if (offerBtnMobile) offerBtnMobile.addEventListener('click', openOfferModal);
+        if (closeOfferModal) closeOfferModal.addEventListener('click', closeOffer);
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeOffer);
 
-        closeModalBtn.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === offerModal) {
-                offerModal.classList.add('hidden');
-            }
-        });
 
         // Mobile Hamburger Menu Toggle
         const menuBtn = document.getElementById("menu-btn");

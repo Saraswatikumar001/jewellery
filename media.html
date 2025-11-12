@@ -352,8 +352,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <button id="offer-button"
+                    <button id="offer-button-mobile"
                         class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                         Offers
                         <span
@@ -509,8 +508,9 @@
             <div class="flex justify-end space-x-3">
                 <button id="close-modal-btn"
                     class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded">Close</button>
-                <a href="./alloffer.html" class="px-4 py-2 bg-[#6E002C] hover:bg-[#8E003A] text-white rounded">View All
-                    Offers</a>
+                <a href="./alloffer.html" class="px-4 py-2 bg-[#6E002C] hover:bg-[#8E003A] text-white rounded">
+                    View All Offers
+                </a>
             </div>
         </div>
     </div>
@@ -606,98 +606,111 @@
             © <span id="year"></span> Alukas & Co. All Rights Reserved. | Crafted with 💛 for Jewellery Lovers
         </div>
     </footer>
+    <!-- Floating Call Button with Tooltip -->
+    <div class="fixed bottom-6 right-6 z-[99999] group">
+        <span
+            class="absolute bottom-16 right-1/2 translate-x-1/2 mb-2 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+            Call Us
+        </span>
+        <a href="tel:+911234567890"
+            class="bg-[#6E002C] hover:bg-[#8E003A] text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+    </div>
     <!-- JS SUCCESS MESSAGE -->
     <script>
-        document.getElementById("mediaForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            alert("Thank you! Your media enquiry has been submitted.");
-        });
+        document.addEventListener("DOMContentLoaded", function () {
 
-        // Offer Modal Logic
-        const offerBtn = document.getElementById('offer-button');
-        const offerModal = document.getElementById('offer-modal');
-        const closeOfferModal = document.getElementById('close-offer-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
+            // Media Form Submit
+            const mediaForm = document.getElementById("mediaForm");
+            if (mediaForm) {
+                mediaForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    alert("Thank you! Your media enquiry has been submitted.");
+                });
+            }
 
-        if (offerBtn && offerModal) {
-            offerBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                offerModal.classList.remove('hidden');
+            // Dropdown Menus
+            const menus = [
+                { menu: 'rings-menu', dropdown: 'rings-dropdown' },
+                { menu: 'earrings-menu', dropdown: 'earrings-dropdown' },
+                { menu: 'bracelets-menu', dropdown: 'bracelets-dropdown' },
+                { menu: 'Solitaires-menu', dropdown: 'Solitaires-dropdown' }
+            ];
+
+            menus.forEach(({ menu, dropdown }) => {
+                const menuEl = document.getElementById(menu);
+                const dropdownEl = document.getElementById(dropdown);
+
+                if (!menuEl || !dropdownEl) return; // prevent errors
+
+                let hideTimer;
+
+                const openMenu = () => {
+                    clearTimeout(hideTimer);
+                    dropdownEl.classList.remove("hidden", "opacity-0");
+                };
+
+                const closeMenu = () => {
+                    hideTimer = setTimeout(() => {
+                        dropdownEl.classList.add("opacity-0");
+                        setTimeout(() => dropdownEl.classList.add("hidden"), 200);
+                    }, 100);
+                };
+
+                menuEl.addEventListener("mouseenter", openMenu);
+                dropdownEl.addEventListener("mouseenter", openMenu);
+                menuEl.addEventListener("mouseleave", closeMenu);
+                dropdownEl.addEventListener("mouseleave", closeMenu);
             });
-        }
 
-        if (closeOfferModal && offerModal) {
-            closeOfferModal.addEventListener('click', () => {
-                offerModal.classList.add('hidden');
-            });
-        }
+            //  Offer Modal Logic            
+            const offerBtnDesktop = document.getElementById("offer-button");
+            const offerBtnMobile = document.getElementById("offer-button-mobile");
+            const offerModal = document.getElementById("offer-modal");
+            const closeOfferModal = document.getElementById("close-offer-modal"); // top-right ×
+            const closeModalBtn = document.getElementById("close-modal-btn"); // bottom "Close" button
 
-        if (closeModalBtn && offerModal) {
-            closeModalBtn.addEventListener('click', () => {
-                offerModal.classList.add('hidden');
-            });
-        }
+            const openOfferModal = () => {
+                if (offerModal) offerModal.classList.remove("hidden");
+            };
 
-        if (offerModal) {
-            window.addEventListener('click', (e) => {
-                if (e.target === offerModal) {
-                    offerModal.classList.add('hidden');
-                }
-            });
-        }
+            // Open buttons
+            if (offerBtnDesktop) offerBtnDesktop.addEventListener("click", openOfferModal);
+            if (offerBtnMobile) offerBtnMobile.addEventListener("click", openOfferModal);
 
+            // Close buttons
+            if (closeOfferModal) {
+                closeOfferModal.addEventListener("click", () => {
+                    if (offerModal) offerModal.classList.add("hidden");
+                });
+            }
 
-        // Mobile Hamburger Menu Toggle
-        const menuBtn = document.getElementById("menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        if (menuBtn && mobileMenu) {
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener("click", () => {
+                    if (offerModal) offerModal.classList.add("hidden");
+                });
+            }
+            // Mobile Hamburger Menu Toggle
+            const menuBtn = document.getElementById("menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
             let isOpen = false;
-            menuBtn.addEventListener("click", () => {
-                isOpen = !isOpen;
-                mobileMenu.classList.toggle("hidden");
-                menuBtn.innerHTML = isOpen
-                    ? '<i class="fas fa-times"></i>'
-                    : '<i class="fas fa-bars"></i>';
-            });
-        }
 
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    isOpen = !isOpen;
+                    mobileMenu.classList.toggle("hidden");
 
-        const menus = [
-            { menu: 'rings-menu', dropdown: 'rings-dropdown' },
-            { menu: 'earrings-menu', dropdown: 'earrings-dropdown' },
-            { menu: 'bracelets-menu', dropdown: 'bracelets-dropdown' },
-            { menu: 'Solitaires-menu', dropdown: 'Solitaires-dropdown' }
-        ];
+                    // Toggle icon safely
+                    const icon = menuBtn.querySelector("i");
+                    if (icon) {
+                        icon.classList.toggle("fa-bars", !isOpen);
+                        icon.classList.toggle("fa-times", isOpen);
+                    }
+                });
+            }
 
-        menus.forEach(({ menu, dropdown }) => {
-            const menuEl = document.getElementById(menu);
-            const dropdownEl = document.getElementById(dropdown);
-
-            let hideTimer;
-
-            // OPEN on hover
-            const openMenu = () => {
-                clearTimeout(hideTimer);
-                dropdownEl.classList.remove("hidden", "opacity-0");
-            };
-
-            // CLOSE on leave
-            const closeMenu = () => {
-                hideTimer = setTimeout(() => {
-                    dropdownEl.classList.add("opacity-0");
-                    setTimeout(() => dropdownEl.classList.add("hidden"), 200);
-                }, 100);
-            };
-
-            menuEl.addEventListener("mouseenter", openMenu);
-            dropdownEl.addEventListener("mouseenter", openMenu);
-
-            menuEl.addEventListener("mouseleave", closeMenu);
-            dropdownEl.addEventListener("mouseleave", closeMenu);
-        });
-
-
+        }); // ✅ Properly closed DOMContentLoaded
     </script>
 
 </body>

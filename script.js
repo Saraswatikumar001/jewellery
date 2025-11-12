@@ -60,49 +60,9 @@ menus.forEach(({ menu, dropdown }) => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Mobile Hamburger Menu Toggle
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  let isOpen = false;
 
-  menuBtn.addEventListener("click", () => {
-    isOpen = !isOpen;
-    mobileMenu.classList.toggle("hidden");
 
-    // Change hamburger icon to close icon
-    menuBtn.innerHTML = isOpen
-      ? '<i class="fas fa-times"></i>'
-      : '<i class="fas fa-bars"></i>';
-  });
 
-  // Offer Modal Logic (you had this too)
-  const offerBtn = document.getElementById('offer-button');
-  const offerModal = document.getElementById('offer-modal');
-  const closeOfferModal = document.getElementById('close-offer-modal');
-  const closeModalBtn = document.getElementById('close-modal-btn');
-
-  if (offerBtn) {
-    offerBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      offerModal.classList.remove('hidden');
-    });
-  }
-
-  closeOfferModal.addEventListener('click', () => {
-    offerModal.classList.add('hidden');
-  });
-
-  closeModalBtn.addEventListener('click', () => {
-    offerModal.classList.add('hidden');
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target === offerModal) {
-      offerModal.classList.add('hidden');
-    }
-  });
-});
 
 
 

@@ -374,8 +374,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <button id="offer-button"
+                    <button id="offer-button-mobile"
                         class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                         Offers
                         <span
@@ -410,7 +409,7 @@
     <!-- SECTION 1 -->
     <section class="mt-32 w-full bg-white py-20 px-6 fade-up">
         <div class="max-w-6xl mx-auto text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-light tracking-wide">
+            <h2 class="text-3xl md:text-4xl font-light tracking-wide text-[#6E002C]">
                 FINDING <span class="italic">the</span> FREEDOM <br> OF EXPRESSION
             </h2>
         </div>
@@ -423,7 +422,7 @@
             </div>
             <!-- Right content and images -->
             <div>
-                <p class="text-xs tracking-widest text-gray-500 mb-3">ART AND BEAUTY</p>
+                <p class="text-xs tracking-widest mb-3 text-[#6E002C] font-bold">ART AND BEAUTY</p>
                 <h3 class="text-2xl font-semibold mb-4">OUR PHILOSOPHY</h3>
                 <p class="text-gray-600 leading-relaxed mb-8">
                     Between fine jewelry and modern luxury lies the extraordinary craftsmanship we bring
@@ -458,7 +457,7 @@
             </div>
             <!-- Right Content -->
             <div>
-                <p class="text-xs tracking-widest text-gray-500 mb-3">ART AND BEAUTY</p>
+                <p class="text-xs tracking-widest mb-3 text-[#6E002C]">ART AND BEAUTY</p>
                 <h3 class="text-2xl font-semibold mb-4">OUR JEWELRY</h3>
 
                 <p class="text-gray-600 leading-relaxed mb-10">
@@ -483,7 +482,7 @@
                     <h3 class="text-xl font-semibold mb-3">
                         Capturing The Unspoken, The Little Fleeting Miracle
                     </h3>
-                    <a class="mt-10 bg-white text-black px-4 py-2 rounded-full text-sm font-medium">
+                    <a class="mt-10 text-white px-4 py-2 rounded-full text-sm font-medium bg-[#6E002C]">
                         View
                     </a>
                 </div>
@@ -499,7 +498,7 @@
                         <h3 class="text-lg font-semibold mb-3">
                             Jewelry That Elevates Every Moment
                         </h3>
-                        <a class="mt-3 bg-white text-black px-4 py-2 rounded-full text-sm font-medium">
+                        <a class="mt-3 text-white bg-[#6E002C] px-4 py-2 rounded-full text-sm font-medium">
                             View
                         </a>
                     </div>
@@ -513,7 +512,7 @@
                         <h3 class="text-lg font-semibold mb-3">
                             Timeless Beauty, Designed With Love
                         </h3>
-                        <a class="mt-3 bg-white text-black px-4 py-2 rounded-full text-sm font-medium">
+                        <a class="mt-3 text-white bg-[#6E002C] px-4 py-2 rounded-full text-sm font-medium">
                             View
                         </a>
                     </div>
@@ -652,31 +651,32 @@
         elements.forEach(el => observer.observe(el));
 
         // Offer Modal Logic (you had this too)
-        const offerBtn = document.getElementById('offer-button');
-        const offerModal = document.getElementById('offer-modal');
-        const closeOfferModal = document.getElementById('close-offer-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
+        //  Offer Modal Logic            
+        const offerBtnDesktop = document.getElementById("offer-button");
+        const offerBtnMobile = document.getElementById("offer-button-mobile");
+        const offerModal = document.getElementById("offer-modal");
+        const closeOfferModal = document.getElementById("close-offer-modal"); // top-right ×
+        const closeModalBtn = document.getElementById("close-modal-btn"); // bottom "Close" button
 
-        if (offerBtn) {
-            offerBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                offerModal.classList.remove('hidden');
+        const openOfferModal = () => {
+            if (offerModal) offerModal.classList.remove("hidden");
+        };
+
+        // Open buttons
+        if (offerBtnDesktop) offerBtnDesktop.addEventListener("click", openOfferModal);
+        if (offerBtnMobile) offerBtnMobile.addEventListener("click", openOfferModal);
+
+        // Close buttons
+        if (closeOfferModal) {
+            closeOfferModal.addEventListener("click", () => {
+                if (offerModal) offerModal.classList.add("hidden");
             });
         }
 
-        closeOfferModal.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === offerModal) {
-                offerModal.classList.add('hidden');
-            }
-        });
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener("click", () => {
+                if (offerModal) offerModal.classList.add("hidden");
+            });        }
 
 
         const menus = [
@@ -703,7 +703,17 @@
             });
         });
     </script>
-
+    <!-- Floating Call Button with Tooltip -->
+    <div class="fixed bottom-6 right-6 z-[99999] group">
+        <span
+            class="absolute bottom-16 right-1/2 translate-x-1/2 mb-2 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+            Call Us
+        </span>
+        <a href="tel:+911234567890"
+            class="bg-[#6E002C] hover:bg-[#8E003A] text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+    </div>
 </body>
 
 </html>

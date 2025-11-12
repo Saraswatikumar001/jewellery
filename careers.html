@@ -353,8 +353,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <button id="offer-button"
+                    <button id="offer-button-mobile"
                         class="hidden md:flex items-center text-pink-600 bg-[#EAB308] rounded-full px-6 py-3 font-semibold hover:text-pink-800 transition-all duration-200">
                         Offers
                         <span
@@ -619,32 +618,33 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-        // Offer Modal Logic (you had this too)
-        const offerBtn = document.getElementById('offer-button');
-        const offerModal = document.getElementById('offer-modal');
-        const closeOfferModal = document.getElementById('close-offer-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
+        //  Offer Modal Logic            
+        const offerBtnDesktop = document.getElementById("offer-button");
+        const offerBtnMobile = document.getElementById("offer-button-mobile");
+        const offerModal = document.getElementById("offer-modal");
+        const closeOfferModal = document.getElementById("close-offer-modal"); // top-right ×
+        const closeModalBtn = document.getElementById("close-modal-btn"); // bottom "Close" button
 
-        if (offerBtn) {
-            offerBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                offerModal.classList.remove('hidden');
+        const openOfferModal = () => {
+            if (offerModal) offerModal.classList.remove("hidden");
+        };
+
+        // Open buttons
+        if (offerBtnDesktop) offerBtnDesktop.addEventListener("click", openOfferModal);
+        if (offerBtnMobile) offerBtnMobile.addEventListener("click", openOfferModal);
+
+        // Close buttons
+        if (closeOfferModal) {
+            closeOfferModal.addEventListener("click", () => {
+                if (offerModal) offerModal.classList.add("hidden");
             });
         }
 
-        closeOfferModal.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            offerModal.classList.add('hidden');
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === offerModal) {
-                offerModal.classList.add('hidden');
-            }
-        });
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener("click", () => {
+                if (offerModal) offerModal.classList.add("hidden");
+            });
+        }
 
 
         // Mobile Hamburger Menu Toggle
